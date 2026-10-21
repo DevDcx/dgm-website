@@ -45,5 +45,6 @@ Update these as the new pages are built.
 | Get the 15 Profit Leaks guide, Resources | Leaks banner, footer | drivecx.com/rgm-resources |
 | Dale Dubberley, About | Author band, footer | drivecx.com/communicate-collaborate-innovate |
 | Privacy, Terms | Footer | drivecx.com/privacy, drivecx.com/terms |
+| Learn more (Brand Growth Strategy) | Flywheel section | drivecx.com/brand-growth-strategy |
 | Login | Footer | console.drivecx.com |
 | Get help | Footer | support@drivecx.com |
