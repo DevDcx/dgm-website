@@ -50,9 +50,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="background: #2A4252; color: #FFFFFF; border-radius: 14px; padding: clamp(24px, 3.5vw, 36px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center">
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
 <div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Pharmacy · Murphy's Pharmacies</div>
-<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">+150%</div>
-<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">higher Net Promoter Score across a 7-store pilot</div>
-<div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 20–25% more five-star reviews and 12–25% more loyalty sign-ups</div>
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">+84%</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">higher average customer value in the year after starting work with us</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 50% more visits per customer, 18% bigger baskets and a 150% higher Net Promoter Score</div>
 </div>
 <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
@@ -102,7 +102,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 22px">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 28px); font-weight: 600">Murphy's measurable results</h3>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 28px); font-weight: 600">The leading indicators moved first</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
 <sc-for list="{{murphysResults}}" as="s" hint-placeholder-count="4">
 <div style="border-top: 3px solid #FFB042; padding-top: 18px; display: flex; flex-direction: column; gap: 8px">
@@ -111,7 +111,23 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </div>
 </sc-for>
 </div>
-<p style="margin: 0; color: #4F6270; max-width: 70ch">Each one is a leading indicator that sales and profit will follow, because Murphy's was fixing what got in the way of customers doing business with them and staying loyal to the brand.</p>
+<p style="margin: 0; color: #4F6270; max-width: 70ch">Each one is a leading indicator that sales and profit will follow, because Murphy's was fixing what got in the way of customers doing business with them and staying loyal to the brand. Within a year, the sales results followed.</p>
+</div>
+
+<div style="background: #2A4252; color: #FFFFFF; border-radius: 14px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 26px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Profit follows</div>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 30px); font-weight: 600">Sales results in the year after starting work with Drive Growth Management</h3>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<sc-for list="{{murphysSales}}" as="s" hint-placeholder-count="3">
+<div style="border-top: 2px solid #FFB042; padding-top: 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">{{s.value}}</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">{{s.label}}</div>
+</div>
+</sc-for>
+</div>
+<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; color: #C7D3DC">More visits from each customer, and more spent on each visit, add up to customers who are worth 84% more to the business.</p>
 </div>
 
 </div>
@@ -192,6 +208,11 @@ class Component extends DCLogic {
         { n: '2', title: 'Kept it to 1 or 2 questions', text: 'Under 2 minutes to answer. We respected customers\u2019 time instead of handing them a long survey.' },
         { n: '3', title: 'Rotated the questions', text: 'Rolling questions across a high volume of cards gave the breadth of a full survey without alienating anyone.' },
         { n: '4', title: 'Said thank you', text: 'Each response earned an entry to win a $50 pharmacy gift card.' }
+      ],
+      murphysSales: [
+        { value: '+84.0%', label: 'Average customer value' },
+        { value: '+50.2%', label: 'Visits per customer' },
+        { value: '+18.3%', label: 'Average basket' }
       ],
       murphysResults: [
         { value: '+150%', label: 'Net Promoter Score' },
