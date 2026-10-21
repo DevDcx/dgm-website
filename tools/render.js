@@ -20,8 +20,18 @@ const pages = {
   },
   'Clients.dc.html': {
     out: 'our-clients/index.html', depth: 1,
-    title: "Our Clients | Romers' Burger Bar Case Study and Kelly Gordon Interview | Drive Growth Management",
-    description: "How Romers' Burger Bar turned one week of customer feedback into $85,000 in projected annual revenue, plus testimonials from pharmacy and restaurant leaders.",
+    title: 'Our Clients | Pharmacy and Restaurant Case Studies | Drive Growth Management',
+    description: 'Results and case studies from multi-unit pharmacy and restaurant chains using the 8 Retail Profit Drivers.',
+  },
+  'ClientsPharmacy.dc.html': {
+    out: 'our-clients/pharmacy/index.html', depth: 2,
+    title: "Pharmacy Case Studies | Murphy's Pharmacies | Drive Growth Management",
+    description: "How Murphy's Pharmacies used a 25% comment card response rate to find what was costing them customers, and lifted NPS 150% across a 7-store pilot.",
+  },
+  'ClientsRestaurants.dc.html': {
+    out: 'our-clients/restaurants/index.html', depth: 2,
+    title: "Restaurant Case Studies | Romers' Burger Bar and Kelly Gordon Interview | Drive Growth Management",
+    description: "How Romers' Burger Bar turned one week of customer feedback into $85,000 in projected annual revenue, plus an interview with CEO Kelly Gordon.",
   },
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
