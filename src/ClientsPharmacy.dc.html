@@ -51,7 +51,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
 <div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Pharmacy · Murphy's Pharmacies</div>
 <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">+84%</div>
-<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">higher average customer value after one year working with us</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">higher average customer value after one year working with us, and a further 12% in year two</div>
 <div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 50% more visits per customer, 18% bigger baskets and a 150% higher Net Promoter Score</div>
 </div>
 <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
@@ -117,8 +117,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="background: #2A4252; color: #FFFFFF; border-radius: 14px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 26px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Profit follows</div>
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 30px); font-weight: 600">Sales results after one year with Drive Growth Management</h3>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 30px); font-weight: 600">Sales results over two years with Drive Growth Management</h3>
 </div>
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF; margin-bottom: -10px">Year one</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
 <sc-for list="{{murphysSales}}" as="s" hint-placeholder-count="3">
 <div style="border-top: 2px solid #FFB042; padding-top: 18px; display: flex; flex-direction: column; gap: 8px">
@@ -128,6 +129,16 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </sc-for>
 </div>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; color: #C7D3DC">More visits from each customer, and more spent on each visit, add up to customers who are worth 84% more to the business after one year.</p>
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF; margin-bottom: -10px">Year two</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<sc-for list="{{murphysYear2}}" as="s" hint-placeholder-count="3">
+<div style="border-top: 2px solid #FFB042; padding-top: 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">{{s.value}}</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">{{s.label}}</div>
+</div>
+</sc-for>
+</div>
+<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; color: #C7D3DC">In year two, the average basket held steady while customers kept coming back more often, driving a further 12% increase in customer value. That growth came from customer retention, not inflation.</p>
 </div>
 
 </div>
@@ -213,6 +224,11 @@ class Component extends DCLogic {
         { value: '+84.0%', label: 'Average customer value' },
         { value: '+50.2%', label: 'Average customer visits' },
         { value: '+18.3%', label: 'Average basket' }
+      ],
+      murphysYear2: [
+        { value: '+12.0%', label: 'Average customer value' },
+        { value: '+12.9%', label: 'Average customer visits' },
+        { value: 'Steady', label: 'Average basket (\u22120.2%)' }
       ],
       murphysResults: [
         { value: '+150%', label: 'Net Promoter Score' },
