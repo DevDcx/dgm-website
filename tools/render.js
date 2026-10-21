@@ -47,7 +47,7 @@ const blobs = {
   'a43647dbc8d12d0627de166138198808': 'rrg-books.jpg',
   '2f3118ce031bdcd7ba8ef5ee2cf1d96b': 'growth-flywheel-v3.png',
   '5d4b0e33104ad2650d016289542c8ea1': 'coach-screen.jpg',
-  '7d51751edb8a117d540a1ab8c14ca603': 'jane-headshot.jpg',
+  '0beb9ac97a75c7c36654ae2399419b45': 'jane-headshot.jpg',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
