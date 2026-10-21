@@ -18,6 +18,11 @@ const pages = {
     title: 'Get Your Profit Growth Score | Free 8 Profit Drivers Assessment | Drive Growth Management',
     description: 'A free 10-minute assessment for multi-unit pharmacy, retail and restaurant chains. Get your Profit Growth Score, a breakdown of all 8 profit drivers, and your 3 biggest profit leaks.',
   },
+  'Clients.dc.html': {
+    out: 'our-clients/index.html', depth: 1,
+    title: "Our Clients | Romers' Burger Bar Case Study and Kelly Gordon Interview | Drive Growth Management",
+    description: "How Romers' Burger Bar turned one week of customer feedback into $85,000 in projected annual revenue, plus testimonials from pharmacy and restaurant leaders.",
+  },
 };
 
 // Uploaded design images -> files in images/
