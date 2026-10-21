@@ -33,6 +33,11 @@ const pages = {
     title: "Restaurant Case Studies | Romers' Burger Bar and Kelly Gordon Interview | Drive Growth Management",
     description: "How Romers' Burger Bar turned one week of customer feedback into $85,000 in projected annual revenue, plus an interview with CEO Kelly Gordon.",
   },
+  'Leaks.dc.html': {
+    out: '15-profit-leaks/index.html', depth: 1,
+    title: '15 Top Retail Profit Leaks and How to Fix Them | Free Guide | Drive Growth Management',
+    description: 'Free 18-page guide for multi-unit retail, pharmacy and restaurant chains: the 15 most common retail profit leaks, how to fix each one, and where AI helps.',
+  },
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
     title: 'The G.R.O.W.T.H Framework from Radical Retail Growth | Drive Growth Management',
@@ -48,6 +53,9 @@ const blobs = {
   '2f3118ce031bdcd7ba8ef5ee2cf1d96b': 'growth-flywheel-v3.png',
   '5d4b0e33104ad2650d016289542c8ea1': 'coach-screen.jpg',
   '0beb9ac97a75c7c36654ae2399419b45': 'jane-headshot.jpg',
+  '7ff867753d1ef480adfdac9a59fbce90': 'leaks-cover.jpg',
+  'b45174fe8b0c5fb1269f882a7f1085be': 'leaks-sample.jpg',
+  'a47c17585de5b80ee00cb42dca97c485': '../downloads/15-retail-profit-leaks.pdf',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

@@ -42,7 +42,7 @@ Update these as the new pages are built.
 | Roundtables, Ask about the next Roundtable | Top menu, GROWTH section | drivecx.com/ai-profitability-roundtable |
 | Blog | Top menu | drivecx.com/blog |
 | Or book a Profit Opportunity Review | Homepage close | drivecx.com/growth-consultation |
-| Get the 15 Profit Leaks guide, Resources | Leaks banner, footer | drivecx.com/rgm-resources |
+| Resources | Footer | drivecx.com/rgm-resources |
 | Dale Dubberley, About | Author band, footer | drivecx.com/communicate-collaborate-innovate |
 | Privacy, Terms | Footer | drivecx.com/privacy, drivecx.com/terms |
 | Learn more (Brand Growth Strategy) | Flywheel section | drivecx.com/brand-growth-strategy |
