@@ -16,7 +16,7 @@ const pages = {
   'Score.dc.html': {
     out: 'profit-growth-score/index.html', depth: 1,
     title: 'Get Your Profit Growth Score | Free 8 Profit Drivers Assessment | Drive Growth Management',
-    description: 'A free 10-minute assessment for multi-unit pharmacy, retail and restaurant chains. Get your Profit Growth Score, a breakdown of all 8 profit drivers, and your 3 biggest profit leaks.',
+    description: 'A free 10-minute assessment for multi-unit pharmacy, retail and restaurant chains. Get your Profit Growth Score, a breakdown of all 8 Profit Drivers, and your 3 biggest profit leaks.',
   },
   'Clients.dc.html': {
     out: 'our-clients/index.html', depth: 1,
