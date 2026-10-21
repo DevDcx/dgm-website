@@ -41,7 +41,7 @@ Update these as the new pages are built.
 | Radical Retail Growth, Get the book | Top menu, GROWTH section | drivecx.com/get-radical-retail-growth |
 | Roundtables, Ask about the next Roundtable | Top menu, GROWTH section | drivecx.com/ai-profitability-roundtable |
 | Blog | Top menu | drivecx.com/blog |
-| Or book a Growth Opportunity Review | Homepage close | drivecx.com/growth-consultation |
+| Or book a Profit Opportunity Review | Homepage close | drivecx.com/growth-consultation |
 | Get the 15 Profit Leaks guide, Resources | Leaks banner, footer | drivecx.com/rgm-resources |
 | Dale Dubberley, About | Author band, footer | drivecx.com/communicate-collaborate-innovate |
 | Privacy, Terms | Footer | drivecx.com/privacy, drivecx.com/terms |
