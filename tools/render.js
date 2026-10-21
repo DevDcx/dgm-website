@@ -23,6 +23,11 @@ const pages = {
     title: "Our Clients | Romers' Burger Bar Case Study and Kelly Gordon Interview | Drive Growth Management",
     description: "How Romers' Burger Bar turned one week of customer feedback into $85,000 in projected annual revenue, plus testimonials from pharmacy and restaurant leaders.",
   },
+  'Growth.dc.html': {
+    out: 'growth-framework/index.html', depth: 1,
+    title: 'The G.R.O.W.T.H Framework from Radical Retail Growth | Drive Growth Management',
+    description: 'The 6 principles behind the 8 Retail Profit Drivers, from the book Radical Retail Growth by Dale Dubberley. Learn the framework and buy the book.',
+  },
 };
 
 // Uploaded design images -> files in images/
