@@ -46,30 +46,26 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 4.8vw, 56px); line-height: 1.1; letter-spacing: -.02em; font-weight: 600; color: #3873AF">What pharmacy and restaurant leaders say about working with us</h1>
 <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.55; color: #4F6270; max-width: 60ch">Real results from multi-unit chains that put the 8 Profit Drivers to work: more customers coming back, more spend per visit, and teams that stay longer.</p>
 </div>
+<div style="background: #2A4252; color: #FFFFFF; border-radius: 14px; padding: clamp(24px, 3.5vw, 36px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Romers' Burger Bar</div>
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">$85,000</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">projected annual revenue from one week of customer feedback</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 10% higher sales and 15% higher server tips</div>
+</div>
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<blockquote style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; font-weight: 500; color: #FFFFFF">"We learned more about our customers in one week by connecting directly with them than we did spending $30K with a market research firm."</blockquote>
+<figcaption style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #C7D3DC">Kelly Gordon, CEO and Founder, Romers' Burger Bar</figcaption>
+</figure>
+</div>
+</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
 <sc-for list="{{quotes}}" as="t" hint-placeholder-count="4">
 <figure style="margin: 0; background: #F4F6F8; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; border-top: 3px solid #FFB042">
 <blockquote style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 17.5px; line-height: 1.45; font-weight: 500">{{t.quote}}</blockquote>
 <figcaption style="font-size: 14.5px; color: #4F6270"><strong style="color: #2A4252; font-weight: 700">{{t.name}}</strong><br>{{t.role}}</figcaption>
 </figure>
-</sc-for>
-</div>
-</div>
-</section>
-
-<!-- RESULTS BAND -->
-<section style="background: #2A4252; color: #FFFFFF; padding: 80px 0">
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 780px">
-<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Romers' Burger Bar results</div>
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">$85,000 in projected annual revenue from one week of customer feedback</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
-<sc-for list="{{results}}" as="s" hint-placeholder-count="4">
-<div style="border-top: 2px solid #FFB042; padding-top: 20px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(40px, 4.6vw, 52px); letter-spacing: -.02em; line-height: 1; color: #FFB042">{{s.value}}</div>
-<div style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; color: #FFFFFF">{{s.label}}</div>
-</div>
 </sc-for>
 </div>
 </div>

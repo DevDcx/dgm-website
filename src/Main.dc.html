@@ -93,7 +93,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">See your leading indicators move in weeks. Profit follows.</h2>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 18px; color: #C7D3DC">Your P&amp;L lags behind these metrics. By the time you are reviewing your quarterly report, you may have already lost valuable customers and sales.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 20px">
 <sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
 <div style="border-top: 2px solid #FFB042; padding-top: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(40px, 4.6vw, 52px); letter-spacing: -.02em; line-height: 1; color: #FFB042">{{s.value}}</div>
@@ -103,21 +103,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </div>
 </sc-for>
 </div>
-<div style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: clamp(24px, 3.5vw, 36px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center">
-<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Romers' Burger Bar</div>
-<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">$85,000</div>
-<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">projected annual revenue from one week of customer feedback</div>
-<div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 10% higher sales and 15% higher server tips</div>
-</div>
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<blockquote style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; font-weight: 500; color: #FFFFFF">"We learned more about our customers in one week by connecting directly with them than we did spending $30K with a market research firm."</blockquote>
-<figcaption style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #C7D3DC">Kelly Gordon, CEO and Founder, Romers' Burger Bar</figcaption>
-</figure>
-<a href="Clients.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how Romers and Murphy's did it →</a>
-</div>
-</div>
+<div><a href="Clients.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how our customers did it →</a></div>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 14px; color: #C7D3DC; border-top: 1px solid rgba(255,255,255,.16); padding-top: 18px">Results from Drive Growth Management clients in pharmacy and restaurants.</p>
 </div>
 </section>
@@ -382,7 +368,9 @@ class Component extends DCLogic {
         { value: '150%', label: 'Higher NPS scores', driver: 'Customer Experience', leads: 'more repeat visits and more referrals.', color: CONNECT },
         { value: '20-25%', label: 'More 5-star reviews', driver: 'Customer Experience', leads: 'new customers who choose you over the store down the road.', color: CONNECT },
         { value: '25-35%', label: 'Higher offer engagement', driver: 'Personalized Marketing', leads: 'more sales without deeper discounts.', color: PERSONALIZE },
-        { value: '12-25%', label: 'More loyalty enrolment', driver: 'Customer Engagement', leads: 'more visits and spend from the customers you already have.', color: ENGAGE }
+        { value: '12-25%', label: 'More loyalty enrolment', driver: 'Customer Engagement', leads: 'more visits and spend from the customers you already have.', color: ENGAGE },
+        { value: '10%', label: 'Higher sales', driver: 'Team Productivity', leads: 'more margin from the same stores and staff.', color: OPTIMIZE },
+        { value: '15%', label: 'Higher server tips', driver: 'Employee Experience', leads: 'lower turnover and less time spent training new hires.', color: ENGAGE }
       ],
       pains: [
         { title: 'One store crushes it. Another underperforms. Nobody can say why.', body: "As you've grown, it's harder to get every location to deliver the same service and the same numbers. You find out a store has slipped when it's already in the sales and margin.", drivers: 'Performance Intelligence, Employee Accountability' },
