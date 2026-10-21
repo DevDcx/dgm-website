@@ -50,7 +50,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <p style="margin: -10px 0 0; padding-left: 16px; border-left: 3px solid #FFB042; font-family: 'Montserrat', sans-serif; font-style: italic; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; font-weight: 500; color: #4F6270">One store crushes it. The one down the road doesn't. Nobody can say why.</p>
 <div style="display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.2vw, 26px); font-weight: 600; color: #3873AF">FREE Profit Growth Score Report</h3>
-<p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.55; color: #4F6270; max-width: 56ch">A free 10-minute assessment that shows how your chain scores on the 8 Profit Drivers behind every sale and every margin point earned. Find out how to keep your customers coming back and spending more.</p>
+<p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.55; color: #4F6270; max-width: 56ch">A free 10-minute assessment that measures how your chain scores on the 8 Profit Drivers behind every sale and every margin point earned. Find out how to keep your customers coming back and spending more.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start">
 <a href="Score.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Get your Profit Growth Score now →</a></div>
@@ -90,11 +90,11 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section id="indicators" style="background: #2A4252; color: #FFFFFF; padding: 88px 0">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 780px">
-<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Results our clients achieve</div>
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Results our clients achieve within the first 90 days</div>
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">See your leading indicators move in weeks. Profit follows.</h2>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 18px; color: #C7D3DC">Your P&amp;L lags behind these metrics. By the time you are reviewing your quarterly report, you may have already lost valuable customers and sales.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px 20px">
 <sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
 <div style="border-top: 2px solid #FFB042; padding-top: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(40px, 4.6vw, 52px); letter-spacing: -.02em; line-height: 1; color: #FFB042">{{s.value}}</div>
@@ -104,8 +104,29 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </div>
 </sc-for>
 </div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0 0 4px; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 28px); font-weight: 600; color: #FFFFFF">What that means on the P&amp;L</h3>
+<div style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: clamp(24px, 3.5vw, 36px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">A 7-store pharmacy chain</div>
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">+84%</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">higher average customer value in one year</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 50% more customer visits</div>
+</div>
+<div style="flex: 999 1 420px; min-width: 0"><p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; font-weight: 500; color: #FFFFFF">The leading indicators moved in the first 90 days. One year later, the same customers were coming back 50% more often and were worth 84% more to the business.</p></div>
+</div>
+<div style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: clamp(24px, 3.5vw, 36px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">A restaurant group</div>
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 60px); letter-spacing: -.02em; line-height: 1; color: #FFB042">$85,000</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">projected annual revenue from one week of customer feedback</div>
+<div style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500; color: #C7D3DC">Plus 10% higher sales and 15% higher server tips</div>
+</div>
+<div style="flex: 999 1 420px; min-width: 0"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><blockquote style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; font-weight: 500; color: #FFFFFF">"We learned more about our customers in one week by connecting directly with them than we did spending $30K with a market research firm."</blockquote><figcaption style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #C7D3DC">CEO and Founder, restaurant group</figcaption></figure></div>
+</div>
+</div>
 <div><a href="Clients.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how that creates more profitable growth →</a></div>
-<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 14px; color: #C7D3DC; border-top: 1px solid rgba(255,255,255,.16); padding-top: 18px">Results from Drive Growth Management clients in pharmacy and restaurants. Customer value and visits were measured after one year.</p>
+<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 14px; color: #C7D3DC; border-top: 1px solid rgba(255,255,255,.16); padding-top: 18px">Results from Drive Growth Management clients in pharmacy and restaurants. Leading indicators were achieved within the first 90 days. Financial results were measured after one year.</p>
 </div>
 </section>
 
@@ -170,8 +191,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section id="drivers" style="padding: 96px 0; background: #F4F6F8">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px; margin: 0 auto; text-align: center; align-items: center">
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>The Profit Growth Flywheel</div>
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">How the 8 Profit Drivers Work Together</h2>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>The mechanism</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">The 8 Profit Drivers Power the Profit Growth Flywheel</h2>
 <p style="margin: 4px 0 0; font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2vw, 24px); line-height: 1.4; font-weight: 600; color: #2A4252">Your frontline relationships, with customers and with your team, are the leading indicators of profitable growth. Your financials are the lagging ones. By the time they show up in the P&amp;L, customers have already come back or walked away, and your best people have already stayed or left.</p>
 <p style="margin: 0; font-size: 19px; color: #4F6270">Every retail chain has 8 Profit Drivers. They work together to build sustainable growth momentum in both sales and margins. Each driver strengthens the next, and the flywheel turns faster every quarter.</p>
 </div>
@@ -357,9 +378,7 @@ class Component extends DCLogic {
         { value: '150%', label: 'Higher NPS scores', driver: 'Customer Experience', leads: 'more repeat visits and more referrals.', color: CONNECT },
         { value: '20-25%', label: 'More 5-star reviews', driver: 'Customer Experience', leads: 'new customers who choose you over the store down the road.', color: CONNECT },
         { value: '25-35%', label: 'Higher offer engagement', driver: 'Personalized Marketing', leads: 'more sales without deeper discounts.', color: PERSONALIZE },
-        { value: '12-25%', label: 'More loyalty enrolment', driver: 'Customer Engagement', leads: 'more visits and spend from the customers you already have.', color: ENGAGE },
-        { value: '84%', label: 'Higher average customer value', driver: 'Personalized Marketing', leads: 'more profit from every customer, without adding stores.', color: PERSONALIZE },
-        { value: '50%', label: 'More customer visits', driver: 'Customer Engagement', leads: 'steadier traffic and sales in every store.', color: CONNECT }
+        { value: '12-25%', label: 'More loyalty enrolment', driver: 'Customer Engagement', leads: 'more visits and spend from the customers you already have.', color: ENGAGE }
       ],
       pains: [
         { title: 'Why do some of our stores outperform others?', body: "As you've grown, it's harder to get every location to deliver the same service and the same numbers. You find out a store has slipped when it's already in the sales and margin.", drivers: 'Performance Intelligence, Employee Accountability' },
@@ -397,18 +416,18 @@ class Component extends DCLogic {
         { where: 'Customer Service Agent', what: "Empowers customers to find what they need fast and quickly connect with associates when they need more help. It handles low-skill tasks, so your associates can spend more time with your customers. Collects valuable customer feedback after every customer service event." },
         { where: 'HR Agent', what: 'Gives every new hire a positive onboarding experience with a personal learning plan. AI training avatars use role play to turn knowledge into skills. It checks in on team morale, so people are less likely to quit in the first 60 days.' },
         { where: 'Marketing Agent', what: "Segments customers by their buying habits and value, sends personalized \u201ccome back\u201d offers, and tracks the sales lift and actual ROI on every marketing campaign. You discount less and get more sales for every marketing dollar you spend." },
-        { where: 'Jane, Growth Coach', what: "AI replaces dashboards with real-time operations intelligence. Get alerts when performance drops and uncover the likely causes when average basket size or repeat visits fall. Get recommended actions to increase sales and profits in every store, every week." }
+        { where: 'Jane, Growth Coach', what: "Jane watches your 8 Profit Drivers every week. AI replaces dashboards with real-time operations intelligence. Get alerts when performance drops and uncover the likely causes when average basket size or repeat visits fall. Get recommended actions to increase sales and profits in every store, every week." }
       ],
       steps: [
         { n: 1, title: 'Get your Profit Growth Score', body: 'Answer a few questions about your operations and see how you stack up on all 8 Profit Drivers.', color: CONNECT },
         { n: 2, title: 'Plug your 3 biggest profit leaks', body: 'A Growth Opportunity Review & Profit Growth Blueprint puts a dollar figure on fixing each one.', color: ENGAGE },
-        { n: 3, title: 'Get your Profit Growth Blueprint', body: 'Your Profit Growth Blueprint sets the targets and shows projected ROI with a 90-day execution plan.', color: PERSONALIZE },
+        { n: 3, title: 'Get your Profit Growth Blueprint', body: 'Built from your Profit Growth Score, it\'s the plan to fix your weakest Profit Drivers, with targets, projected ROI and a 90-day execution plan.', color: PERSONALIZE },
         { n: 4, title: 'Build your Brand Growth Strategy', body: 'Discover how to build loyalty and strengthen your competitive edge with a Brand Growth Strategy.', color: OPTIMIZE },
         { n: 5, title: 'Execute on your 90-day profit growth plan', body: 'A 90-day, done-with-you implementation of your growth plan, with target performance improvements.', color: '#FFB042' }
       ],
       quotes: [
         { quote: '\u201cWorking with Dale has been thought-provoking. You made us think about how we connect customers and team mates. You opened up a world.\u201d', name: 'Derek Tweel', role: "Director of Operations, Murphy's Pharmacies" },
-        { quote: '\u201cWe learned more about our customers in one week by connecting directly with them than we did spending $30K with a market research firm.\u201d', name: 'Kelly Gordon', role: "CEO and Founder, Romers' Burger Bar" },
+        { quote: '\u201cFor the first time, I know what our customers are saying about us in real-time. This software really works.\u201d', name: 'Kelly Gordon', role: "CEO and Founder, Romers' Burger Bar" },
         { quote: '\u201cWe are seeing our vision getting closer to reality because of working with Dale.\u201d', name: 'Jeff Murphy', role: 'VP Marketing, Murphy Healthcare' }
       ],
       faqs: [
