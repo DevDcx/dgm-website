@@ -215,6 +215,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 1.3; font-weight: 600">{{a.label}}</h3>
 <div style="font-size: 13px; font-weight: 700; color: #3873AF">{{a.drivers}}</div>
 <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4F6270">{{a.body}}</p>
+<sc-if value="{{a.stat}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; padding-top: 10px; border-top: 1px solid #E1E6EB; font-size: 13.5px; line-height: 1.5; color: #2A4252"><strong style="font-weight: 700">{{a.stat}}</strong> <a href="{{a.statUrl}}" style="color: #4F6270; font-style: italic; text-decoration: underline">{{a.statSource}}</a></p></sc-if>
 </div>
 </sc-for>
 <div class="drivers-cta" style="grid-column: span 2; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; padding: 18px 4px">
@@ -433,7 +434,7 @@ class Component extends DCLogic {
       ],
       wheelAreas: [
         { label: '1. Connect with Customers', color: CONNECT, drivers: 'Customer Experience · Customer Engagement', body: 'Get customer feedback in real time. Send \u201ccome back\u201d offers to increase return visits, promote good reviews and build loyalty enrolment.' },
-        { label: '2. Engage Employees', color: ENGAGE, drivers: 'Employee Experience · Employee Accountability', body: 'Know how to attract and keep great staff. Get feedback from teams, resolve problems in real time, acknowledge success and use AI to spot training gaps.' },
+        { label: '2. Engage Employees', color: ENGAGE, drivers: 'Employee Experience · Employee Accountability', body: 'Know how to attract and keep great staff. Get feedback from teams, resolve problems in real time, acknowledge success and use AI to spot training gaps.' , stat: 'Replacing a frontline employee costs about 16% of their annual salary.', statSource: '(Center for American Progress)', statUrl: 'https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/' },
         { label: '3. Personalize Marketing', color: PERSONALIZE, drivers: 'Personalized Marketing · Marketing ROI', body: 'Send personalized offers that increase visits, spend and brand loyalty. Track the return on every promotion and boost sales with less discounting.' },
         { label: '4. Optimize Operations', color: OPTIMIZE, drivers: 'Team Productivity · Performance Intelligence', body: 'AI-driven performance management for every store. KPI alerts with prioritized actions, performance feedback and digital coaching, like a productivity coach for each manager.' }
       ],
