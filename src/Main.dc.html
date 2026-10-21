@@ -13,6 +13,7 @@
 <style>
 body{margin:0}
 a{color:#3873AF}a:hover{color:#2A4252}
+@media (max-width: 640px){.drivers-cta{grid-column:auto !important}}
 </style>
 </helmet>
 <div style="font-family: 'Quicksand', system-ui, sans-serif; font-weight: 500; color: #2A4252; background: #FFFFFF; font-size: 17px; line-height: 1.6">
@@ -172,10 +173,13 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">The Profit Growth Flywheel</h2>
 <p style="margin: 0; font-size: 19px; color: #4F6270">Every retail chain has 8 profit drivers. They work together to build a sustainable growth momentum in both sales and margins. Each driver strengthens the next, and the flywheel turns faster every quarter.</p>
 </div>
-<div style="background: #2A4252; color: #FFFFFF; border-radius: 10px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+<div style="background: #2A4252; color: #FFFFFF; border-radius: 10px; padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
 <div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: #FFB042">At the centre of the flywheel</div>
 <h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 23px; font-weight: 600">Your Brand Growth Strategy</h3>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; color: #DDE5EB">It's what sets you apart in the eyes of your customers and builds unshakeable brand loyalty. It guides where you innovate and allocate resources to strengthen your competitive advantage.</p>
+</div>
+<a href="{{brandStrategyUrl}}" style="flex: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; text-decoration: none">Learn more →</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px 48px">
 <div style="flex: 0 1 270px; min-width: 0; margin: 0 auto; display: flex; justify-content: center">
@@ -189,11 +193,11 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4F6270">{{a.body}}</p>
 </div>
 </sc-for>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px">
+<div class="drivers-cta" style="grid-column: span 2; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; padding: 18px 4px">
 <a href="Score.dc.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; text-decoration: none">See how your stores compare →</a>
-<p style="margin: 10px 0 0; font-size: 16px; color: #2A4252; font-weight: 600; max-width: 58ch">Get your Profit Growth Score. It only takes a few minutes.</p>
+<p style="margin: 0; font-size: 16px; color: #2A4252; font-weight: 600">Get your Profit Growth Score. It only takes a few minutes.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -339,6 +343,7 @@ class Component extends DCLogic {
     });
     return {
       accent: this.props.accent ?? '#FFC873',
+      brandStrategyUrl: '#brand-growth-strategy-registration',
       rows: rows,
       stats: [
         { value: '150%', label: 'Higher NPS scores', driver: 'Customer Experience', leads: 'more repeat visits and more referrals.', color: CONNECT },
