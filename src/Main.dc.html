@@ -145,19 +145,19 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <p style="margin: 0; padding: 4px 0 4px 18px; border-left: 3px solid #8DC63F; font-family: 'Montserrat', sans-serif; font-size: 22px; line-height: 1.3; font-weight: 500">Your Profit Growth Score flags problems as they happen, while you can still fix them.</p>
 </div>
 <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<div style="background: #FFFFFF; border: 1px solid #E1E6EB; border-radius: 10px; padding: 20px">
-<h3 style="margin: 0 0 14px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #4F6270; font-weight: 700">How most chains find out</h3>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 14px">
+<div style="background: #FFFFFF; border: 1px solid #E1E6EB; border-radius: 10px; padding: 24px">
+<h3 style="margin: 0 0 18px; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #4F6270; font-weight: 700">How most chains find out</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 22px 20px">
 <sc-for list="{{late}}" as="t" hint-placeholder-count="4">
-<div style="display: flex; flex-direction: column; gap: 4px; border-top: 4px solid {{t.color}}; padding-top: 10px; font-size: 14px; line-height: 1.4"><b style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #2A4252">{{t.when}}</b>{{t.what}}</div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-top: 4px solid {{t.color}}; padding-top: 12px; font-size: 17px; line-height: 1.45"><b style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #2A4252">{{t.when}}</b>{{t.what}}</div>
 </sc-for>
 </div>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #E1E6EB; border-radius: 10px; padding: 20px">
-<h3 style="margin: 0 0 14px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #3873AF; font-weight: 700">With the 8 Profit Drivers</h3>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 14px">
+<div style="background: #FFFFFF; border: 1px solid #E1E6EB; border-radius: 10px; padding: 24px">
+<h3 style="margin: 0 0 18px; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #3873AF; font-weight: 700">With the 8 Profit Drivers</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 22px 20px">
 <sc-for list="{{early}}" as="t" hint-placeholder-count="4">
-<div style="display: flex; flex-direction: column; gap: 4px; border-top: 4px solid {{t.color}}; padding-top: 10px; font-size: 14px; line-height: 1.4"><b style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: #2A4252">{{t.when}}</b>{{t.what}}</div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-top: 4px solid {{t.color}}; padding-top: 12px; font-size: 17px; line-height: 1.45"><b style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #2A4252">{{t.when}}</b>{{t.what}}</div>
 </sc-for>
 </div>
 </div>
@@ -372,9 +372,9 @@ class Component extends DCLogic {
         { when: 'Quarter end', what: 'Sales and margin miss in the P&L', color: RED }
       ],
       early: [
-        { when: 'Week 1', what: 'Staff start leaving one store', color: GREY },
-        { when: 'Week 2', what: 'Employee Experience score drops and gets flagged', color: '#3873AF' },
-        { when: 'Week 3', what: 'Store manager gets a coaching plan', color: '#3873AF' },
+        { when: 'Week 1', what: 'Staff start leaving one store. The drop in Employee Experience gets flagged', color: '#3873AF' },
+        { when: 'Week 4', what: 'Store manager is on a coaching plan. Service holds', color: '#3873AF' },
+        { when: 'Week 8', what: 'The team is stable and regulars keep coming back', color: '#3873AF' },
         { when: 'Quarter end', what: 'The miss never happens', color: '#8DC63F' }
       ],
       wheelAreas: [
