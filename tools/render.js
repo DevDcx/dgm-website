@@ -3,6 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
+// While the site is a draft, keep search engines out. Set to false on launch day.
+const DRAFT = true;
 
 // Design source file -> published page, plus its SEO title and description
 const pages = {
@@ -64,6 +66,7 @@ for (const [srcName, cfg] of Object.entries(pages)) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${cfg.title}</title>
 <meta name="description" content="${cfg.description}">
+${DRAFT ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="${up}images/dgm-logo-mark.png">
 ${helmet.trim()}
 <style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:900px){nav[aria-label="Main"]{display:none!important}}</style>
