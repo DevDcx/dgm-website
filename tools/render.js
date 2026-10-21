@@ -21,7 +21,7 @@ const pages = {
   'Clients.dc.html': {
     out: 'our-clients/index.html', depth: 1,
     title: 'Our Clients | Pharmacy and Restaurant Case Studies | Drive Growth Management',
-    description: 'Results and case studies from multi-unit pharmacy and restaurant chains using the 8 Retail Profit Drivers.',
+    description: 'Results and case studies from multi-unit pharmacy and restaurant chains using the 8 Profit Drivers.',
   },
   'ClientsPharmacy.dc.html': {
     out: 'our-clients/pharmacy/index.html', depth: 2,
@@ -36,7 +36,7 @@ const pages = {
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
     title: 'The G.R.O.W.T.H Framework from Radical Retail Growth | Drive Growth Management',
-    description: 'The 6 principles behind the 8 Retail Profit Drivers, from the book Radical Retail Growth by Dale Dubberley. Learn the framework and buy the book.',
+    description: 'The 6 principles behind the 8 Profit Drivers, from the book Radical Retail Growth by Dale Dubberley. Learn the framework and buy the book.',
   },
 };
 
@@ -45,7 +45,7 @@ const blobs = {
   '040850abb18a406d4deb8022376b1a60': 'dgm-logo-mark.png',
   'cb445564c037dc315830ca6a90b4771d': 'rrg-standing-trim.jpg',
   'a43647dbc8d12d0627de166138198808': 'rrg-books.jpg',
-  '0ae0c1436e9a4e5cedbc62621ae34910': 'growth-flywheel-v2.png',
+  '2f3118ce031bdcd7ba8ef5ee2cf1d96b': 'growth-flywheel-v3.png',
   '5d4b0e33104ad2650d016289542c8ea1': 'coach-screen.jpg',
 };
 
