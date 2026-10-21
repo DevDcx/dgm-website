@@ -56,6 +56,12 @@ const blobs = {
   '7ff867753d1ef480adfdac9a59fbce90': 'leaks-cover.jpg',
   'b45174fe8b0c5fb1269f882a7f1085be': 'leaks-sample.jpg',
   'a47c17585de5b80ee00cb42dca97c485': '../downloads/15-retail-profit-leaks.pdf',
+  'b7c8aa4e72fa67cdfdff947c0a7f954b': '8-drivers-guide-cover.jpg',
+  '8e70b2d0b03c234e377077b5b3e4afe7': '8-drivers-wheel.jpg',
+  'f65ff879913bf5af01ba338a6d136d80': '8-profit-drivers-infographic.jpg',
+  '78b2d99e88b2eb016eb61a5aba4b3ec7': '../downloads/8-drivers-of-profitable-growth.pdf',
+  '9838b05243b9b42731ea582acdf82580': '../downloads/8-profit-drivers-cards.pdf',
+  '29adda388536e44d808ec4f084d8aa43': '../downloads/8-profit-drivers-one-page.png',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
