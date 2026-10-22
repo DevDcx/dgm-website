@@ -184,34 +184,6 @@ window.DGM_KEAP = window.DGM_KEAP || {
 </div>
 </section>
 
-<!-- HOW IT'S SCORED -->
-<section style="padding: 96px 0; background: #FFFFFF">
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: center">
-<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>How your score is calculated</div>
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">One number out of 10. Eight places to look.</h2>
-<p style="margin: 0; font-size: 19px; color: #4F6270">Each driver is rated from 1 to 5. Add up your totals, divide by 40, and multiply by 10 to get your Profit Growth Score.</p>
-<p style="margin: 0; font-size: 17px; font-weight: 700">The score tells you where you stand. The breakdown tells you where to focus: the 2 to 3 drivers that will deliver the biggest impact.</p>
-</div>
-<div style="flex: 1 1 380px; min-width: 0; background: #F4F6F8; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-<div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #4F6270">Example</div>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<sc-for list="{{calc}}" as="c" hint-placeholder-count="4">
-<div style="background: #FFFFFF; border: 1px solid #E1E6EB; border-left: 4px solid {{c.color}}; border-radius: 8px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
-<span style="font-size: 14px; font-weight: 600">{{c.area}}</span>
-<span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px">{{c.total}}<span style="font-size: 12px; color: #4F6270; font-weight: 500"> /10</span></span>
-</div>
-</sc-for>
-</div>
-<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding-top: 8px; border-top: 1px solid #D6DDE3; font-family: 'Montserrat', sans-serif">
-<span style="font-size: 16px; font-weight: 500; color: #4F6270">17 ÷ 40 × 10 =</span>
-<span style="font-size: 34px; font-weight: 700; color: #3873AF; line-height: 1">4.25</span>
-<span style="font-size: 14px; font-weight: 500; color: #4F6270">Profit Growth Score</span>
-</div>
-</div>
-</div>
-</section>
-
 <!-- AFTER YOUR SCORE -->
 <section style="padding: 96px 0; background: #F4F6F8">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
@@ -255,7 +227,7 @@ window.DGM_KEAP = window.DGM_KEAP || {
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
 <div style="background: #2A4252; color: #FFFFFF; border-radius: 16px; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between">
 <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">Find your 3 most expensive profit leaks before your 2027 budget is locked.</h2>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">Find your 3 most expensive profit leaks and allocate resources to fix them before your 2027 budget is locked.</h2>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">Your Profit Growth Score Report is free and the Profit Opportunity Review carries no obligation.</p>
 </div>
 <a href="{{assessmentUrl}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Start your free assessment →</a>
