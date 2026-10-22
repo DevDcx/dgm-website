@@ -35,8 +35,8 @@ const pages = {
   },
   'Leaks.dc.html': {
     out: '15-profit-leaks/index.html', depth: 1,
-    title: '15 Top Retail Profit Leaks and How to Fix Them | Free Guide | Drive Growth Management',
-    description: 'Free 18-page guide for multi-unit retail, pharmacy and restaurant chains: the 15 most common retail profit leaks, how to fix each one, and where AI helps.',
+    title: 'How to Increase Retail Profits: 15 Hidden Profit Leaks and How to Fix Them | Free Guide',
+    description: 'How to increase retail profits: a free 18-page guide to the 15 most common hidden profit leaks in multi-unit retail, pharmacy and restaurant chains, with the fix for each and where AI helps.',
   },
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
@@ -53,9 +53,9 @@ const blobs = {
   '2f3118ce031bdcd7ba8ef5ee2cf1d96b': 'growth-flywheel-v3.png',
   '5d4b0e33104ad2650d016289542c8ea1': 'coach-screen.jpg',
   '0beb9ac97a75c7c36654ae2399419b45': 'jane-headshot.jpg',
-  '7ff867753d1ef480adfdac9a59fbce90': 'leaks-cover.jpg',
+  'b064922752817aa4f79edea3d0f440a8': 'leaks-cover.jpg',
   'b45174fe8b0c5fb1269f882a7f1085be': 'leaks-sample.jpg',
-  'a47c17585de5b80ee00cb42dca97c485': '../downloads/15-retail-profit-leaks.pdf',
+  'b1bc5805a4e4b0f8eb99a0dae737310c': '../downloads/15-retail-profit-leaks.pdf',
   'b7c8aa4e72fa67cdfdff947c0a7f954b': '8-drivers-guide-cover.jpg',
   '8e70b2d0b03c234e377077b5b3e4afe7': '8-drivers-wheel.jpg',
   'f65ff879913bf5af01ba338a6d136d80': '8-profit-drivers-infographic.jpg',

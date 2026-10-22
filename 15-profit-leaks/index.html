@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>15 Top Retail Profit Leaks and How to Fix Them | Free Guide | Drive Growth Management</title>
-<meta name="description" content="Free 18-page guide for multi-unit retail, pharmacy and restaurant chains: the 15 most common retail profit leaks, how to fix each one, and where AI helps.">
+<title>How to Increase Retail Profits: 15 Hidden Profit Leaks and How to Fix Them | Free Guide</title>
+<meta name="description" content="How to increase retail profits: a free 18-page guide to the 15 most common hidden profit leaks in multi-unit retail, pharmacy and restaurant chains, with the fix for each and where AI helps.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../images/dgm-logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,59 @@
 body{margin:0}
 a{color:#3873AF}a:hover{color:#2A4252}
 </style>
+<style>
+.dgm-gate{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(23,33,43,.62)}
+.dgm-gate.open{display:flex}
+.dgm-gate__card{width:100%;max-width:460px;background:#fff;border-radius:14px;padding:28px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);font-family:'Quicksand',system-ui,sans-serif;color:#2A4252;position:relative}
+.dgm-gate__x{position:absolute;top:10px;right:12px;border:0;background:none;font-size:26px;line-height:1;color:#4F6270;cursor:pointer}
+.dgm-gate h3{margin:0 0 6px;font-family:'Montserrat',sans-serif;font-size:22px;font-weight:600}
+.dgm-gate p{margin:0 0 16px;color:#4F6270;font-size:15.5px}
+.dgm-gate label{display:block;font-size:13.5px;font-weight:700;margin:12px 0 5px}
+.dgm-gate input,.dgm-gate select{width:100%;min-height:46px;padding:0 12px;border:1px solid #C7D3DC;border-radius:6px;font:inherit;font-size:16px;color:#2A4252;background:#fff}
+.dgm-gate button[type=submit],.dgm-gate .dgm-gate__go{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:18px;border:0;border-radius:6px;background:#FFB042;color:#2A4252;font:inherit;font-weight:700;font-size:17px;cursor:pointer;text-decoration:none}
+.dgm-gate__fine{margin:12px 0 0 !important;font-size:12.5px !important}
+.dgm-gate__err{color:#A42E2E;font-size:14px;margin-top:8px;display:none}
+</style>
+<script>
+/* Download gate. Keap connection: fill in DGM_KEAP once the Keap web form exists.
+   action = the form's process URL; hidden = Keap's hidden inputs; fields = Keap field names. */
+window.DGM_KEAP = window.DGM_KEAP || {
+  leaks:   { action: '', hidden: {}, fields: { name: 'inf_field_FirstName', email: 'inf_field_Email', stores: 'inf_custom_NumberofStores' } },
+  drivers: { action: '', hidden: {}, fields: { name: 'inf_field_FirstName', email: 'inf_field_Email', stores: 'inf_custom_NumberofStores' } }
+};
+(function(){
+  var pending=null;
+  function el(id){return document.getElementById(id)}
+  function startDownload(href,name){var a=document.createElement('a');a.href=href;if(name)a.setAttribute('download',name);document.body.appendChild(a);a.click();a.remove()}
+  function sendToKeap(key,data){
+    var cfg=(window.DGM_KEAP||{})[key]; if(!cfg||!cfg.action) return;
+    var ifr=el('dgm-gate-frame'); var f=document.createElement('form'); f.method='POST'; f.action=cfg.action; f.target='dgm-gate-frame'; f.style.display='none';
+    function add(n,v){var i=document.createElement('input');i.type='hidden';i.name=n;i.value=v;f.appendChild(i)}
+    Object.keys(cfg.hidden||{}).forEach(function(k){add(k,cfg.hidden[k])});
+    add(cfg.fields.name,data.name); add(cfg.fields.email,data.email); add(cfg.fields.stores,data.stores);
+    document.body.appendChild(f); f.submit(); setTimeout(function(){f.remove()},3000);
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('[data-gate]'); if(!t) return;
+    e.preventDefault(); pending={href:t.getAttribute('href'),name:t.getAttribute('download'),key:t.getAttribute('data-gate'),title:t.getAttribute('data-gate-title')||'your free guide'};
+    el('dgm-gate-title').textContent='Get '+pending.title;
+    el('dgm-gate-form').style.display='block'; el('dgm-gate-done').style.display='none';
+    el('dgm-gate').classList.add('open'); setTimeout(function(){el('dgm-gate-name').focus()},50);
+  });
+  document.addEventListener('submit',function(e){
+    if(e.target.id!=='dgm-gate-form') return; e.preventDefault();
+    var d={name:el('dgm-gate-name').value.trim(),email:el('dgm-gate-email').value.trim(),stores:el('dgm-gate-stores').value};
+    if(!d.name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)||!d.stores){el('dgm-gate-err').style.display='block';return}
+    el('dgm-gate-err').style.display='none';
+    sendToKeap(pending.key,d); startDownload(pending.href,pending.name);
+    el('dgm-gate-form').style.display='none'; el('dgm-gate-done').style.display='block';
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.id==='dgm-gate'||(e.target.closest&&e.target.closest('.dgm-gate__x'))) el('dgm-gate').classList.remove('open');
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el('dgm-gate'))el('dgm-gate').classList.remove('open')});
+})();
+</script>
 <style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:900px){nav[aria-label="Main"]{display:none!important}}</style>
 </head>
 <body>
@@ -47,7 +100,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 4.8vw, 56px); line-height: 1.1; letter-spacing: -.02em; font-weight: 600; color: #2A4252">15 Top Retail Profit Leaks and How to Fix&nbsp;Them</h1>
 <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.55; color: #4F6270; max-width: 56ch">Most retailers chase sales while hidden profit leaks drain margins. This guide shows the 15 most common leaks, the fix for each one, and where AI helps you catch them early.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center">
-<a href="../images/../downloads/15-retail-profit-leaks.pdf" download="15-Retail-Profit-Leaks-Drive-Growth-Management.pdf" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 6px; background: #FFB042; color: #2A4252; font-weight: 700; font-size: 18px; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(255,142,0,.7)">Download the free guide (PDF) →</a>
+<a href="../images/../downloads/15-retail-profit-leaks.pdf" download="15-Retail-Profit-Leaks-Drive-Growth-Management.pdf" data-gate="leaks" data-gate-title="the 15 Profit Leaks guide" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 6px; background: #FFB042; color: #2A4252; font-weight: 700; font-size: 18px; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(255,142,0,.7)">Download the free guide (PDF) →</a>
+<a href="../profit-growth-score/" style="font-weight: 700; font-size: 17px; text-decoration: none">Ready to find your leaks? Get your Profit Growth Score →</a>
 </div>
 <p style="margin: 0; font-size: 15px; font-weight: 600; color: #2A4252">18 pages. Free. More than 400 retail leaders subscribed after this guide ran on LinkedIn.</p>
 </div>
@@ -63,7 +117,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 780px">
 <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What's inside</div>
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Which of these 15 leaks are costing your stores?</h2>
-<p style="margin: 0; font-size: 19px; color: #4F6270">Each leak in the guide comes with the problem, five practical fixes, where AI helps, and a sourced industry stat.</p>
+<p style="margin: 0; font-size: 19px; color: #4F6270">Each leak in the guide comes with the problem, five practical fixes, where AI helps, and a sourced industry stat. Prefer to read it online? <a href="https://www.drivecx.com/post/how-to-increase-retail-profits" style="font-weight: 700">Read the full article</a>.</p>
 </div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px 24px">
 
@@ -148,7 +202,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.4vw, 28px); font-weight: 600">Get all 15 leaks and the fixes</h3>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">Share it with your operations team and pick the three leaks to fix first.</p>
-<div><a href="../images/../downloads/15-retail-profit-leaks.pdf" download="15-Retail-Profit-Leaks-Drive-Growth-Management.pdf" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 6px; background: #FFB042; color: #2A4252; font-weight: 700; font-size: 18px; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(255,142,0,.7)">Download the free guide (PDF) →</a></div>
+<div><a href="../images/../downloads/15-retail-profit-leaks.pdf" download="15-Retail-Profit-Leaks-Drive-Growth-Management.pdf" data-gate="leaks" data-gate-title="the 15 Profit Leaks guide" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 6px; background: #FFB042; color: #2A4252; font-weight: 700; font-size: 18px; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(255,142,0,.7)">Download the free guide (PDF) →</a></div>
 </div>
 </div>
 </div>
@@ -167,6 +221,32 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </div>
 </div>
 </section>
+
+<!-- DOWNLOAD GATE -->
+<div id="dgm-gate" class="dgm-gate" role="dialog" aria-modal="true" aria-labelledby="dgm-gate-title">
+<div class="dgm-gate__card">
+<button type="button" class="dgm-gate__x" aria-label="Close">&times;</button>
+<form id="dgm-gate-form" novalidate>
+<h3 id="dgm-gate-title">Get your free guide</h3>
+<p>Tell us where to send updates and your download starts right away.</p>
+<label for="dgm-gate-name">First name</label>
+<input id="dgm-gate-name" name="name" autocomplete="given-name" required>
+<label for="dgm-gate-email">Work email</label>
+<input id="dgm-gate-email" name="email" type="email" autocomplete="email" required>
+<label for="dgm-gate-stores">Number of stores</label>
+<select id="dgm-gate-stores" name="stores" required><option value="">Choose one</option><option>1</option><option>2 to 5</option><option>6 to 10</option><option>11 to 25</option><option>26 to 50</option><option>51 or more</option></select>
+<div id="dgm-gate-err" class="dgm-gate__err">Please add your first name, a valid email and your number of stores.</div>
+<button type="submit">Download now →</button>
+<p class="dgm-gate__fine">We'll send you occasional retail profit insights. Unsubscribe anytime.</p>
+</form>
+<div id="dgm-gate-done" style="display: none">
+<h3>Your download has started</h3>
+<p>Ready to see which leaks are costing your stores the most? Get your free Profit Growth Score now. It takes about 10 minutes.</p>
+<a class="dgm-gate__go" href="../profit-growth-score/">Get your Profit Growth Score →</a>
+</div>
+</div>
+</div>
+<iframe name="dgm-gate-frame" id="dgm-gate-frame" title="" style="display: none"></iframe>
 
 <!-- FOOTER -->
 <footer style="border-top: 1px solid #E1E6EB; padding: 32px 0; background: #FFFFFF">
