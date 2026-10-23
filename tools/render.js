@@ -106,14 +106,71 @@ function render(t, scope) {
   return t.replace(/\{\{\s*([\w.$]+)\s*\}\}/g, (_, p) => { const v = get(scope, p); return v == null ? '' : esc(v); });
 }
 
-for (const [srcName, cfg] of Object.entries(pages)) {
+// ---------- Blog posts (one file per post in posts/) ----------
+// Each file starts with a few "key: value" lines (title, date, topic, dek, hero, heroAlt), then a line with ---, then the post in simple Markdown.
+const topicLabels = { strategy: 'Growth strategy', customers: 'Customers', teams: 'Teams', marketing: 'Marketing', ai: 'AI and operations' };
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const niceDate = iso => { const [y, m, d] = iso.split('-').map(Number); return `${months[m - 1]} ${d}, ${y}`; };
+// Wix-hosted images get resized by Wix; anything else is used as is.
+const sized = (url, w, h) => {
+  const m = url.match(/^(https:\/\/static\.wixstatic\.com\/media\/)([^/]+)$/);
+  if (!m) return url;
+  return h ? `${url}/v1/fill/w_${w},h_${h},al_c,q_85,enc_avif,quality_auto/${m[2]}` : `${url}/v1/fit/w_${w},h_${w},al_c,q_85,enc_avif,quality_auto/${m[2]}`;
+};
+
+function inlineMd(t) {
+  t = esc(t);
+  t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, src) => `<img src="${sized(src, 1520)}" alt="${alt}" loading="lazy">`);
+  t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, href) => `<a href="${href}">${text}</a>`);
+  t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  t = t.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\w)/g, '$1<em>$2</em>');
+  return t;
+}
+function mdToHtml(md) {
+  return md.trim().split(/\n\s*\n/).map(block => {
+    const lines = block.split('\n');
+    let m;
+    if ((m = block.match(/^(#{2,3}) (.+)$/))) return `<h${m[1].length}>${inlineMd(m[2])}</h${m[1].length}>`;
+    if (lines.every(l => /^> /.test(l))) return `<blockquote>${inlineMd(lines.map(l => l.slice(2)).join(' '))}</blockquote>`;
+    if (lines.every(l => /^- /.test(l))) return `<ul>\n${lines.map(l => `<li>${inlineMd(l.slice(2))}</li>`).join('\n')}\n</ul>`;
+    if (lines.every(l => /^\d+\. /.test(l))) return `<ol>\n${lines.map(l => `<li>${inlineMd(l.replace(/^\d+\. /, ''))}</li>`).join('\n')}\n</ol>`;
+    if (/^!\[[^\]]*\]\([^)]+\)$/.test(block.trim())) return inlineMd(block.trim());
+    const cta = /^\[[^\]]+\]\([\w-]+\.dc\.html\)$/.test(block.trim());
+    return `<p${cta ? ' class="post-cta"' : ''}>${inlineMd(lines.join(' '))}</p>`;
+  }).join('\n');
+}
+
+const posts = fs.readdirSync(path.join(root, 'posts')).filter(f => f.endsWith('.md')).map(f => {
+  const raw = fs.readFileSync(path.join(root, 'posts', f), 'utf8').replace(/\r\n/g, '\n');
+  const cut = raw.indexOf('\n---\n');
+  const meta = {};
+  raw.slice(0, cut).split('\n').forEach(l => { const i = l.indexOf(':'); if (i > 0) meta[l.slice(0, i).trim()] = l.slice(i + 1).trim(); });
+  const md = raw.slice(cut + 5);
+  const words = md.replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1').split(/\s+/).filter(Boolean).length;
+  if (!topicLabels[meta.topic]) throw new Error(`${f}: topic must be one of ${Object.keys(topicLabels).join(', ')}`);
+  return {
+    slug: f.replace(/\.md$/, ''), title: meta.title, dek: meta.dek, cat: meta.topic, topic: topicLabels[meta.topic],
+    iso: meta.date, date: niceDate(meta.date), read: Math.max(1, Math.ceil(words / 230)),
+    heroAlt: meta.heroAlt || '', hero: meta.hero, img: sized(meta.hero, 960, 640), heroLarge: sized(meta.hero, 2000), md,
+  };
+}).sort((a, b) => b.iso.localeCompare(a.iso));
+
+// Extra props per design page (the blog index gets the post list)
+const pageProps = {
+  'Blog.dc.html': { posts: posts.map(p => Object.assign({}, p, { href: `${p.slug}/` })) },
+};
+
+function build(srcName, cfg, props, extraHead, bodyHtml) {
   const html = fs.readFileSync(path.join(root, 'src', srcName), 'utf8');
   const script = html.match(/<script type="text\/x-dc" data-dc-script[^>]*>([\s\S]*?)<\/script>/)[1];
   const Klass = new Function('DCLogic', script + '\nreturn Component;')(class { constructor() { this.props = {}; this.state = {}; } });
-  const data = new Klass().renderVals();
+  const inst = new Klass();
+  Object.assign(inst.props, props || {});
+  const data = inst.renderVals();
   const body = html.match(/<x-dc>([\s\S]*?)<\/x-dc>/)[1];
   const helmet = (body.match(/<helmet>([\s\S]*?)<\/helmet>/) || ['', ''])[1];
   let page = render(body.replace(/<helmet>[\s\S]*?<\/helmet>/, ''), data);
+  if (bodyHtml != null) page = page.replace('<post-body></post-body>', bodyHtml);
 
   const up = '../'.repeat(cfg.depth);
   page = page.replace(/\/_blob\/([0-9a-f]{32})/g, (m, id) => (blobs[id] ? up + 'images/' + blobs[id] : m));
@@ -146,6 +203,7 @@ ${items}
 <meta name="description" content="${cfg.description}">
 ${DRAFT ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="${up}images/dgm-logo-mark.png">
+${extraHead || ''}
 ${helmet.trim()}
 <style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:1179px){nav[aria-label="Main"]{display:none!important}}
 .dgm-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;margin-left:auto;background:none;border:1px solid #E1E6EB;border-radius:8px;cursor:pointer}
@@ -172,4 +230,27 @@ ${page.trim()}
   fs.writeFileSync(outPath, doc);
   const left = (doc.match(/\{\{|\/_blob\/|\.dc\.html|<sc-/g) || []).length;
   console.log(cfg.out, (doc.length / 1024).toFixed(0) + ' KB', left ? `WARNING: ${left} unrendered bits` : 'ok');
+}
+
+for (const [srcName, cfg] of Object.entries(pages)) build(srcName, cfg, pageProps[srcName]);
+
+const attr = v => esc(v);
+for (const post of posts) {
+  const others = posts.filter(p => p !== post);
+  const related = others.filter(p => p.cat === post.cat).concat(others.filter(p => p.cat !== post.cat)).slice(0, 3)
+    .map(p => Object.assign({}, p, { href: `../${p.slug}/` }));
+  const ld = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title, description: post.dek, image: post.heroLarge,
+    datePublished: post.iso, author: { '@type': 'Person', name: 'Dale Dubberley' }, publisher: { '@type': 'Organization', name: 'Drive Growth Management' } };
+  const head = `<meta property="og:type" content="article">
+<meta property="og:title" content="${attr(post.title)}">
+<meta property="og:description" content="${attr(post.dek)}">
+<meta property="og:image" content="${attr(post.heroLarge)}">
+<meta property="article:published_time" content="${post.iso}">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>`;
+  build('BlogPost.dc.html', {
+    out: `blog/${post.slug}/index.html`, depth: 2,
+    title: `${attr(post.title)} | Drive Growth Management Blog`,
+    description: attr(post.dek),
+  }, { post, related }, head, mdToHtml(post.md));
 }

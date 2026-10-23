@@ -53,10 +53,10 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Retail Growth Insights</div>
 <h1 style="margin: 0; max-width: 820px; font-family: 'Montserrat', sans-serif; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.1; letter-spacing: -.02em; font-weight: 600; color: #3873AF">Practical ideas for growing sales and profit in every store</h1>
-<p style="margin: 0; max-width: 700px; font-size: 19px">Lessons from running and growing multi-unit chains. What works with customers, teams, marketing and margins, and where AI is starting to help.</p>
+<p style="margin: 0; max-width: 700px; font-size: 19px">Lessons from running and growing multi-unit chains. What works with customers, teams, marketing and operations, and where AI is starting to help.</p>
 <div role="group" aria-label="Filter posts by topic" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px">
 <button type="button" class="blog-chip" data-filter="all" aria-pressed="true">All posts</button>
-<sc-for list="{{topics}}" as="t" hint-placeholder-count="3">
+<sc-for list="{{topics}}" as="t" hint-placeholder-count="5">
 <button type="button" class="blog-chip" data-filter="{{t.key}}" aria-pressed="false">{{t.label}}</button>
 </sc-for>
 </div>
@@ -66,8 +66,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <!-- FEATURED -->
 <section style="padding: 56px 0 24px; background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
-<a class="blog-feature blog-card" data-cat="{{featured.cat}}" href="{{featured.url}}" style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 16px; overflow: hidden; background: #FFFFFF">
-<img src="{{featured.img}}" alt="{{featured.alt}}" style="flex: 1 1 420px; min-width: 0; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block">
+<a class="blog-feature blog-card" data-cat="{{featured.cat}}" href="{{featured.href}}" style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 16px; overflow: hidden; background: #FFFFFF">
+<img src="{{featured.img}}" alt="{{featured.heroAlt}}" style="flex: 1 1 420px; min-width: 0; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block">
 <div style="flex: 1 1 380px; min-width: 0; padding: 8px 32px 32px; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 13px; font-weight: 700">
 <span style="padding: 4px 10px; border-radius: 999px; background: #FFF1DC; color: #8A5200; letter-spacing: .04em; text-transform: uppercase">Latest</span>
@@ -87,8 +87,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
 <div id="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 28px">
 <sc-for list="{{posts}}" as="p" hint-placeholder-count="7">
-<a class="blog-card" data-cat="{{p.cat}}" href="{{p.url}}" style="display: flex; flex-direction: column; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 14px; overflow: hidden; background: #FFFFFF">
-<img src="{{p.img}}" alt="{{p.alt}}" loading="lazy" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EEF1F4">
+<a class="blog-card" data-cat="{{p.cat}}" href="{{p.href}}" style="display: flex; flex-direction: column; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 14px; overflow: hidden; background: #FFFFFF">
+<img src="{{p.img}}" alt="{{p.heroAlt}}" loading="lazy" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EEF1F4">
 <div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1">
 <div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #3873AF">{{p.topic}}</div>
 <h3 class="blog-title" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600; transition: color .15s">{{p.title}}</h3>
@@ -171,49 +171,17 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFC873","options":["#FFC873","#FFB042","#FFD9A0"]},"$preview":{"width":1440,"height":3000}}'>
 class Component extends DCLogic {
   renderVals() {
-    // Newest first. The first post is shown as the featured card.
-    // url: where the full post lives. These still point to drivecx.com until the posts move to this site.
-    const wix = (id, ext) => `https://static.wixstatic.com/media/85ead7_${id}~mv2.${ext}/v1/fill/w_960,h_640,al_c,q_85,enc_avif,quality_auto/85ead7_${id}~mv2.${ext}`;
+    // The posts come from the files in posts/ (tools/render.js reads them, newest first).
+    // The first post is shown as the featured card.
     const topics = [
       { key: 'strategy', label: 'Growth strategy' },
       { key: 'customers', label: 'Customers' },
+      { key: 'teams', label: 'Teams' },
+      { key: 'marketing', label: 'Marketing' },
       { key: 'ai', label: 'AI and operations' }
     ];
-    const label = Object.fromEntries(topics.map(t => [t.key, t.label]));
-    const all = [
-      { title: 'The 8 Drivers of Profitable Growth', cat: 'strategy', date: 'Jul 14, 2026', read: 3,
-        url: 'https://www.drivecx.com/post/the-8-drivers-of-profitable-growth',
-        img: wix('1b38c83b02174d89aac3192869d7a482', 'png'), alt: 'The 8 Drivers of Profitable Growth',
-        dek: 'Every leadership team has blind spots. These are the 8 Profit Drivers that decide whether growth turns into profit, plus a quick way to score your own.' },
-      { title: 'How to Increase Retail Profits: 15 Top Profit Leaks and How to Fix Them with AI Intelligence', cat: 'ai', date: 'May 20, 2026', read: 6,
-        url: 'https://www.drivecx.com/post/how-to-increase-retail-profits',
-        img: wix('013f228043324b63a60fe1bbc81b8836', 'png'), alt: 'Hidden retail profit leaks draining margins in a retail business',
-        dek: 'The 15 leaks that quietly drain margin in multi-unit retail, and how AI helps you catch them before they show up in the P&L.' },
-      { title: 'SaaSmageddon Is Coming… And It Could Save Retailers Millions', cat: 'ai', date: 'Mar 27, 2026', read: 3,
-        url: 'https://www.drivecx.com/post/saasmageddon-is-coming-and-it-could-save-retailers-millions',
-        img: wix('24989f5a7ccd4443b345b7ca441fbf36', 'webp'), alt: 'Categories of SaaS software',
-        dek: 'AI is making single-purpose software cheap to replace. What that means for retailers paying 20+ vendors whose tools never talk to each other.' },
-      { title: 'How Retail Chains Gain Market Share in Uncertain Times', cat: 'strategy', date: 'Mar 6, 2025', read: 2,
-        url: 'https://www.drivecx.com/post/how-retail-chains-grow-market-share-in-uncertain-times',
-        img: wix('b2e396bd34284cd898eaa77af406adbf', 'png'), alt: 'Road sign reading Uncertainty Ahead against a stormy sky',
-        dek: 'Cutting service to protect margin often starts a sales slide. Three places to invest in a downturn so you come out with more market share.' },
-      { title: 'Is Your CX Strategy Keeping Customers - or Alienating Them?', cat: 'customers', date: 'Oct 31, 2024', read: 4,
-        url: 'https://www.drivecx.com/post/is-your-cx-strategy-keeping-customers-or-alienating-them',
-        img: wix('79d5c4d245fa4bf89938035936f01fb9', 'png'), alt: 'Is your CX strategy keeping customers or alienating them',
-        dek: 'Some customer experience programs push shoppers away. How to tell whether yours keeps them coming back.' },
-      { title: 'Top 5 Trends in Retail Brand Experience Management with Digital Engagement and AI', cat: 'customers', date: 'Apr 24, 2024', read: 2,
-        url: 'https://www.drivecx.com/post/top-5-trends-retail-brand-experience-management',
-        img: wix('2bd43b5d6faf4f659c199939d01582e0', 'jpg'), alt: 'Retail brand experience trends with digital engagement and AI',
-        dek: 'Five shifts in how retail brands use digital engagement and AI to stand out in store.' },
-      { title: 'What Customers of Big Box Stores Want You to Know!', cat: 'customers', date: 'Jul 12, 2023', read: 3,
-        url: 'https://www.drivecx.com/post/what-customers-want-big-box-stores-to-know',
-        img: wix('ee4ad6dc560c45c18d41c43be0c46562', 'png'), alt: 'Shoppers in a big box store',
-        dek: 'What shoppers say the big box stores get wrong, and the opening that gives smaller chains.' },
-      { title: 'Transforming Retail B2C Logistics with Robotics and AI', cat: 'ai', date: 'Jun 19, 2023', read: 3,
-        url: 'https://www.drivecx.com/post/retail-b2c-logistics-robotics-ai',
-        img: wix('61ec2bf034c3461e8db8ca839bec9f24', 'png'), alt: 'A robot arm pushing a shopping cart',
-        dek: 'How robotics and AI are changing retail fulfilment, for both operations and the customer experience.' }
-    ].map(p => Object.assign({ topic: label[p.cat] }, p));
+    const sample = { title: 'Post title', topic: 'Growth strategy', cat: 'strategy', dek: 'One or two sentences on what the reader gets from this post.', date: 'Jan 1, 2026', read: 3, href: '#', img: '', heroAlt: '' };
+    const all = this.props.posts ?? [sample, sample, sample, sample];
     return {
       accent: this.props.accent ?? '#FFC873',
       topics,

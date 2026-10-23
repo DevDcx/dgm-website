@@ -8,7 +8,8 @@ The Drive Growth Management website, published with GitHub Pages.
 |---|---|
 | `index.html` | Homepage |
 | `profit-growth-score/index.html` | Profit Growth Score landing page |
-| `blog/index.html` | Blog. Add a post by adding it to the list at the bottom of `src/Blog.dc.html` (newest first) |
+| `blog/` | Blog index and one folder per post, built from `posts/` |
+| `posts/` | One file per blog post. Add a post by copying a file, changing the top lines (title, date, topic, dek, hero, heroAlt) and writing the post under the `---` line. Topics: strategy, customers, teams, marketing, ai |
 | `images/` | Logo, flywheel, book and coach images |
 | `src/` | Design source files from the Claude canvas (edit these, then rebuild) |
 | `tools/render.js` | Rebuilds the HTML pages from `src/` |
@@ -41,8 +42,8 @@ Update these as the new pages are built.
 | How we work | Top menu | drivecx.com/revenue-growth-management-services |
 | Radical Retail Growth, Get the book | Top menu, GROWTH section | drivecx.com/get-radical-retail-growth |
 | Roundtables, Ask about the next Roundtable | Top menu, GROWTH section | drivecx.com/ai-profitability-roundtable |
-| Blog post cards | Blog page | drivecx.com/post/... (8 posts, until they move here) |
-| Blog card images | Blog page | static.wixstatic.com (download before Wix is cancelled) |
+| Blog images | Blog page and posts | static.wixstatic.com (copy into images/ before Wix is cancelled) |
+| Book a Profit Opportunity Review | Blog posts | drivecx.com/growth-consultation |
 | Or book a Profit Opportunity Review | Homepage close | drivecx.com/growth-consultation |
 | Resources | Footer | drivecx.com/rgm-resources |
 | Dale Dubberley, About | Author band, footer | drivecx.com/communicate-collaborate-innovate |
