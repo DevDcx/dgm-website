@@ -92,6 +92,8 @@ const blobs = {
   '19ae4b4c70e80af9e2b7eb6f8860a541': 'craig-foldes.jpg',
   '80292d16974e13a239af43fee8d8217e': 'raymone-simpkins.jpg',
   '0ef95c4ab388485dae82672ec453dc14': 'dale-dubberley.jpg',
+  'facca8809cf49114d8b9ad6fa388edd3': 'paul-ziv.jpg',
+  'f1e6d6b069be741d78cda9983cab3ca0': 'jeff-sutton.jpg',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
