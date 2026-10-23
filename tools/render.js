@@ -38,6 +38,11 @@ const pages = {
     title: 'How to Increase Retail Profits: 15 Hidden Profit Leaks and How to Fix Them | Free Guide',
     description: 'How to increase retail profits: a free 18-page guide to the 15 most common hidden profit leaks in multi-unit retail, pharmacy and restaurant chains, with the fix for each and where AI helps.',
   },
+  'How.dc.html': {
+    out: 'how-we-work/index.html', depth: 1,
+    title: 'How We Work | From Free Profit Growth Score to a 90-Day Profit Growth Plan | Drive Growth Management',
+    description: 'How Drive Growth Management works with multi-unit pharmacy, retail and restaurant chains: free Profit Growth Score, Profit Opportunity Review, Blueprint and a guaranteed 90-day plan.',
+  },
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
     title: 'The G.R.O.W.T.H Framework from Radical Retail Growth | Drive Growth Management',
