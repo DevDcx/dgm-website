@@ -66,11 +66,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 .bgs .qs li{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:8px;padding:16px 18px;font-weight:600;color:var(--ink)}
 
 /* ---------- Flywheel ---------- */
-.bgs .fly .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
-.bgs .wheel{width:100%;max-width:460px;margin-inline:auto;display:block}
-.bgs .principles{counter-reset:p;list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
-.bgs .principles li{counter-increment:p;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:baseline;font-weight:600;color:var(--ink)}
-.bgs .principles li::before{content:counter(p);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--tint);color:var(--blue);font:700 14px var(--display)}
+.bgs .fly{background:var(--soft);padding-top:0}
+.bgs .fly .eyebrow{justify-content:center}
+.bgs .wheel{display:block;width:100%;max-width:480px;height:auto;margin:20px auto 0}
 
 /* ---------- Outcomes ---------- */
 .bgs .out{background:var(--navy);color:#DCE6EF}
@@ -107,6 +105,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 .bgs .book img{display:block;width:100%;height:auto}
 .bgs .about p + p{margin-top:14px}
 .bgs .about .body{color:var(--muted)}
+.bgs .about .closer{margin-top:20px;font-family:var(--display);font-weight:600;font-size:20px;color:var(--navy)}
 
 /* ---------- Apply ---------- */
 .bgs .apply .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
@@ -198,8 +197,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section class="hero" aria-labelledby="h-hero">
   <div class="copy">
     <p class="eyebrow">Growth Strategy MasterClass</p>
-    <h1 id="h-hero">Compete on care, <span>not price.</span></h1>
-    <p class="sub">A half-day working session where you build your Brand Growth Strategy: the one reason customers choose you, and the plan to own it across every store.</p>
+    <h1 id="h-hero">Compete on customer care, <span>not price.</span></h1>
+    <p class="sub">A half-day intensive working session where you build your Brand Growth Strategy: the one reason customers choose you, and how you'll amplify it to strengthen your competitive advantage.</p>
     <ul class="facts" aria-label="Session details">
       <li>Half-day, live online</li>
       <li>2 sessions a month</li>
@@ -223,61 +222,23 @@ a{color:#3873AF}a:hover{color:#2A4252}
     <div>
       <p class="eyebrow">Start here</p>
       <h2 id="h-ask">The big chains outspend you. They can't out-care you.</h2>
-      <p class="lede">Independent chains don't win by matching discounts or tech budgets. They win when every store knows why customers choose them, and every decision backs it up. Ask yourself:</p>
+      <p class="lede">Independent chains don't win by competing on price or technology spend. They win when every store knows why customers choose them, and every decision empowers frontline teams to deliver on their brand promise.</p>
+      <p class="lede">Ask yourself:</p>
     </div>
     <ul class="qs">
-      <li>Could every store manager explain, in one sentence, why customers choose you over the chain down the street?</li>
-      <li>Are your investments this year building that reason, or spread thin across everything?</li>
-      <li>Do your regulars come back because they love you, or because you're close and on sale?</li>
+      <li>Could every store manager explain, in one sentence, why customers choose you over the big chain down the street?</li>
+      <li>Are your investments this year building your competitive advantage, or spread thin across everything?</li>
+      <li>Do you know why your regulars keep coming back?</li>
       <li>Would your growth plan still hold if a competitor cut prices tomorrow?</li>
     </ul>
   </div>
 </section>
 
 <!-- FLYWHEEL -->
-<section class="fly" aria-labelledby="h-fly">
-  <div class="wrap grid">
-    <svg class="wheel" viewBox="0 0 460 460" role="img" aria-labelledby="wheel-t wheel-d">
-      <title id="wheel-t">The Profit Growth Flywheel</title>
-      <desc id="wheel-d">Brand Growth Strategy sits at the centre, surrounded by four builders: Customer Loyalty Connector, Team Productivity Builder, Promotions ROI Builder and Margins Multiplier, each covering two of the 8 Profit Drivers.</desc>
-      <defs>
-        <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#FF8E00"/></marker>
-      </defs>
-      <circle cx="230" cy="230" r="186" fill="none" stroke="#E1E6EB" stroke-width="2"/>
-      <path d="M230 44 A186 186 0 0 1 416 230" fill="none" stroke="#FF8E00" stroke-width="3" marker-end="url(#ah)"/>
-      <path d="M416 230 A186 186 0 0 1 230 416" fill="none" stroke="#FF8E00" stroke-width="3" marker-end="url(#ah)"/>
-      <path d="M230 416 A186 186 0 0 1 44 230" fill="none" stroke="#FF8E00" stroke-width="3" marker-end="url(#ah)"/>
-      <path d="M44 230 A186 186 0 0 1 230 44" fill="none" stroke="#FF8E00" stroke-width="3" marker-end="url(#ah)"/>
-      <circle cx="230" cy="230" r="92" fill="#1F3550"/>
-      <circle cx="230" cy="230" r="100" fill="none" stroke="#FFB042" stroke-width="3"/>
-      <text x="230" y="218" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="19" fill="#FFFFFF">Brand Growth</text>
-      <text x="230" y="243" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="19" fill="#FFFFFF">Strategy</text>
-      <text x="230" y="268" text-anchor="middle" font-family="Quicksand,sans-serif" font-weight="700" font-size="11" letter-spacing="1.5" fill="#FFB042">YOU BUILD THIS</text>
-      <g font-family="Montserrat,sans-serif" font-weight="600" font-size="14" fill="#1F3550" text-anchor="middle">
-        <rect x="150" y="22" width="160" height="44" rx="22" fill="#FFFFFF" stroke="#3873AF" stroke-width="2"/>
-        <text x="230" y="40">Customer Loyalty</text><text x="230" y="57">Connector</text>
-        <rect x="336" y="208" width="116" height="44" rx="22" fill="#FFFFFF" stroke="#3873AF" stroke-width="2"/>
-        <text x="394" y="226">Team</text><text x="394" y="243">Productivity</text>
-        <rect x="150" y="394" width="160" height="44" rx="22" fill="#FFFFFF" stroke="#3873AF" stroke-width="2"/>
-        <text x="230" y="412">Promotions</text><text x="230" y="429">ROI Builder</text>
-        <rect x="8" y="208" width="116" height="44" rx="22" fill="#FFFFFF" stroke="#3873AF" stroke-width="2"/>
-        <text x="66" y="226">Margins</text><text x="66" y="243">Multiplier</text>
-      </g>
-    </svg>
-    <div>
-      <p class="eyebrow">What you'll build</p>
-      <h2 id="h-fly">The centre of your Profit Growth Flywheel</h2>
-      <p class="lede">Your Brand Growth Strategy sets you apart in customers' eyes and tells your team where to put time and money. The 8 Profit Drivers build momentum around it. In the session, you'll work through the 7 principles that make it stick:</p>
-      <ol class="principles">
-        <li>Your customers will tell you how to grow</li>
-        <li>Your team knows more about your customers than you do</li>
-        <li>Empowered people rise to the expectation</li>
-        <li>Personalize, don't discount</li>
-        <li>Benchmark what matters: the leading indicators of sales and margin</li>
-        <li>Catch it early, fix it fast</li>
-        <li>Act on performance intelligence</li>
-      </ol>
-    </div>
+<section class="fly" aria-label="What you'll build">
+  <div class="wrap">
+    <p class="eyebrow">What you'll build</p>
+    <img class="wheel" src="/_blob/e0e513773ad28d76147f21c1dbb4b26c" alt="Brand Growth Strategy at the centre, surrounded by Connect, Engage, Personalize and Optimize" width="480" height="482">
   </div>
 </section>
 
@@ -285,45 +246,14 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section class="out" aria-labelledby="h-out">
   <div class="wrap">
     <p class="eyebrow">You'll walk away with</p>
-    <h2 id="h-out">A strategy your whole chain can act on by Monday</h2>
+    <h2 id="h-out">A strategy your whole executive team can get on board with by Monday</h2>
     <p class="lede">This isn't a lecture. You'll do the work in the room, with AI tools that turn your answers into a written plan before you leave.</p>
     <div class="cards">
       <article class="card"><span class="n">01</span><h3>Clarity</h3><p>One sentence that says what you do better than anyone, in your customers' words.</p></article>
       <article class="card"><span class="n">02</span><h3>Strategy</h3><p>A Brand Growth Strategy built around that advantage, so competitors can't copy it with a price cut.</p></article>
-      <article class="card"><span class="n">03</span><h3>Focus</h3><p>Your 3 weakest Profit Drivers named, so you know where to spend first.</p></article>
-      <article class="card"><span class="n">04</span><h3>Action plan</h3><p>The customer and team moves for your next 90 days, with the leading indicators to watch.</p></article>
-      <article class="card"><span class="n">05</span><h3>Peers</h3><p>A room of non-competing chain owners solving the same problems you are.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT RUNS -->
-<section aria-labelledby="h-how">
-  <div class="wrap">
-    <p class="eyebrow">How it works</p>
-    <h2 id="h-how">Before, during and after the session</h2>
-    <div class="steps">
-      <article class="step"><span class="when">Before</span><h3><a href="Score.dc.html" style="color:inherit">Take your Profit Growth Score</a></h3><p>A 10-minute assessment of your 8 Profit Drivers. You'll arrive knowing where your stores are strong and where they're leaking.</p></article>
-      <article class="step"><span class="when">During</span><h3>Build your strategy, live</h3><p>A half-day AI-assisted workshop with Dale. You'll define why customers choose you and map it to your weakest drivers.</p></article>
-      <article class="step"><span class="when">After</span><h3>Profit Opportunity Review</h3><p>A 1:1 call with Dale to pressure-test your plan and put a dollar figure on your 3 biggest opportunities.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="proof" aria-labelledby="h-proof">
-  <div class="wrap">
-    <p class="eyebrow">Results</p>
-    <h2 id="h-proof">The same method, in real stores</h2>
-    <div class="stats">
-      <div class="stat"><b>+150%</b><span>NPS at Murphy's Pharmacies in one year</span></div>
-      <div class="stat"><b>25&ndash;38%</b><span>Customer feedback rates at Romer's</span></div>
-      <div class="stat"><b>+25%</b><span>Loyalty sign-ups at Romer's</span></div>
-      <div class="stat"><b>20%</b><span>Same-store sales growth in Dale's own chain, at double industry-average profits</span></div>
-    </div>
-    <div class="quotes">
-      <blockquote><p>"Drive CX has been thought provoking. You made us think about how we connect customers and team mates. You opened up a world."</p><footer>Derek Tweel, Director of Operations, Murphy's Pharmacies</footer></blockquote>
-      <blockquote><p>"We are seeing our vision getting closer to reality because of working with you."</p><footer>Jeff Murphy, VP of Marketing, Murphy's Pharmacies</footer></blockquote>
+      <article class="card"><span class="n">03</span><h3>Framework</h3><p>A system to predictably build growth momentum.</p></article>
+      <article class="card"><span class="n">04</span><h3>Action plan</h3><p>The next steps to embed your Brand Growth Strategy into your operations.</p></article>
+      <article class="card"><span class="n">05</span><h3>Support</h3><p>Change management experts to support you in executing your Brand Growth Strategy.</p></article>
     </div>
   </div>
 </section>
@@ -333,11 +263,13 @@ a{color:#3873AF}a:hover{color:#2A4252}
   <div class="wrap grid">
     <div class="book"><img src="/_blob/cb445564c037dc315830ca6a90b4771d" alt="Radical Retail Growth by Dale Dubberley"></div>
     <div>
-      <p class="eyebrow">Your host</p>
+      <p class="eyebrow">Your facilitator</p>
       <h2 id="h-about">Dale Dubberley, author of <em>Radical Retail Growth</em></h2>
-      <p class="lede">I've been where you are. I ran a chain of restaurants and a food service distribution company, competing against brands with far bigger budgets.</p>
-      <p class="body">What worked wasn't a bigger ad spend. It was listening to customers, trusting the people closest to them, and holding everyone to a high standard of care. That approach grew same-store sales 20% and earned double industry-average profits, year after year. In 15 years, only 3 chefs left, and each one left to start their own business.</p>
-      <p class="body">Those lessons became the <a href="Growth.dc.html">G.R.O.W.T.H framework</a> and the Profit Growth Flywheel. This MasterClass is where I teach the part that matters most: the strategy at the centre.</p>
+      <p class="lede">I've been where you are, competing against established brands with far bigger budgets. What worked wasn't a bigger ad spend.</p>
+      <p class="body">It was listening to customers, building a brand around what they told me they wanted, and holding everyone to a high standard of care.</p>
+      <p class="body">That approach grew same-store sales 20%, earned double industry-average profits, and won many Consumer Choice Awards, year after year. Those experiences led me to create a systematic approach to driving growth, which I now call the Profit Growth Flywheel.</p>
+      <p class="body">This MasterClass is where I teach the part that matters most: the strategy at the centre.</p>
+      <p class="closer">Don't leave the heart of your growth plan as an afterthought.</p>
     </div>
   </div>
 </section>

@@ -60,8 +60,8 @@ const pages = {
   },
   'Brand.dc.html': {
     out: 'brand-growth-strategy/index.html', depth: 1,
-    title: 'Brand Growth Strategy MasterClass | Compete on Care, Not Price | Drive Growth Management',
-    description: 'A half-day working session for owners of multi-unit pharmacy, retail and service chains. Build your Brand Growth Strategy and the plan to compete on care, not price.',
+    title: 'Brand Growth Strategy MasterClass | Compete on Customer Care, Not Price | Drive Growth Management',
+    description: 'A half-day intensive for owners of multi-unit pharmacy, retail and service chains. Build your Brand Growth Strategy and compete on customer care, not price.',
   },
   'Blog.dc.html': {
     out: 'blog/index.html', depth: 1,
@@ -97,6 +97,7 @@ const blobs = {
   '19ae4b4c70e80af9e2b7eb6f8860a541': 'craig-foldes.jpg',
   '80292d16974e13a239af43fee8d8217e': 'raymone-simpkins.jpg',
   '0ef95c4ab388485dae82672ec453dc14': 'dale-dubberley.jpg',
+  'e0e513773ad28d76147f21c1dbb4b26c': 'brand-growth-strategy-wheel.png',
   'facca8809cf49114d8b9ad6fa388edd3': 'paul-ziv.jpg',
   'f1e6d6b069be741d78cda9983cab3ca0': 'jeff-sutton.jpg',
 };
