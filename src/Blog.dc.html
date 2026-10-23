@@ -67,7 +67,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section style="padding: 56px 0 24px; background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
 <a class="blog-feature blog-card" data-cat="{{featured.cat}}" href="{{featured.href}}" style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 16px; overflow: hidden; background: #FFFFFF">
-<img src="{{featured.img}}" alt="{{featured.heroAlt}}" style="flex: 1 1 420px; min-width: 0; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block">
+<img src="{{featured.img}}" alt="{{featured.heroAlt}}" style="flex: 1 1 420px; min-width: 0; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top center; display: block">
 <div style="flex: 1 1 380px; min-width: 0; padding: 8px 32px 32px; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 13px; font-weight: 700">
 <span style="padding: 4px 10px; border-radius: 999px; background: #FFF1DC; color: #8A5200; letter-spacing: .04em; text-transform: uppercase">Latest</span>
@@ -88,7 +88,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div id="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 28px">
 <sc-for list="{{posts}}" as="p" hint-placeholder-count="7">
 <a class="blog-card" data-cat="{{p.cat}}" href="{{p.href}}" style="display: flex; flex-direction: column; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 14px; overflow: hidden; background: #FFFFFF">
-<img src="{{p.img}}" alt="{{p.heroAlt}}" loading="lazy" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EEF1F4">
+<img src="{{p.img}}" alt="{{p.heroAlt}}" loading="lazy" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top center; background: #EEF1F4">
 <div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1">
 <div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #3873AF">{{p.topic}}</div>
 <h3 class="blog-title" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600; transition: color .15s">{{p.title}}</h3>

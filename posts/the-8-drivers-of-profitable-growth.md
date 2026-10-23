@@ -5,7 +5,7 @@ dek: Every leadership team has blind spots. These are the 8 Profit Drivers that 
 hero: https://static.wixstatic.com/media/85ead7_1b38c83b02174d89aac3192869d7a482~mv2.png
 heroAlt: The 8 Profit Drivers
 ---
-![The 4 management pillars and 8 Profit Drivers](https://static.wixstatic.com/media/85ead7_0c7916cad261410fa7115bf805f1553e~mv2.jpg)
+![The Profit Growth Scorecard and how the score is calculated](https://static.wixstatic.com/media/85ead7_0c7916cad261410fa7115bf805f1553e~mv2.jpg)
 
 ## How well is your company positioned for sustainable, profitable growth?
 
