@@ -104,6 +104,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 .bgs .about .grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:48px;align-items:center}
 .bgs .book{border-radius:12px;overflow:hidden;background:var(--soft);box-shadow:12px 12px 0 0 var(--gold)}
 .bgs .book img{display:block;width:100%;height:auto}
+.bgs .bookcol{display:flex;flex-direction:column;align-items:flex-start;gap:28px}
+.bgs .bookcol .book{width:100%}
 .bgs .about p + p{margin-top:14px}
 .bgs .about .body{color:var(--muted)}
 .bgs .about .closer{margin-top:20px;font-family:var(--display);font-weight:600;font-size:20px;color:var(--navy)}
@@ -282,7 +284,10 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <!-- ABOUT -->
 <section class="about" aria-labelledby="h-about">
   <div class="wrap grid">
-    <div class="book"><img src="../images/rrg-standing-trim.jpg" alt="Radical Retail Growth by Dale Dubberley"></div>
+    <div class="bookcol">
+      <div class="book"><img src="../images/rrg-standing-trim.jpg" alt="Radical Retail Growth by Dale Dubberley"></div>
+      <a class="cta" href="https://www.amazon.com/s?k=radical+retail+growth+book&amp;crid=21EO1Z0J7758N&amp;sprefix=radical+retail+growth+boo%2Caps%2C253&amp;ref=nb_sb_noss_1" target="_blank" rel="noopener">Get the book</a>
+    </div>
     <div>
       <p class="eyebrow">Your facilitator</p>
       <h2 id="h-about">Dale Dubberley, author of <em>Radical Retail Growth</em></h2>
