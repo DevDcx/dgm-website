@@ -43,6 +43,11 @@ const pages = {
     title: 'How We Work | From Free Profit Growth Score to a 90-Day Profit Growth Plan | Drive Growth Management',
     description: 'How Drive Growth Management works with multi-unit pharmacy, retail and restaurant chains: free Profit Growth Score, Profit Opportunity Review, Blueprint and a guaranteed 90-day plan.',
   },
+  'AI.dc.html': {
+    out: 'how-ai-helps/index.html', depth: 1,
+    title: 'How AI Helps Retail Chains | AI Agents and Jane, Your AI Growth Coach | Drive Growth Management',
+    description: 'AI agents for customer service, HR and marketing, plus Jane, your AI Growth Coach, who watches your 8 Profit Drivers every week and recommends actions to grow sales and profit.',
+  },
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
     title: 'The G.R.O.W.T.H Framework from Radical Retail Growth | Drive Growth Management',
