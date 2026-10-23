@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roundtables</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Quicksand:wght@500;600;700&amp;family=Poppins:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#3873AF}a:hover{color:#2A4252}
+</style>
+</helmet>
+<div spellcheck="false" style="font-family: 'Quicksand', system-ui, sans-serif; font-weight: 500; color: #2A4252; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid #E1E6EB; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px">
+<a href="Main.dc.html" aria-label="Drive Growth Management home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1F3550">
+<img src="/_blob/040850abb18a406d4deb8022376b1a60" alt="" style="width: 50px; height: 56px; flex: none; object-fit: contain">
+<div style="display: flex; flex-direction: column; align-items: stretch; line-height: 1">
+<span style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -.01em; color: #1F3550; white-space: nowrap">Drive Growth</span>
+<span style="display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 11px; color: #1F3550; margin-top: 5px"><span>M</span><span>A</span><span>N</span><span>A</span><span>G</span><span>E</span><span>M</span><span>E</span><span>N</span><span>T</span></span>
+</div>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 600">
+<a href="Clients.dc.html" style="color: #2A4252; text-decoration: none">Our clients</a>
+<a href="Score.dc.html" style="color: #2A4252; text-decoration: none">Your Profit Growth Score</a>
+<a href="How.dc.html" style="color: #2A4252; text-decoration: none">How we work</a>
+<a href="AI.dc.html" style="color: #2A4252; text-decoration: none">How AI helps</a>
+<a href="Values.dc.html" style="color: #2A4252; text-decoration: none">What we stand for</a>
+<a href="Growth.dc.html" style="color: #2A4252; text-decoration: none">Radical Retail Growth</a>
+<a href="Roundtable.dc.html" aria-current="page" style="color: #3873AF; text-decoration: none; border-bottom: 2px solid #FFB042">Roundtables</a>
+<a href="https://www.drivecx.com/blog" style="color: #2A4252; text-decoration: none">Blog</a>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section style="padding: 80px 0 72px; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Private executive roundtable</div>
+<h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1.08; letter-spacing: -.02em; font-weight: 700; color: #3873AF">AI Profitability Growth Roundtable</h1>
+<p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.6; color: #2A4252; max-width: 60ch">How retail leaders are using AI to drive sales, keep good people and protect margins. A small, private conversation with executives from multi-unit chains, about what's working and what isn't.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center">
+<a href="mailto:dale@drivegrowthwith.ai?subject=Request%20a%20seat%20at%20the%20AI%20Profitability%20Growth%20Roundtable" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Request your seat →</a>
+<a href="Score.dc.html" style="font-weight: 700; font-size: 17px; text-decoration: none">Or start with your free Profit Growth Score →</a>
+</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #2A4252; color: #FFFFFF; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">Next roundtable</div>
+<div style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.25">{{nextDate}}</div>
+<sc-for list="{{facts}}" as="f" hint-placeholder-count="5">
+<div style="display: flex; gap: 12px; align-items: baseline; font-family: 'Poppins', sans-serif; font-size: 16px; color: #E3EAF0"><span aria-hidden="true" style="color: #FFB042; font-weight: 700">✓</span>{{f}}</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- WHO -->
+<section style="padding: 88px 0; background: #F4F6F8">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Who it's for</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Senior leaders of multi-unit retail and service chains</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #4F6270">CEOs, COOs, CMOs, CROs, VPs of Operations and growth leaders from retail, restaurant, pharmacy, grocery, home improvement and service chains. If a colleague from your leadership team would like to join you, let us know when you request your seat.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-for list="{{topics}}" as="t" hint-placeholder-count="3">
+<div style="background: #FFFFFF; border-top: 4px solid {{t.color}}; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">{{t.n}}</div>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">{{t.t}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">{{t.d}}</p>
+</div>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2A4252; max-width: 72ch"><strong>How it runs:</strong> spotlight speakers open each topic, then we open it up for peer discussion and Q&amp;A. The agenda follows what the people in the room want to talk about.</p>
+</div>
+</section>
+
+<!-- GET -->
+<section style="padding: 88px 0; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What you'll walk away with</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Clear priorities, from people who run stores like yours</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px">
+<sc-for list="{{gets}}" as="g" hint-placeholder-count="5">
+<div style="background: #F4F6F8; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 4px; border-radius: 2px; background: {{g.color}}"></span>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 600">{{g.t}}</h3>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #4F6270">{{g.d}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- SPEAKERS -->
+<section style="padding: 0 0 88px; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Recent spotlight speakers</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3vw, 34px); line-height: 1.2; font-weight: 600">Hosted by Dale Dubberley, with leaders who've done the work</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<sc-for list="{{speakers}}" as="s" hint-placeholder-count="4">
+<div style="border: 1px solid #E1E6EB; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 52px; height: 52px; border-radius: 50%; background: #2A4252; color: #FFB042; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px">{{s.i}}</span>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 600">{{s.name}}</h3>
+<div style="font-size: 14px; font-weight: 700; color: #3873AF">{{s.role}}</div>
+<p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #4F6270">{{s.d}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- QUOTES -->
+<section style="padding: 88px 0; background: #F4F6F8">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What leaders say about working with Dale</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-for list="{{quotes}}" as="q" hint-placeholder-count="2">
+<figure style="margin: 0; background: #FFFFFF; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<blockquote style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 1.45; font-weight: 500">{{q.q}}</blockquote>
+<figcaption style="font-size: 14.5px; color: #4F6270"><strong style="color: #2A4252; font-weight: 700">{{q.name}}</strong><br>{{q.role}}</figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 88px 0; background: #FFFFFF">
+<div style="max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Before you request a seat</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Roundtable questions</h2>
+<div style="display: flex; flex-direction: column; gap: 0">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="5">
+<div style="border-bottom: 1px solid #E1E6EB; padding: 20px 0; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 600">{{f.q}}</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: #4F6270">{{f.a}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- CLOSE -->
+<section style="padding: 0 0 96px; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
+<div style="background: #2A4252; color: #FFFFFF; border-radius: 16px; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between">
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">Seats are limited to 12 executives</h2>
+<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">Request your seat and we'll send you the date, the agenda and the speakers for the next roundtable.</p>
+</div>
+<a href="mailto:dale@drivegrowthwith.ai?subject=Request%20a%20seat%20at%20the%20AI%20Profitability%20Growth%20Roundtable" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Request your seat →</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #E1E6EB; padding: 32px 0; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 24px; font-size: 14px; color: #4F6270">
+<span>© 2026 Drive Growth Management · Serving pharmacy, retail and restaurant chains across the US and Canada</span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 6px 18px">
+<a href="https://console.drivecx.com/" style="color: #4F6270; text-decoration: none">Login</a>
+<a href="mailto:support@drivecx.com" style="color: #4F6270; text-decoration: none">Get help</a>
+<a href="Values.dc.html" style="color: #4F6270; text-decoration: none">About</a>
+<a href="Main.dc.html#faq" style="color: #4F6270; text-decoration: none">FAQs</a>
+<a href="https://www.drivecx.com/rgm-resources" style="color: #4F6270; text-decoration: none">Resources</a>
+<a href="https://www.drivecx.com/privacy" style="color: #4F6270; text-decoration: none">Privacy</a>
+<a href="https://www.drivecx.com/terms" style="color: #4F6270; text-decoration: none">Terms</a>
+</nav>
+</div>
+</footer>
+
+</div>
+</x-dc>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFC873","options":["#FFC873","#FFB042","#FFD9A0"]},"$preview":{"width":1440,"height":4200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#FFC873',
+      nextDate: "Date to be announced",
+      facts: ["Private and virtual, 1 hour", "Invitation only, 12 seats", "Interactive and informal, no product demos", "Not recorded, so people can speak openly", "Every attendee gets a complimentary Profit Growth Score"],
+      topics: [
+        { n: "Topic 1", t: "AI, people and the customer experience", d: "What separates your best stores from the rest, and what actually improves team performance and keeps customers coming back.", color: "#FFB042" },
+        { n: "Topic 2", t: "AI, operations and financial performance", d: "Moving from siloed reports to connected, real-time performance management, and where AI makes the biggest difference.", color: "#8DC63F" },
+        { n: "Topic 3", t: "AI growth strategies and competitive edge", d: "Using AI to strengthen what makes your brand different, and build market share and loyalty.", color: "#13C4E4" }
+      ],
+      gets: [
+        { t: "Clear priorities", d: "The opportunities most likely to improve sales, margins, loyalty and team performance.", color: "#FFB042" },
+        { t: "Practical takeaways", d: "What peers are doing to improve the customer experience and frontline execution.", color: "#8DC63F" },
+        { t: "An AI action plan", d: "Turn the conversation into practical AI goals for your organization.", color: "#13C4E4" },
+        { t: "More confidence", d: "Where AI delivers a measurable return, and where it doesn't.", color: "#3873AF" },
+        { t: "An executive network", d: "An informal peer network, future discussions and the AI Retail Profit Insider newsletter.", color: "#2A4252" }
+      ],
+      speakers: [
+        { i: "DD", name: "Dale Dubberley", role: "Host. Founder and CEO, Drive Growth Management", d: "Author of Radical Retail Growth. Helps multi-unit chains improve loyalty, team productivity, marketing ROI and margins." },
+        { i: "AV", name: "Angela Vincent", role: "Senior Retail Brand Leader", d: "Launched stores and turned around underperforming markets for Free People and Scotch & Soda." },
+        { i: "PZ", name: "Paul Ziv", role: "VP of IT, NACS", d: "Also VP of Emerging Tech and Operations for TruAge." },
+        { i: "JS", name: "Jeff Sutton", role: "Enterprise Growth Leader, Deloitte", d: "Helps leaders align AI investments with their growth strategy." }
+      ],
+      quotes: [
+        { q: "\u201cWorking with Dale has been thought-provoking. You made us think about how we connect customers and team mates. You opened up a world.\u201d", name: "Derek Tweel", role: "Director of Operations, Murphy's Pharmacies" },
+        { q: "\u201cWe are seeing our vision getting closer to reality because of working with Dale.\u201d", name: "Jeff Murphy", role: "VP of Marketing, Murphy's Pharmacies" }
+      ],
+      faqs: [
+        { q: "What will we talk about?", a: "Improving sales and margins through operations, customer loyalty and retention, team productivity and engagement, marketing effectiveness, and where AI adds real business value." },
+        { q: "Is there a product demo?", a: "No. This is an executive discussion, not a sales pitch. If you want to see Jane, your AI Growth Coach, we can set up a private follow-up." },
+        { q: "Is the session recorded?", a: "No. Keeping it off the record lets people share what's really happening in their business." },
+        { q: "Can I bring another executive from my company?", a: "Yes, if there's space. Let us know when you request your seat." },
+        { q: "I have another question.", a: "Email Dale at dale@drivegrowthwith.ai or call 604-318-8111." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

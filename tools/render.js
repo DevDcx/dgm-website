@@ -51,7 +51,12 @@ const pages = {
   'Values.dc.html': {
     out: 'what-we-stand-for/index.html', depth: 1,
     title: 'What We Stand For | Our Values, Our Approach to AI and Our 2% Climate Commitment | Drive Growth Management',
-    description: 'Drive Growth Management gives 2% of top-line revenue to organizations cleaning up the oceans and fighting climate change, and uses AI to strengthen the human connections that grow your business.',
+    description: 'Drive Growth Management gives 2% of top-line revenue to organizations cleaning up the oceans and managing climate change, and uses AI to strengthen the human connections that grow your business.',
+  },
+  'Roundtable.dc.html': {
+    out: 'roundtables/index.html', depth: 1,
+    title: 'AI Profitability Growth Roundtable | Private Executive Roundtable for Retail Leaders | Drive Growth Management',
+    description: 'A private, 12-seat virtual roundtable for leaders of multi-unit retail, restaurant and pharmacy chains on using AI to drive sales, keep good people and protect margins.',
   },
   'Growth.dc.html': {
     out: 'growth-framework/index.html', depth: 1,
