@@ -216,7 +216,7 @@ ${DRAFT ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="${up}images/dgm-logo-mark.png">
 ${extraHead || ''}
 ${helmet.trim()}
-<style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:1179px){nav[aria-label="Main"]{display:none!important}}
+<style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:1179px){nav[aria-label="Main"],.dgm-navcta{display:none!important}}
 .dgm-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;margin-left:auto;background:none;border:1px solid #E1E6EB;border-radius:8px;cursor:pointer}
 .dgm-burger span{display:block;height:2px;background:#2A4252;border-radius:2px;transition:transform .2s,opacity .2s}
 .dgm-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
