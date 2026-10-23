@@ -87,6 +87,10 @@ const blobs = {
   '78b2d99e88b2eb016eb61a5aba4b3ec7': '../downloads/8-drivers-of-profitable-growth.pdf',
   '9838b05243b9b42731ea582acdf82580': '../downloads/8-profit-drivers-cards.pdf',
   '29adda388536e44d808ec4f084d8aa43': '../downloads/8-profit-drivers-one-page.png',
+  '40b2a79132700729d8b230214d4baad7': 'roundtable-grid.jpg',
+  '96ed7380fbc39b23895d57e7b0b45811': 'bryan-moyer.jpg',
+  '19ae4b4c70e80af9e2b7eb6f8860a541': 'craig-foldes.jpg',
+  '80292d16974e13a239af43fee8d8217e': 'raymone-simpkins.jpg',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
