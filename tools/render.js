@@ -40,7 +40,7 @@ const pages = {
   },
   'How.dc.html': {
     out: 'how-we-work/index.html', depth: 1,
-    title: 'How We Work | From Free Profit Growth Score to a 90-Day Profit Growth Plan | Drive Growth Management',
+    title: 'How We Work | From Free Profit Growth Score to Stronger Profit Drivers in 90 Days | Drive Growth Management',
     description: 'How Drive Growth Management works with multi-unit pharmacy, retail and restaurant chains: free Profit Growth Score, Profit Opportunity Review, Blueprint and a guaranteed 90-day plan.',
   },
   'AI.dc.html': {
