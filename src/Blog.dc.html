@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blog</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Quicksand:wght@500;600;700&amp;family=Poppins:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#3873AF}a:hover{color:#2A4252}
+.blog-chip{font:inherit;font-size:14px;font-weight:700;color:#2A4252;background:#FFFFFF;border:1px solid #D6DDE3;border-radius:999px;padding:9px 18px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.blog-chip:hover{border-color:#3873AF;color:#3873AF}
+.blog-chip[aria-pressed="true"]{background:#2A4252;border-color:#2A4252;color:#FFFFFF}
+.blog-card{transition:transform .2s,box-shadow .2s}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(42,66,82,.55)}
+.blog-card:hover .blog-title{color:#3873AF}
+.blog-card[hidden]{display:none!important}
+.blog-feature:hover .blog-title{color:#3873AF}
+</style>
+</helmet>
+<div spellcheck="false" style="font-family: 'Quicksand', system-ui, sans-serif; font-weight: 500; color: #2A4252; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid #E1E6EB; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px">
+<a href="Main.dc.html" aria-label="Drive Growth Management home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1F3550">
+<img src="/_blob/040850abb18a406d4deb8022376b1a60" alt="" style="width: 50px; height: 56px; flex: none; object-fit: contain">
+<div style="display: flex; flex-direction: column; align-items: stretch; line-height: 1">
+<span style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -.01em; color: #1F3550; white-space: nowrap">Drive Growth</span>
+<span style="display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 11px; color: #1F3550; margin-top: 5px"><span>M</span><span>A</span><span>N</span><span>A</span><span>G</span><span>E</span><span>M</span><span>E</span><span>N</span><span>T</span></span>
+</div>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 600">
+<a href="Clients.dc.html" style="color: #2A4252; text-decoration: none">Our clients</a>
+<a href="Score.dc.html" style="color: #2A4252; text-decoration: none">Your Profit Growth Score</a>
+<a href="How.dc.html" style="color: #2A4252; text-decoration: none">How we work</a>
+<a href="AI.dc.html" style="color: #2A4252; text-decoration: none">How AI helps</a>
+<a href="Values.dc.html" style="color: #2A4252; text-decoration: none">What we stand for</a>
+<a href="Growth.dc.html" style="color: #2A4252; text-decoration: none">Radical Retail Growth</a>
+<a href="Roundtable.dc.html" style="color: #2A4252; text-decoration: none">Roundtables</a>
+<a href="Blog.dc.html" aria-current="page" style="color: #3873AF; text-decoration: none; border-bottom: 2px solid #FFB042">Blog</a>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section style="padding: 72px 0 40px; background: #F5F8FA; border-bottom: 1px solid #E1E6EB">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Retail Growth Insights</div>
+<h1 style="margin: 0; max-width: 820px; font-family: 'Montserrat', sans-serif; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.1; letter-spacing: -.02em; font-weight: 600; color: #3873AF">Practical ideas for growing sales and profit in every store</h1>
+<p style="margin: 0; max-width: 700px; font-size: 19px">Lessons from running and growing multi-unit chains. What works with customers, teams, marketing and margins, and where AI is starting to help.</p>
+<div role="group" aria-label="Filter posts by topic" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px">
+<button type="button" class="blog-chip" data-filter="all" aria-pressed="true">All posts</button>
+<sc-for list="{{topics}}" as="t" hint-placeholder-count="3">
+<button type="button" class="blog-chip" data-filter="{{t.key}}" aria-pressed="false">{{t.label}}</button>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- FEATURED -->
+<section style="padding: 56px 0 24px; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
+<a class="blog-feature blog-card" data-cat="{{featured.cat}}" href="{{featured.url}}" style="display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: center; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 16px; overflow: hidden; background: #FFFFFF">
+<img src="{{featured.img}}" alt="{{featured.alt}}" style="flex: 1 1 420px; min-width: 0; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block">
+<div style="flex: 1 1 380px; min-width: 0; padding: 8px 32px 32px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 13px; font-weight: 700">
+<span style="padding: 4px 10px; border-radius: 999px; background: #FFF1DC; color: #8A5200; letter-spacing: .04em; text-transform: uppercase">Latest</span>
+<span style="letter-spacing: .08em; text-transform: uppercase; color: #3873AF">{{featured.topic}}</span>
+</div>
+<h2 class="blog-title" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; font-weight: 600; transition: color .15s">{{featured.title}}</h2>
+<p style="margin: 0">{{featured.dek}}</p>
+<div style="font-size: 14px; color: #4F6270">Dale Dubberley · {{featured.date}} · {{featured.read}} min read</div>
+<span style="font-weight: 700; color: #3873AF">Read the post →</span>
+</div>
+</a>
+</div>
+</section>
+
+<!-- GRID -->
+<section style="padding: 24px 0 72px; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
+<div id="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 28px">
+<sc-for list="{{posts}}" as="p" hint-placeholder-count="7">
+<a class="blog-card" data-cat="{{p.cat}}" href="{{p.url}}" style="display: flex; flex-direction: column; text-decoration: none; color: #2A4252; border: 1px solid #E1E6EB; border-radius: 14px; overflow: hidden; background: #FFFFFF">
+<img src="{{p.img}}" alt="{{p.alt}}" loading="lazy" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #EEF1F4">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1">
+<div style="font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #3873AF">{{p.topic}}</div>
+<h3 class="blog-title" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600; transition: color .15s">{{p.title}}</h3>
+<p style="margin: 0; font-size: 16px">{{p.dek}}</p>
+<div style="margin-top: auto; padding-top: 8px; font-size: 14px; color: #4F6270">{{p.date}} · {{p.read}} min read</div>
+</div>
+</a>
+</sc-for>
+</div>
+<p id="blog-empty" hidden style="margin: 24px 0 0; color: #4F6270">No posts on this topic yet. More are on the way.</p>
+</div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section style="padding: 72px 0; background: #F5F8FA; border-top: 1px solid #E1E6EB; border-bottom: 1px solid #E1E6EB">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: center">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; justify-content: center">
+<img src="/_blob/b064922752817aa4f79edea3d0f440a8" alt="Cover of the 15 Top Retail Profit Leaks and How to Fix Them guide" style="display: block; width: 100%; max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 30px 60px -30px rgba(42,66,82,.6); transform: rotate(-2deg)">
+</div>
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Free guide</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600; color: #3873AF">Find the profit leaks hiding in your stores</h2>
+<p style="margin: 0">The 15 most common leaks in multi-unit pharmacy, retail and restaurant chains, what each one costs you, and how to fix it. 18 pages, read in one sitting.</p>
+<div><a href="Leaks.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">Get the free guide →</a></div>
+</div>
+</div>
+</section>
+
+<!-- CLOSE -->
+<section style="padding: 72px 0 96px; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
+<div style="background: #2A4252; color: #FFFFFF; border-radius: 16px; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between">
+<div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">See which of your 8 Profit Drivers to fix first</h2>
+<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">Your free Profit Growth Score takes 10 minutes and shows the 3 leaks costing your stores the most.</p>
+</div>
+<a href="Score.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Get your Profit Growth Score →</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #E1E6EB; padding: 32px 0; background: #FFFFFF">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 24px; font-size: 14px; color: #4F6270">
+<span>© 2026 Drive Growth Management · Serving pharmacy, retail and restaurant chains across the US and Canada</span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 6px 18px">
+<a href="https://console.drivecx.com/" style="color: #4F6270; text-decoration: none">Login</a>
+<a href="mailto:support@drivecx.com" style="color: #4F6270; text-decoration: none">Get help</a>
+<a href="Values.dc.html" style="color: #4F6270; text-decoration: none">About</a>
+<a href="Main.dc.html#faq" style="color: #4F6270; text-decoration: none">FAQs</a>
+<a href="https://www.drivecx.com/rgm-resources" style="color: #4F6270; text-decoration: none">Resources</a>
+<a href="https://www.drivecx.com/privacy" style="color: #4F6270; text-decoration: none">Privacy</a>
+<a href="https://www.drivecx.com/terms" style="color: #4F6270; text-decoration: none">Terms</a>
+</nav>
+</div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.blog-chip');
+  var cards = document.querySelectorAll('.blog-card');
+  var empty = document.getElementById('blog-empty');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var f = chip.getAttribute('data-filter'), shown = 0;
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      cards.forEach(function(card){
+        var on = f === 'all' || card.getAttribute('data-cat') === f;
+        card.hidden = !on;
+        if (on) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+    });
+  });
+})();
+</script>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFC873","options":["#FFC873","#FFB042","#FFD9A0"]},"$preview":{"width":1440,"height":3000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    // Newest first. The first post is shown as the featured card.
+    // url: where the full post lives. These still point to drivecx.com until the posts move to this site.
+    const wix = (id, ext) => `https://static.wixstatic.com/media/85ead7_${id}~mv2.${ext}/v1/fill/w_960,h_640,al_c,q_85,enc_avif,quality_auto/85ead7_${id}~mv2.${ext}`;
+    const topics = [
+      { key: 'strategy', label: 'Growth strategy' },
+      { key: 'customers', label: 'Customers' },
+      { key: 'ai', label: 'AI and operations' }
+    ];
+    const label = Object.fromEntries(topics.map(t => [t.key, t.label]));
+    const all = [
+      { title: 'The 8 Drivers of Profitable Growth', cat: 'strategy', date: 'Jul 14, 2026', read: 3,
+        url: 'https://www.drivecx.com/post/the-8-drivers-of-profitable-growth',
+        img: wix('1b38c83b02174d89aac3192869d7a482', 'png'), alt: 'The 8 Drivers of Profitable Growth',
+        dek: 'Every leadership team has blind spots. These are the 8 Profit Drivers that decide whether growth turns into profit, plus a quick way to score your own.' },
+      { title: 'How to Increase Retail Profits: 15 Top Profit Leaks and How to Fix Them with AI Intelligence', cat: 'ai', date: 'May 20, 2026', read: 6,
+        url: 'https://www.drivecx.com/post/how-to-increase-retail-profits',
+        img: wix('013f228043324b63a60fe1bbc81b8836', 'png'), alt: 'Hidden retail profit leaks draining margins in a retail business',
+        dek: 'The 15 leaks that quietly drain margin in multi-unit retail, and how AI helps you catch them before they show up in the P&L.' },
+      { title: 'SaaSmageddon Is Coming… And It Could Save Retailers Millions', cat: 'ai', date: 'Mar 27, 2026', read: 3,
+        url: 'https://www.drivecx.com/post/saasmageddon-is-coming-and-it-could-save-retailers-millions',
+        img: wix('24989f5a7ccd4443b345b7ca441fbf36', 'webp'), alt: 'Categories of SaaS software',
+        dek: 'AI is making single-purpose software cheap to replace. What that means for retailers paying 20+ vendors whose tools never talk to each other.' },
+      { title: 'How Retail Chains Gain Market Share in Uncertain Times', cat: 'strategy', date: 'Mar 6, 2025', read: 2,
+        url: 'https://www.drivecx.com/post/how-retail-chains-grow-market-share-in-uncertain-times',
+        img: wix('b2e396bd34284cd898eaa77af406adbf', 'png'), alt: 'Road sign reading Uncertainty Ahead against a stormy sky',
+        dek: 'Cutting service to protect margin often starts a sales slide. Three places to invest in a downturn so you come out with more market share.' },
+      { title: 'Is Your CX Strategy Keeping Customers - or Alienating Them?', cat: 'customers', date: 'Oct 31, 2024', read: 4,
+        url: 'https://www.drivecx.com/post/is-your-cx-strategy-keeping-customers-or-alienating-them',
+        img: wix('79d5c4d245fa4bf89938035936f01fb9', 'png'), alt: 'Is your CX strategy keeping customers or alienating them',
+        dek: 'Some customer experience programs push shoppers away. How to tell whether yours keeps them coming back.' },
+      { title: 'Top 5 Trends in Retail Brand Experience Management with Digital Engagement and AI', cat: 'customers', date: 'Apr 24, 2024', read: 2,
+        url: 'https://www.drivecx.com/post/top-5-trends-retail-brand-experience-management',
+        img: wix('2bd43b5d6faf4f659c199939d01582e0', 'jpg'), alt: 'Retail brand experience trends with digital engagement and AI',
+        dek: 'Five shifts in how retail brands use digital engagement and AI to stand out in store.' },
+      { title: 'What Customers of Big Box Stores Want You to Know!', cat: 'customers', date: 'Jul 12, 2023', read: 3,
+        url: 'https://www.drivecx.com/post/what-customers-want-big-box-stores-to-know',
+        img: wix('ee4ad6dc560c45c18d41c43be0c46562', 'png'), alt: 'Shoppers in a big box store',
+        dek: 'What shoppers say the big box stores get wrong, and the opening that gives smaller chains.' },
+      { title: 'Transforming Retail B2C Logistics with Robotics and AI', cat: 'ai', date: 'Jun 19, 2023', read: 3,
+        url: 'https://www.drivecx.com/post/retail-b2c-logistics-robotics-ai',
+        img: wix('61ec2bf034c3461e8db8ca839bec9f24', 'png'), alt: 'A robot arm pushing a shopping cart',
+        dek: 'How robotics and AI are changing retail fulfilment, for both operations and the customer experience.' }
+    ].map(p => Object.assign({ topic: label[p.cat] }, p));
+    return {
+      accent: this.props.accent ?? '#FFC873',
+      topics,
+      featured: all[0],
+      posts: all.slice(1)
+    };
+  }
+}
+</script>
+</body>
+</html>
