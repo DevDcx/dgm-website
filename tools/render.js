@@ -58,6 +58,11 @@ const pages = {
     title: 'AI Profitability Growth Roundtable | Private Executive Roundtable for Retail Leaders | Drive Growth Management',
     description: 'A private, 12-seat virtual roundtable for leaders of multi-unit retail, restaurant and pharmacy chains on using AI to drive sales, keep good people and protect margins.',
   },
+  'Brand.dc.html': {
+    out: 'brand-growth-strategy/index.html', depth: 1,
+    title: 'Brand Growth Strategy MasterClass | Compete on Care, Not Price | Drive Growth Management',
+    description: 'A half-day working session for owners of multi-unit pharmacy, retail and service chains. Build your Brand Growth Strategy and the plan to compete on care, not price.',
+  },
   'Blog.dc.html': {
     out: 'blog/index.html', depth: 1,
     title: 'Retail Growth Insights Blog | Sales, Profit and AI for Multi-Unit Chains | Drive Growth Management',

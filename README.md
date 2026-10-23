@@ -8,6 +8,7 @@ The Drive Growth Management website, published with GitHub Pages.
 |---|---|
 | `index.html` | Homepage |
 | `profit-growth-score/index.html` | Profit Growth Score landing page |
+| `brand-growth-strategy/index.html` | Brand Growth Strategy MasterClass page (replaces drivecx.com/brand-growth-strategy) |
 | `blog/` | Blog index and one folder per post, built from `posts/` |
 | `posts/` | One file per blog post. Add a post by copying a file, changing the top lines (title, date, topic, dek, hero, heroAlt) and writing the post under the `---` line. Topics: strategy, customers, teams, marketing, ai |
 | `images/` | Logo, flywheel, book and coach images |
@@ -48,6 +49,6 @@ Update these as the new pages are built.
 | Resources | Footer | drivecx.com/rgm-resources |
 | Dale Dubberley, About | Author band, footer | drivecx.com/communicate-collaborate-innovate |
 | Privacy, Terms | Footer | drivecx.com/privacy, drivecx.com/terms |
-| Learn more (Brand Growth Strategy) | Flywheel section | drivecx.com/brand-growth-strategy |
 | Login | Footer | console.drivecx.com |
 | Get help | Footer | support@drivecx.com |
+| MasterClass application form | Brand Growth Strategy page | Not connected yet: paste the Zapier Catch Hook URL into `WEBHOOK_URL` in `src/Brand.dc.html` (Keap tag `MC-Apply`) |
