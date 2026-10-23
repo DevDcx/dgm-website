@@ -64,7 +64,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>The 6 principles</div>
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Six principles that turn relationships into sales and margin</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-auto-rows: 1fr; gap: 20px">
 <sc-for list="{{principles}}" as="p" hint-placeholder-count="6">
 <div style="background: #FFFFFF; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 12px; border-top: 4px solid {{p.color}}">
 <div style="display: flex; align-items: center; gap: 14px">
@@ -125,12 +125,12 @@ class Component extends DCLogic {
       accent: this.props.accent ?? '#FFC873',
       bookUrl: 'https://www.drivecx.com/get-radical-retail-growth',
       principles: [
-        { l: 'G', t: 'Give Value First', where: 'The centre', drivers: "At the centre of the flywheel: why customers choose you over the store down the road. Fix a problem or find a way to make their life easier.", color: NAVY },
-        { l: 'R', t: 'Recruit Customers as Co-Creators', where: 'Connect with customers', drivers: "The easiest way to understand why they would choose you over your competitors is to ask them. Get feedback in real time and find a way to integrate their suggestions into your operations.", color: CONNECT },
-        { l: 'O', t: 'Operate with Team Intelligence', where: 'Engage employees', drivers: "Your frontline teams know more about your customers than you do. Find a way to tap into that wealth of operations intelligence. Keep your teams happy and they'll keep your customers happy.", color: ENGAGE },
-        { l: 'W', t: 'Watch What Drives Growth', where: 'Optimize operations', drivers: "Benchmark store performance. Focus on understanding what makes one store high-performing and another one struggle. Use AI to analyze and recommend the most impactful actions you can take to increase sales and profits.", color: OPTIMIZE },
-        { l: 'T', t: 'Transform Your Marketing into a Service', where: 'Personalize marketing', drivers: "In this noisy world competing for your customers' attention, they need to know you understand what they want. And that won't be the same for every customer who loves you. Segment your customers by their buying behaviour and personalize the offers you send them. Measure your marketing ROI and do more of what works.", color: PERSONALIZE },
-        { l: 'H', t: 'Help Others', where: 'The outer ring', drivers: "A higher purpose that connects your brand to your community. Make it easy for your customers to feel good about doing business with you. Stand for more than just a product or service they can buy. Give them an opportunity to make a difference.", color: NAVY }
+        { l: 'G', t: 'Give Value First', where: "Brand Passion", drivers: "At the centre of the flywheel is your growth strategy: why customers choose you over the store down the road. The goal is to fix a problem they have, find a way to make their life easier, or make doing business with you more fun.", color: NAVY },
+        { l: 'R', t: 'Recruit Customers as Co-Creators', where: "Connect with customers", drivers: "The easiest way to understand why they would choose you over your competitors is to ask them. Find out what would get them in more often and spending more. Get feedback in real time, thank them with a gift, and find a way to integrate their suggestions into your operations.", color: CONNECT },
+        { l: 'O', t: 'Operate with Team Intelligence', where: "Engage employees", drivers: "Your frontline teams know more about your customers than you do. Find a way to tap into that wealth of operations intelligence. Make it safe for your team members to share their ideas. Acknowledge them. Keep your teams happy and they'll keep your customers happy.", color: ENGAGE },
+        { l: 'W', t: 'Watch What Drives Growth', where: "Optimize operations", drivers: "Benchmark store performance. Focus on understanding what makes one store high-performing and another one struggle. Use AI to find problems so you can fix them before you lose sales, and recommend actions you can take to increase sales and profits.", color: OPTIMIZE },
+        { l: 'T', t: 'Transform Your Marketing into a Service', where: "Personalize marketing", drivers: "In this noisy world competing for your customers' attention, they need to know you understand what they want. And that won't be the same for every customer who loves you. Segment your customers by their buying behaviour and personalize the offers you send them.", color: PERSONALIZE },
+        { l: 'H', t: 'Help Others', where: "Make a difference", drivers: "A higher purpose that connects your brand to your community and world sustainability. Make it easy for your customers to feel good about doing business with you. Stand for more than just a product or service they can buy. Give them an opportunity to make a difference.", color: NAVY }
       ],
       layers: [
         { k: 'Profit leaks', v: 'The symptom you see in sales and margins.' },
