@@ -54,15 +54,16 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section id="steps" style="padding: 24px 0 88px; background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>The 5 steps</div>
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Five steps to grow sales and margins in every store</h2>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Our signature method</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">The Profit Drivers SCALE Method</h2>
+<p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2vw, 24px); line-height: 1.35; font-weight: 600; color: #3873AF">5 steps to build your Profit Growth Accelerator</p>
 </div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
 <sc-for list="{{steps5}}" as="st" hint-placeholder-count="5">
 <li style="background: #FFFFFF; border: 1px solid #E1E6EB; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 24px -18px rgba(42,66,82,.35)">
 <div style="background: {{st.color}}; color: {{st.fg}}; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 10px">Step {{st.n}}</div>
 <div style="padding: 20px 18px 16px; display: flex; flex-direction: column; gap: 12px; flex: 1; text-align: center">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 1.25; font-weight: 700; color: #1F3550; min-height: 2.5em; display: flex; align-items: center; justify-content: center">{{st.t}}</h3>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 1.25; font-weight: 700; color: #1F3550; min-height: 3.8em; display: flex; align-items: center; justify-content: center"><span><span style="color: {{st.color}}; font-size: 1.35em; line-height: 1">{{st.l}}</span>{{st.t}}</span></h3>
 <span style="align-self: center; width: 44px; height: 3px; border-radius: 2px; background: {{st.color}}"></span>
 <p style="margin: 0; font-size: 15.5px; line-height: 1.55; color: #4F6270; flex: 1">{{st.d}}</p>
 <img src="{{st.img}}" alt="{{st.alt}}" style="display: block; width: 100%; height: auto; border-radius: 10px; margin-top: 6px">
@@ -305,11 +306,11 @@ class Component extends DCLogic {
     return {
       accent: this.props.accent ?? '#FFC873',
       steps5: [
-        { n: "1", color: "#1E95A8", fg: "#FFFFFF", t: "Make your brand unbeatable", d: "Create a winning brand strategy. Plan how to put the wow in your brand experience.", img: "/_blob/9c0dff61a256085c15ada2f4ed2c59ab", alt: "Brand Power Audit" },
-        { n: "2", color: "#FFA41B", fg: "#2A4252", t: "Connect with customers", d: "Grow brand loyalty with real-time feedback. Solve problems as they happen, before you lose sales.", img: "/_blob/2779a9d6a1f32bcc111f953bc2325d81", alt: "Customer Connect" },
-        { n: "3", color: "#8DC63F", fg: "#FFFFFF", t: "Engage your teams", d: "Share feedback. Engage your frontline teams in delivering an exceptional brand experience.", img: "/_blob/31c704c4c935ea23ab224db3af53c1ad", alt: "Team Engage" },
-        { n: "4", color: "#13B4E4", fg: "#FFFFFF", t: "Turbocharge promotions", d: "Create highly effective personalized promotions that maximize sales and minimize discounts.", img: "/_blob/401f826202507611ff91b02da1b5df32", alt: "Marketing Pro" },
-        { n: "5", color: "#1B3A6B", fg: "#FFFFFF", t: "Grow your profit margins", d: "Harness the power of AI with performance alerts and recommended actions for driving brand growth.", img: "/_blob/e4196b12c9013e3fc56715d78d4f41e2", alt: "AI Optimizer" }
+        { n: "1", color: "#1E95A8", fg: "#FFFFFF", l: "S", t: "et your Brand Growth Strategy", d: "Create a winning brand strategy. Plan how to put the wow in your brand experience.", img: "/_blob/9c0dff61a256085c15ada2f4ed2c59ab", alt: "Brand Power Audit" },
+        { n: "2", color: "#FFA41B", fg: "#2A4252", l: "C", t: "onnect with your customers", d: "Grow brand loyalty with real-time feedback. Solve problems as they happen, before you lose sales.", img: "/_blob/2779a9d6a1f32bcc111f953bc2325d81", alt: "Customer Connect" },
+        { n: "3", color: "#8DC63F", fg: "#FFFFFF", l: "A", t: "ctivate your teams", d: "Share feedback. Engage your frontline teams in delivering an exceptional brand experience.", img: "/_blob/31c704c4c935ea23ab224db3af53c1ad", alt: "Team Engage" },
+        { n: "4", color: "#13B4E4", fg: "#FFFFFF", l: "L", t: "ift sales with personalized marketing", d: "Create highly effective personalized promotions that maximize sales and minimize discounts.", img: "/_blob/401f826202507611ff91b02da1b5df32", alt: "Marketing Pro" },
+        { n: "5", color: "#1B3A6B", fg: "#FFFFFF", l: "E", t: "xpand your margins", d: "Harness the power of AI with performance alerts and recommended actions for driving brand growth.", img: "/_blob/e4196b12c9013e3fc56715d78d4f41e2", alt: "AI Optimizer" }
       ],
       others: [
         { n: "01", color: "#FFB042", t: "Customer service management", d: "Customer self-service that connects people to an associate when they need one." },
