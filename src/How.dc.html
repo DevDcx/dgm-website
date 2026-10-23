@@ -166,7 +166,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Leading indicators move in 90 days. Profit follows.</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px 20px">
-<sc-for list="{{results}}" as="s" hint-placeholder-count="6">
+<sc-for list="{{results}}" as="s" hint-placeholder-count="4">
 <div style="border-top: 2px solid #FFB042; padding-top: 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(34px, 3.8vw, 44px); line-height: 1; color: #FFB042">{{s.value}}</div>
 <div style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500">{{s.label}}</div>
@@ -253,9 +253,7 @@ class Component extends DCLogic {
         { value: "+150%", label: "Net Promoter Score", when: "Within 90 days" },
         { value: "20\u201325%", label: "More five-star reviews", when: "Within 90 days" },
         { value: "25\u201335%", label: "Offer engagement", when: "Within 90 days" },
-        { value: "12\u201325%", label: "More loyalty enrolment", when: "Within 90 days" },
-        { value: "+84%", label: "Average customer value", when: "After one year" },
-        { value: "+50%", label: "Customer visits", when: "After one year" }
+        { value: "12\u201325%", label: "More loyalty enrolment", when: "Within 90 days" }
       ],
       faqs: [
         { q: "How fast will we see results?", a: "Leading indicators like feedback, reviews and loyalty enrolment usually move within the first 90 days. Sales and margin follow, and our clients have seen the biggest financial gains over the first year." },
