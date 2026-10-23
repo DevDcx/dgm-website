@@ -162,11 +162,12 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <section style="padding: 88px 0; background: #2A4252; color: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 800px">
-<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">What clients have achieved</div>
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Leading indicators move in 90 days. Profit follows.</h2>
+<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #FFB042">What the research says</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Leading indicators move first. Profit follows.</h2>
 </div>
+<p style="margin: -24px 0 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 18px; line-height: 1.6; color: #C7D3DC; max-width: 66ch">Our clients see their leading indicators move within 90 days. Here is what independent research says happens to profit when they do.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px 20px">
-<sc-for list="{{results}}" as="s" hint-placeholder-count="4">
+<sc-for list="{{results}}" as="s" hint-placeholder-count="6">
 <div style="border-top: 2px solid #FFB042; padding-top: 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(34px, 3.8vw, 44px); line-height: 1; color: #FFB042">{{s.value}}</div>
 <div style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500">{{s.label}}</div>
@@ -201,8 +202,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px">
 <div style="background: #2A4252; color: #FFFFFF; border-radius: 16px; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between">
 <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">Find your 3 most expensive profit leaks and allocate resources to fix them before your 2027 budget is locked.</h2>
-<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">We take on 4 new 90-day engagements each quarter, and Q1 2027 is open now.</p>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">We take on 4 new 90-day engagements each quarter, and Q1 2027 is open now.</h2>
+<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">Find your 3 most expensive profit leaks and allocate resources to fix them before your 2027 budget is locked.</p>
 </div>
 <a href="Score.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Start with your free Profit Growth Score →</a>
 </div>
@@ -250,10 +251,12 @@ class Component extends DCLogic {
         { delivery: "Done by us", name: "Gold", price: "$27,000", per: "$9,000 a month for 3 months", d: "Everything in Silver, but we do the heavy lifting: setting up your tools and managing the metrics for you.", software: "Premium plus the growth packs in up to 3 pilot stores for 90 days, then year-one software at a 30% discount.", software2: "", excl: "Not included: custom POS and other system integrations, and AI usage costs.", support: "24-hour email support, a dedicated expert setting up your tools and managing the metrics on your plan, and weekly progress and feedback meetings.", guarantee: "Miss the agreed targets and get an extra 90 days of done-by-us management at no cost, with your software free for those 90 days.", gnote: "", flag: "", bg: "#FFFFFF", fg: "#2A4252", accent: "#3873AF", border: "1px solid #E1E6EB", rule: "#E1E6EB" }
       ],
       results: [
-        { value: "+150%", label: "Net Promoter Score", when: "Within 90 days" },
-        { value: "20\u201325%", label: "More five-star reviews", when: "Within 90 days" },
-        { value: "25\u201335%", label: "Offer engagement", when: "Within 90 days" },
-        { value: "12\u201325%", label: "More loyalty engagement", when: "Within 90 days" }
+        { value: "+150%", label: "Higher Net Promoter Score for our clients", when: "Drive Growth Management clients, within 90 days" },
+        { value: "2x", label: "Faster growth for Net Promoter leaders than their competitors", when: "Bain & Company" },
+        { value: "25\u201395%", label: "More profit from a 5% lift in customer retention", when: "Bain & Company" },
+        { value: "23%", label: "Higher profitability in highly engaged teams", when: "Gallup, 2024 meta-analysis" },
+        { value: "21\u201351%", label: "Lower turnover in highly engaged teams", when: "Gallup, 2024 meta-analysis" },
+        { value: "44%", label: "More productive: engaged employees compared with satisfied ones", when: "Bain & Company" }
       ],
       faqs: [
         { q: "How fast will we see results?", a: "Leading indicators like feedback, reviews and loyalty engagement usually move within the first 90 days. Sales and margin follow, and our clients have seen the biggest financial gains over the first year." },
