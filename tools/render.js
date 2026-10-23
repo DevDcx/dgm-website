@@ -105,6 +105,9 @@ const blobs = {
   '31c704c4c935ea23ab224db3af53c1ad': 'step-team-engage.png',
   '401f826202507611ff91b02da1b5df32': 'step-marketing-pro.png',
   'e4196b12c9013e3fc56715d78d4f41e2': 'step-ai-optimizer.png',
+  '9610572ff4ddb4b2ba9c39f0191951e4': 'ai-joyce.jpg',
+  'a12ed0e0d33c48f4f5ed01404debe3d2': 'ai-jamie.jpg',
+  '286c3e1322a590b2bdcef7a9b8f84eeb': 'ai-julia.jpg',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

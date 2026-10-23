@@ -44,14 +44,18 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What the AI actually does</div>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Meet your AI team</div>
 <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 4.8vw, 56px); line-height: 1.1; letter-spacing: -.02em; font-weight: 600; color: #3873AF">Get more from your frontline teams</h1>
 <p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.2vw, 26px); line-height: 1.3; font-weight: 600; color: #3873AF">AI acts like a low-cost extension of your team, improving frontline productivity.</p>
 </div>
 <sc-for list="{{examples}}" as="e" hint-placeholder-count="4">
-<div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 16px; border-bottom: 1px solid #D6DDE3">
-<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #3873AF">{{e.where}}</div>
-<p style="margin: 0">{{e.what}}</p>
+<div style="display: flex; gap: 16px; align-items: flex-start; padding-bottom: 18px; border-bottom: 1px solid #D6DDE3">
+<img src="{{e.img}}" alt="{{e.name}}, AI {{e.role}}" style="flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid #FFB042">
+<div style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
+<div style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: #2A4252">{{e.name}} <span style="color: #3873AF">| {{e.role}}</span></div>
+<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">{{e.spec}}</div>
+<p style="margin: 4px 0 0">{{e.what}}</p>
+</div>
 </div>
 </sc-for>
 </div>
@@ -105,10 +109,10 @@ class Component extends DCLogic {
     return {
       accent: this.props.accent ?? '#FFC873',
       examples: [
-        { where: 'Customer Service Agent', what: "Empowers customers to find what they need fast and quickly connect with associates when they need more help. It handles low-skill tasks, so your associates can spend more time with your customers. Collects valuable customer feedback after every customer service event." },
-        { where: 'HR Agent', what: 'Gives every new hire a positive onboarding experience with a personal learning plan. AI training avatars use role play to turn knowledge into skills. It checks in on team morale, so people are less likely to quit in the first 60 days.' },
-        { where: 'Marketing Agent', what: "Segments customers by their buying habits and value, sends personalized \u201ccome back\u201d offers, and tracks the sales lift and actual ROI on every marketing campaign. You discount less and get more sales for every marketing dollar you spend." },
-        { where: 'Jane, Growth Coach', what: "Jane watches your 8 Profit Drivers every week. AI replaces dashboards with real-time operations intelligence. Get alerts when performance drops and uncover the likely causes when average basket size or repeat visits fall. Get recommended actions to increase sales and profits in every store, every week." }
+        { img: '/_blob/9610572ff4ddb4b2ba9c39f0191951e4', name: 'Joyce', role: 'Customer Care', spec: 'Retail feedback specialist', what: "Empowers customers to find what they need fast and quickly connect with associates when they need more help. It handles low-skill tasks, so your associates can spend more time with your customers. Collects valuable customer feedback after every customer service event." },
+        { img: '/_blob/a12ed0e0d33c48f4f5ed01404debe3d2', name: 'Jamie', role: 'Frontline Team Coach', spec: 'Frontline team empowerment', what: 'Gives every new hire a positive onboarding experience with a personal learning plan. AI training avatars use role play to turn knowledge into skills. It checks in on team morale, so people are less likely to quit in the first 60 days.' },
+        { img: '/_blob/286c3e1322a590b2bdcef7a9b8f84eeb', name: 'Julia', role: 'Marketing Manager', spec: 'Personalization marketing specialist', what: "Segments customers by their buying habits and value, sends personalized \u201ccome back\u201d offers, and tracks the sales lift and actual ROI on every marketing campaign. You discount less and get more sales for every marketing dollar you spend." },
+        { img: '/_blob/0beb9ac97a75c7c36654ae2399419b45', name: 'Jane', role: 'Growth Coach', spec: 'Growth coach and data analyst', what: "Jane watches your 8 Profit Drivers every week. AI replaces dashboards with real-time operations intelligence. Get alerts when performance drops and uncover the likely causes when average basket size or repeat visits fall. Get recommended actions to increase sales and profits in every store, every week." }
       ]
     };
   }
