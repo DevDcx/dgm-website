@@ -100,6 +100,11 @@ const blobs = {
   'e0e513773ad28d76147f21c1dbb4b26c': 'brand-growth-strategy-wheel.png',
   'facca8809cf49114d8b9ad6fa388edd3': 'paul-ziv.jpg',
   'f1e6d6b069be741d78cda9983cab3ca0': 'jeff-sutton.jpg',
+  '9c0dff61a256085c15ada2f4ed2c59ab': 'step-brand-power-audit.png',
+  '2779a9d6a1f32bcc111f953bc2325d81': 'step-customer-connect.png',
+  '31c704c4c935ea23ab224db3af53c1ad': 'step-team-engage.png',
+  '401f826202507611ff91b02da1b5df32': 'step-marketing-pro.png',
+  'e4196b12c9013e3fc56715d78d4f41e2': 'step-ai-optimizer.png',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
