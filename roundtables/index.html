@@ -13,6 +13,57 @@
 body{margin:0}
 a{color:#3873AF}a:hover{color:#2A4252}
 </style>
+<style>
+.rt-pop{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;background:rgba(23,33,43,.62)}
+.rt-pop.open{display:flex}
+.rt-pop__card{width:100%;max-width:620px;margin:auto 0;background:#F4F6F8;border-radius:14px;padding:30px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);font-family:'Quicksand',system-ui,sans-serif;color:#2A4252;position:relative}
+.rt-pop__x{position:absolute;top:10px;right:12px;border:0;background:none;font-size:28px;line-height:1;color:#4F6270;cursor:pointer}
+.rt-pop h3{margin:0 0 6px;font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,28px);font-weight:600;text-align:center}
+.rt-pop__lead{margin:0 auto 20px;color:#4F6270;font-size:15.5px;text-align:center;max-width:46ch}
+.rt-pop__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.rt-pop input,.rt-pop select,.rt-pop textarea{width:100%;min-height:48px;padding:0 14px;border:1px solid #D6DDE3;border-radius:8px;font:inherit;font-size:16px;color:#2A4252;background:#fff}
+.rt-pop textarea{min-height:110px;padding:12px 14px;resize:vertical;margin-top:12px}
+.rt-pop__check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15px}
+.rt-pop__check input{width:18px;height:18px;min-height:0;margin-top:3px;flex:none}
+.rt-pop button[type=submit]{width:100%;min-height:54px;margin-top:18px;border:0;border-radius:28px;background:#2A4252;color:#fff;font:inherit;font-weight:700;font-size:17px;cursor:pointer}
+.rt-pop__fine{margin:12px 0 0;font-size:13px;color:#4F6270;text-align:center}
+.rt-pop__err{color:#A42E2E;font-size:14px;margin-top:10px;display:none}
+.rt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+<script>
+/* Roundtable waitlist pop-up. Keap connection: set action to the Keap form's process URL and map field names.
+   Until then, submitting opens an email to Dale with the details filled in. */
+window.DGM_RT = window.DGM_RT || { action: '', hidden: {}, fields: { first: 'inf_field_FirstName', last: 'inf_field_LastName', email: 'inf_field_Email', phone: 'inf_field_Phone1', company: 'inf_field_Company', title: 'inf_field_JobTitle', stores: 'inf_custom_NumberofStores', topics: 'inf_custom_RoundtableTopics' } };
+(function(){
+  function el(id){return document.getElementById(id)}
+  function open(focus){el('rt-pop-form').style.display='block';el('rt-pop-done').style.display='none';el('rt-pop').classList.add('open');setTimeout(function(){(focus==='topics'?el('rt-topics'):el('rt-first')).focus()},50)}
+  function close(){el('rt-pop').classList.remove('open')}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('[data-rt-open]'); if(t){e.preventDefault();open(t.getAttribute('data-rt-focus'));return}
+    if(e.target.id==='rt-pop'||(e.target.closest&&e.target.closest('.rt-pop__x'))) close();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el('rt-pop'))close()});
+  document.addEventListener('submit',function(e){
+    if(e.target.id!=='rt-pop-form') return; e.preventDefault();
+    var d={first:el('rt-first').value.trim(),last:el('rt-last').value.trim(),email:el('rt-email').value.trim(),phone:el('rt-phone').value.trim(),company:el('rt-company').value.trim(),title:el('rt-title').value.trim(),stores:el('rt-stores').value,topics:el('rt-topics').value.trim()};
+    var ok=d.first&&d.last&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)&&d.company&&d.title&&d.stores&&el('rt-leader').checked;
+    if(!ok){el('rt-pop-err').style.display='block';return}
+    el('rt-pop-err').style.display='none';
+    var cfg=window.DGM_RT||{};
+    if(cfg.action){
+      var f=document.createElement('form');f.method='POST';f.action=cfg.action;f.target='rt-pop-frame';f.style.display='none';
+      function add(n,v){var i=document.createElement('input');i.type='hidden';i.name=n;i.value=v;f.appendChild(i)}
+      Object.keys(cfg.hidden||{}).forEach(function(k){add(k,cfg.hidden[k])});
+      Object.keys(cfg.fields).forEach(function(k){add(cfg.fields[k],d[k]||'')});
+      document.body.appendChild(f);f.submit();setTimeout(function(){f.remove()},3000);
+    } else {
+      var body='Name: '+d.first+' '+d.last+'\nEmail: '+d.email+'\nMobile: '+d.phone+'\nCompany: '+d.company+'\nTitle: '+d.title+'\nStores: '+d.stores+'\nTopics: '+d.topics;
+      window.location.href='mailto:dale@drivegrowthwith.ai?subject='+encodeURIComponent('Roundtable waitlist: '+d.first+' '+d.last+', '+d.company)+'&body='+encodeURIComponent(body);
+    }
+    el('rt-pop-form').style.display='none';el('rt-pop-done').style.display='block';
+  });
+})();
+</script>
 <style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:1179px){nav[aria-label="Main"]{display:none!important}}
 .dgm-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;margin-left:auto;background:none;border:1px solid #E1E6EB;border-radius:8px;cursor:pointer}
 .dgm-burger span{display:block;height:2px;background:#2A4252;border-radius:2px;transition:transform .2s,opacity .2s}
@@ -74,7 +125,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(36px, 5vw, 56px); line-height: 1.08; letter-spacing: -.02em; font-weight: 700; color: #3873AF">AI Profitability Growth Roundtable</h1>
 <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.6; color: #2A4252; max-width: 60ch">How retail leaders are using AI to drive sales, keep good people and protect margins. A small, private conversation with executives from multi-unit chains, about what's working and what isn't.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center">
-<a href="mailto:dale@drivegrowthwith.ai?subject=Join%20the%20AI%20Profitability%20Growth%20Roundtable%20waitlist" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Join the waitlist →</a>
+<a href="#waitlist" data-rt-open style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Join the waitlist →</a>
 <a href="../profit-growth-score/" style="font-weight: 700; font-size: 17px; text-decoration: none">Or start with your free Profit Growth Score →</a>
 </div>
 </div>
@@ -103,71 +154,6 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>Who it's for</div>
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">Senior leaders of multi-unit retail and service chains</h2>
 <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #4F6270">CEOs, COOs, CMOs, CROs, VPs of Operations and growth leaders from retail, restaurant, pharmacy, grocery, home improvement and service chains. If a colleague from your leadership team would like to join you, let us know when you join the waitlist.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
-
-<div style="background: #FFFFFF; border-top: 4px solid #FFB042; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">Topic 1</div>
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">AI, people and the customer experience</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">What separates your best stores from the rest, and what actually improves team performance and keeps customers coming back.</p>
-</div>
-
-<div style="background: #FFFFFF; border-top: 4px solid #8DC63F; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">Topic 2</div>
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">AI, operations and financial performance</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Moving from siloed reports to connected, real-time performance management, and where AI makes the biggest difference.</p>
-</div>
-
-<div style="background: #FFFFFF; border-top: 4px solid #13C4E4; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">Topic 3</div>
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">AI growth strategies and competitive edge</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Using AI to strengthen what makes your brand different, and build market share and loyalty.</p>
-</div>
-
-</div>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2A4252; max-width: 72ch"><strong>How it runs:</strong> spotlight speakers open each topic, then we open it up for peer discussion and Q&amp;A. The agenda follows what the people in the room want to talk about.</p>
-<div style="background: #FFFFFF; border: 2px dashed #FFB042; border-radius: 12px; padding: 24px 26px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between">
-<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 600">Help set the agenda</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Join the waitlist and tell us which topics you'd most like to talk through with your peers.</p>
-</div>
-<a href="mailto:dale@drivegrowthwith.ai?subject=Roundtable%20topic%20ideas&body=Topics%20I%27d%20like%20to%20discuss%3A%20" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">Share your topics →</a>
-</div>
-</div>
-</section>
-
-<!-- ROOM -->
-<section style="padding: 72px 0; background: #FFFFFF">
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center">
-<img src="../images/roundtable-grid.jpg" alt="Retail and service executives on a video call during a roundtable" style="display: block; width: 100%; max-width: 980px; height: auto; border-radius: 12px">
-<p style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(19px, 2vw, 23px); line-height: 1.45; font-weight: 500; color: #2A4252; max-width: 60ch">A private virtual discussion with retail and service executives, exploring practical ways AI is being used to improve revenue, margins, customer loyalty and frontline productivity.</p>
-</div>
-</section>
-
-<!-- EXPECT -->
-<section style="padding: 88px 0; background: #F4F6F8">
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What you can expect</div>
-<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">An hour with peers who are facing the same challenges</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
-
-<div style="background: #FFFFFF; border-top: 4px solid #FFB042; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 600">Peer networking</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Connect with other senior retail leaders facing similar growth, margin, staffing and AI adoption challenges.</p>
-</div>
-
-<div style="background: #FFFFFF; border-top: 4px solid #8DC63F; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 600">Best practice sharing</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Find out how AI is creating measurable value across sales, operations, marketing, the customer experience and team productivity.</p>
-</div>
-
-<div style="background: #FFFFFF; border-top: 4px solid #13C4E4; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 600">Implementation support</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Leave with useful resources and ideas you can apply inside your own organization, to shortcut your way to AI that works.</p>
-</div>
-
 </div>
 </div>
 </section>
@@ -227,8 +213,47 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </div>
 </section>
 
-<!-- QUOTES -->
+<!-- EXPECT -->
 <section style="padding: 88px 0; background: #F4F6F8">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What you can expect</div>
+<h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">An hour with peers who are facing the same challenges</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+
+<div style="background: #FFFFFF; border-top: 4px solid #FFB042; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">Topic 1</div>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">AI, people and the customer experience</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">What separates your best stores from the rest, and what actually improves team performance and keeps customers coming back.</p>
+</div>
+
+<div style="background: #FFFFFF; border-top: 4px solid #8DC63F; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">Topic 2</div>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">AI, operations and financial performance</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Moving from siloed reports to connected, real-time performance management, and where AI makes the biggest difference.</p>
+</div>
+
+<div style="background: #FFFFFF; border-top: 4px solid #13C4E4; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #4F6270">Topic 3</div>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; line-height: 1.25; font-weight: 600">AI growth strategies and competitive edge</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Using AI to strengthen what makes your brand different, and build market share and loyalty.</p>
+</div>
+
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2A4252; max-width: 72ch"><strong>How it runs:</strong> spotlight speakers open each topic, then we open it up for peer discussion and Q&amp;A. The agenda follows what the people in the room want to talk about.</p>
+<div style="background: #FFFFFF; border: 2px dashed #FFB042; border-radius: 12px; padding: 24px 26px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between">
+<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 600">Help set the agenda</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4F6270">Join the waitlist and tell us which topics you'd most like to talk through with your peers.</p>
+</div>
+<a href="#waitlist" data-rt-open data-rt-focus="topics" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">Share your topics →</a>
+</div>
+</div>
+</section>
+
+<!-- QUOTES -->
+<section style="padding: 88px 0; background: #FFFFFF">
 <div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 36px">
 <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>What leaders say about working with Dale</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
@@ -305,10 +330,41 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; font-weight: 600">Seats are limited to 12 executives</h2>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 16px; color: #C7D3DC">Join the waitlist and we'll send you the date, the agenda and the guest speakers as soon as the next roundtable is set.</p>
 </div>
-<a href="mailto:dale@drivegrowthwith.ai?subject=Join%20the%20AI%20Profitability%20Growth%20Roundtable%20waitlist" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Join the waitlist →</a>
+<a href="#waitlist" data-rt-open style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 17px; text-decoration: none">Join the waitlist →</a>
 </div>
 </div>
 </section>
+
+<!-- WAITLIST POP-UP -->
+<div id="rt-pop" class="rt-pop" role="dialog" aria-modal="true" aria-labelledby="rt-pop-title">
+<div class="rt-pop__card">
+<button type="button" class="rt-pop__x" aria-label="Close">×</button>
+<form id="rt-pop-form" novalidate>
+<h3 id="rt-pop-title">Join the waitlist for a complimentary seat</h3>
+<p class="rt-pop__lead">Participation is limited to senior retail executives to encourage meaningful discussion and peer learning.</p>
+<div class="rt-pop__grid">
+<label class="rt-sr" for="rt-first">First name</label><input id="rt-first" placeholder="First name*" autocomplete="given-name" required>
+<label class="rt-sr" for="rt-last">Last name</label><input id="rt-last" placeholder="Last name*" autocomplete="family-name" required>
+<label class="rt-sr" for="rt-email">Business email</label><input id="rt-email" type="email" placeholder="Business email*" autocomplete="email" required>
+<label class="rt-sr" for="rt-phone">Mobile phone</label><input id="rt-phone" type="tel" placeholder="Mobile phone" autocomplete="tel">
+<label class="rt-sr" for="rt-company">Company</label><input id="rt-company" placeholder="Company*" autocomplete="organization" required>
+<label class="rt-sr" for="rt-title">Title or role</label><input id="rt-title" placeholder="Title or role*" autocomplete="organization-title" required>
+<label class="rt-sr" for="rt-stores">Number of stores</label><select id="rt-stores" required><option value="">Number of stores*</option><option>1 to 4</option><option>5 to 9</option><option>10 to 24</option><option>25 to 49</option><option>50 to 99</option><option>100 or more</option></select>
+</div>
+<label class="rt-sr" for="rt-topics">Topics</label><textarea id="rt-topics" placeholder="What's your biggest area of interest for improving profitability in your organization? (For example: personal productivity, service agents, training and performance management.)"></textarea>
+<label class="rt-pop__check"><input id="rt-leader" type="checkbox" required>I am a senior leader or decision maker in my organization.</label>
+<div id="rt-pop-err" class="rt-pop__err">Please fill in the starred fields and tick the box to confirm.</div>
+<button type="submit">Join the waitlist</button>
+<p class="rt-pop__fine">We'll review your request and send a confirmation email with the event details and executive resources.</p>
+</form>
+<div id="rt-pop-done" style="display: none; text-align: center">
+<h3>You're on the list</h3>
+<p class="rt-pop__lead">Thanks. We'll be in touch with the date, the agenda and the guest speakers as soon as the next roundtable is set.</p>
+<a href="../profit-growth-score/" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #FFB042; color: #2A4252; font-weight: 700; text-decoration: none">While you wait, get your free Profit Growth Score →</a>
+</div>
+</div>
+</div>
+<iframe name="rt-pop-frame" title="" style="display: none"></iframe>
 
 <!-- FOOTER -->
 <footer style="border-top: 1px solid #E1E6EB; padding: 32px 0; background: #FFFFFF">
