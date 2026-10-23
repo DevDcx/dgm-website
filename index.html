@@ -15,7 +15,20 @@ a{color:#3873AF}a:hover{color:#2A4252}
 @media (max-width: 640px){.drivers-cta{grid-column:auto !important}}
 </style>
 <script type="application/ld+json" id="faq-schema">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will improving retail profitability add to my tech costs?", "acceptedAnswer": {"@type": "Answer", "text": "In many cases we can reduce your tech costs by replacing a number of single-function tools with one multi-function retail platform. You only invest once you've seen your numbers and agreed on the targets, and every 90-day engagement is guaranteed to deliver on agreed targets."}}, {"@type": "Question", "name": "Do we have to replace our POS or existing systems?", "acceptedAnswer": {"@type": "Answer", "text": "No. Our platform connects to your existing POS and store systems through APIs, so all of your data comes together in one place. That's when the AI can spot patterns across every store."}}, {"@type": "Question", "name": "Is the free Profit Opportunity Review a sales call in disguise?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely not. You receive a free report with an optional complimentary 1:1 with Dale. There is no obligation to work with us, and you'll walk away with valuable insights either way."}}, {"@type": "Question", "name": "Who is the Profit Growth Score for?", "acceptedAnswer": {"@type": "Answer", "text": "Owners and operators of growing multi-unit pharmacy, retail and restaurant chains in the US and Canada who want innovative ways to improve both their customer and team experience, with the goal of growing sales and profit margins."}}, {"@type": "Question", "name": "How long does the Profit Growth Score assessment take?", "acceptedAnswer": {"@type": "Answer", "text": "About 10 minutes. You'll get a custom report with your overall Profit Growth Score and a breakdown for each of the 8 Profit Drivers."}}]}</script>
-<style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:900px){nav[aria-label="Main"]{display:none!important}}</style>
+<style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:900px){nav[aria-label="Main"]{display:none!important}}
+.dgm-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;margin-left:auto;background:none;border:1px solid #E1E6EB;border-radius:8px;cursor:pointer}
+.dgm-burger span{display:block;height:2px;background:#2A4252;border-radius:2px;transition:transform .2s,opacity .2s}
+.dgm-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.dgm-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.dgm-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.dgm-mnav{flex-basis:100%;display:flex;flex-direction:column;border-top:1px solid #E1E6EB;padding-top:6px;font-family:'Montserrat',sans-serif}
+.dgm-mnav[hidden]{display:none}
+.dgm-mnav a{display:block;padding:14px 2px;font-size:17px;font-weight:600;color:#2A4252;text-decoration:none;border-bottom:1px solid #EEF1F4}
+.dgm-mnav a.dgm-mnav-cta{margin:16px 0 8px;padding:15px 18px;border:0;border-radius:8px;background:#FFC873;color:#1F3550;text-align:center}
+@media (max-width:900px){.dgm-burger{display:flex}}
+@media (min-width:901px){.dgm-mnav{display:none!important}}
+</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.dgm-burger'),n=document.getElementById('dgm-mnav');if(!b||!n)return;function set(o){n.hidden=!o;b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}b.addEventListener('click',function(){set(n.hidden)});n.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})});</script>
 </head>
 <body>
 <div spellcheck="false" style="font-family: 'Quicksand', system-ui, sans-serif; font-weight: 500; color: #2A4252; background: #FFFFFF; font-size: 17px; line-height: 1.6">
@@ -38,6 +51,17 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <a href="growth-framework/" style="color: #2A4252; text-decoration: none">Radical Retail Growth</a>
 <a href="https://www.drivecx.com/ai-profitability-roundtable" style="color: #2A4252; text-decoration: none">Roundtables</a>
 <a href="https://www.drivecx.com/blog" style="color: #2A4252; text-decoration: none">Blog</a>
+</nav>
+<button type="button" class="dgm-burger" aria-label="Open menu" aria-expanded="false" aria-controls="dgm-mnav"><span></span><span></span><span></span></button>
+<nav id="dgm-mnav" class="dgm-mnav" aria-label="Mobile" hidden>
+<a href="our-clients/">Our clients</a>
+<a href="profit-growth-score/">Your Profit Growth Score</a>
+<a href="how-we-work/">How we work</a>
+<a href="how-ai-helps/">How AI helps</a>
+<a href="growth-framework/">Radical Retail Growth</a>
+<a href="https://www.drivecx.com/ai-profitability-roundtable">Roundtables</a>
+<a href="https://www.drivecx.com/blog">Blog</a>
+<a class="dgm-mnav-cta" href="profit-growth-score/">Get your Profit Growth Score &rarr;</a>
 </nav>
 </div>
 </header>

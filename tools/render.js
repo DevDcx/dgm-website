@@ -104,6 +104,17 @@ for (const [srcName, cfg] of Object.entries(pages)) {
   });
   page = page.replace(/href="#top"/g, `href="${up || './'}"`);
 
+  // Mobile menu: a menu button and drop-down panel that replace the main nav under 900px
+  page = page.replace(/(<nav aria-label="Main"[^>]*>)([\s\S]*?)(<\/nav>)/, (m, open, links, close) => {
+    const items = links.trim().split('\n').map(l => l.replace(/ style="[^"]*"/, '')).join('\n');
+    return `${m}
+<button type="button" class="dgm-burger" aria-label="Open menu" aria-expanded="false" aria-controls="dgm-mnav"><span></span><span></span><span></span></button>
+<nav id="dgm-mnav" class="dgm-mnav" aria-label="Mobile" hidden>
+${items}
+<a class="dgm-mnav-cta" href="${up}profit-growth-score/">Get your Profit Growth Score &rarr;</a>
+</nav>`;
+  });
+
   const doc = `<!doctype html>
 <html lang="en">
 <head>
@@ -114,7 +125,20 @@ for (const [srcName, cfg] of Object.entries(pages)) {
 ${DRAFT ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="${up}images/dgm-logo-mark.png">
 ${helmet.trim()}
-<style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:900px){nav[aria-label="Main"]{display:none!important}}</style>
+<style>html{scroll-behavior:smooth}*{box-sizing:border-box}img{max-width:100%}@media (max-width:900px){nav[aria-label="Main"]{display:none!important}}
+.dgm-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;margin-left:auto;background:none;border:1px solid #E1E6EB;border-radius:8px;cursor:pointer}
+.dgm-burger span{display:block;height:2px;background:#2A4252;border-radius:2px;transition:transform .2s,opacity .2s}
+.dgm-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.dgm-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.dgm-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.dgm-mnav{flex-basis:100%;display:flex;flex-direction:column;border-top:1px solid #E1E6EB;padding-top:6px;font-family:'Montserrat',sans-serif}
+.dgm-mnav[hidden]{display:none}
+.dgm-mnav a{display:block;padding:14px 2px;font-size:17px;font-weight:600;color:#2A4252;text-decoration:none;border-bottom:1px solid #EEF1F4}
+.dgm-mnav a.dgm-mnav-cta{margin:16px 0 8px;padding:15px 18px;border:0;border-radius:8px;background:#FFC873;color:#1F3550;text-align:center}
+@media (max-width:900px){.dgm-burger{display:flex}}
+@media (min-width:901px){.dgm-mnav{display:none!important}}
+</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.dgm-burger'),n=document.getElementById('dgm-mnav');if(!b||!n)return;function set(o){n.hidden=!o;b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}b.addEventListener('click',function(){set(n.hidden)});n.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})});</script>
 </head>
 <body>
 ${page.trim()}
