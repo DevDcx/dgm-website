@@ -39,7 +39,6 @@ Update these as the new pages are built.
 
 | Link | Where it appears | Points to now |
 |---|---|---|
-| Start your free assessment | Score page (hero, close) | drivecx.com/get-your-growth-score |
 | How we work | Top menu | drivecx.com/revenue-growth-management-services |
 | Radical Retail Growth, Get the book | Top menu, GROWTH section | drivecx.com/get-radical-retail-growth |
 | Roundtables, Ask about the next Roundtable | Top menu, GROWTH section | drivecx.com/ai-profitability-roundtable |
