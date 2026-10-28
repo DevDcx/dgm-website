@@ -73,6 +73,21 @@ const pages = {
     title: 'The G.R.O.W.T.H Framework from Radical Retail Growth | Drive Growth Management',
     description: 'The 6 principles behind the 8 Profit Drivers, from the book Radical Retail Growth by Dale Dubberley. Learn the framework and buy the book.',
   },
+  'Resources.dc.html': {
+    out: 'free-resources/index.html', depth: 1,
+    title: 'Free Growth Resources from Radical Retail Growth | The Profit Drivers SCALE Method | Drive Growth Management',
+    description: 'Free resources from the book Radical Retail Growth: the 5 steps of The Profit Drivers SCALE Method, blogs, videos, free growth tools and the DGM Profit Growth Academy.',
+  },
+  'Toolkit.dc.html': {
+    out: 'free-resources/toolkit/index.html', depth: 2,
+    title: 'Profit Growth Resources | Free Scorecards, ROI Calculators and Guides | Drive Growth Management',
+    description: 'Free scorecards, ROI calculators, guides, templates and blog posts for each step of The Profit Drivers SCALE Method, for multi-unit pharmacy, retail and restaurant chains.',
+  },
+  'Academy.dc.html': {
+    out: 'academy/index.html', depth: 1,
+    title: 'DGM Profit Growth Academy | Members Training | Drive Growth Management',
+    description: 'Members-only training for The Profit Drivers SCALE Method, for Drive Growth Management clients and subscribers.',
+  },
 };
 
 // Uploaded design images -> files in images/

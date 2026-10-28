@@ -9,6 +9,10 @@ The Drive Growth Management website, published with GitHub Pages.
 | `index.html` | Homepage |
 | `profit-growth-score/index.html` | Profit Growth Score landing page |
 | `brand-growth-strategy/index.html` | Brand Growth Strategy MasterClass page (replaces drivecx.com/brand-growth-strategy) |
+| `free-resources/index.html` | Free Growth Resources hub: SCALE steps + 4 tiles (Blogs, Videos, Profit Growth Resources, Academy). Landing page for the book QR (drivecx.com/xm-resources.com redirects here) |
+| `free-resources/toolkit/index.html` | Profit Growth Resources: free tools by SCALE step (replaces drivecx.com/rgm-tools) |
+| `academy/index.html` | DGM Profit Growth Academy, members only (replaces drivecx.com/academy). Gate with Cloudflare Access on `/academy/*` |
+| `FreeResources/` | Alias that forwards to `free-resources/` |
 | `blog/` | Blog index and one folder per post, built from `posts/` |
 | `posts/` | One file per blog post. Add a post by copying a file, changing the top lines (title, date, topic, dek, hero, heroAlt) and writing the post under the `---` line. Topics: strategy, customers, teams, marketing, ai |
 | `images/` | Logo, flywheel, book and coach images |
@@ -45,7 +49,6 @@ Update these as the new pages are built.
 | Blog images | Blog page and posts | static.wixstatic.com (copy into images/ before Wix is cancelled) |
 | Book a Profit Opportunity Review | Blog posts | drivecx.com/growth-consultation |
 | Or book a Profit Opportunity Review | Homepage close | drivecx.com/growth-consultation |
-| Resources | Footer | drivecx.com/rgm-resources |
 | Dale Dubberley, About | Author band, footer | drivecx.com/communicate-collaborate-innovate |
 | Privacy, Terms | Footer | drivecx.com/privacy, drivecx.com/terms |
 | Login | Footer | console.drivecx.com |
@@ -65,3 +68,10 @@ All four site forms post to one Zapier workflow, **DGM Website Forms to Keap** (
 Field mapping: name / first and last name, email, phone, company (Company + custom Company Name), title or role (Job Title, Role), industry, stores (Locations), topics and seat format (Challenges/Goals), UTM source/medium/campaign.
 
 To add a new form: post to `DGM_FORMS_HOOK` with a new `form` value, then add that value and its tag ID to the `FORMS` table in the workflow.
+
+## DGM Profit Growth Academy login
+
+The Academy page is plain HTML, so the login comes from Cloudflare Access (Zero Trust, free up to 50 users), not from the page.
+Members get a one-time code by email. To add a member, add their email to the Access policy for `drivegrowthmanagement.com/academy`.
+To add lessons, edit the `lessons` lists in `src/Academy.dc.html` and rebuild.
+Note: while this repo is public, the Academy page source is visible on GitHub. Make the repo private once the site is deployed from Cloudflare Pages.
