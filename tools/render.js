@@ -76,7 +76,7 @@ const pages = {
   'Resources.dc.html': {
     out: 'free-resources/index.html', depth: 1,
     title: 'Free Growth Resources from Radical Retail Growth | The Profit Drivers SCALE Method | Drive Growth Management',
-    description: 'Free resources from the book Radical Retail Growth: the 5 steps of The Profit Drivers SCALE Method, blogs, videos, free growth tools and the DGM Profit Growth Academy.',
+    description: 'Free resources from the book Radical Retail Growth: the 5 steps of The Profit Drivers SCALE Method, blogs, videos, free growth tools and the Profit Growth Academy.',
   },
   'Toolkit.dc.html': {
     out: 'free-resources/toolkit/index.html', depth: 2,
