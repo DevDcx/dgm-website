@@ -32,9 +32,10 @@ a{color:#3873AF}a:hover{color:#2A4252}
 .rt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 <script>
-/* Roundtable waitlist pop-up. Keap connection: set action to the Keap form's process URL and map field names.
-   Until then, submitting opens an email to Dale with the details filled in. */
-window.DGM_RT = window.DGM_RT || { action: '', hidden: {}, fields: { first: 'inf_field_FirstName', last: 'inf_field_LastName', email: 'inf_field_Email', phone: 'inf_field_Phone1', company: 'inf_field_Company', title: 'inf_field_JobTitle', stores: 'inf_custom_NumberofStores', topics: 'inf_custom_RoundtableTopics' } };
+/* Roundtable waitlist pop-up. Sends the form to the Zapier workflow "DGM Website Forms to Keap",
+   which creates or updates the Keap contact and applies tag 968 (Executive Roundtable Waitlist).
+   If the send fails, it falls back to opening an email to Dale with the details filled in. */
+window.DGM_FORMS_HOOK = window.DGM_FORMS_HOOK || 'https://hooks.zapier.com/hooks/catch/495935/CCNLdhnVhbiNq1Iwk/';
 (function(){
   function el(id){return document.getElementById(id)}
   function open(focus){el('rt-pop-form').style.display='block';el('rt-pop-done').style.display='none';el('rt-pop').classList.add('open');setTimeout(function(){(focus==='topics'?el('rt-topics'):el('rt-first')).focus()},50)}
@@ -50,17 +51,13 @@ window.DGM_RT = window.DGM_RT || { action: '', hidden: {}, fields: { first: 'inf
     var ok=d.first&&d.last&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)&&d.company&&d.title&&d.stores&&el('rt-leader').checked;
     if(!ok){el('rt-pop-err').style.display='block';return}
     el('rt-pop-err').style.display='none';
-    var cfg=window.DGM_RT||{};
-    if(cfg.action){
-      var f=document.createElement('form');f.method='POST';f.action=cfg.action;f.target='rt-pop-frame';f.style.display='none';
-      function add(n,v){var i=document.createElement('input');i.type='hidden';i.name=n;i.value=v;f.appendChild(i)}
-      Object.keys(cfg.hidden||{}).forEach(function(k){add(k,cfg.hidden[k])});
-      Object.keys(cfg.fields).forEach(function(k){add(cfg.fields[k],d[k]||'')});
-      document.body.appendChild(f);f.submit();setTimeout(function(){f.remove()},3000);
-    } else {
+    var data={form:'roundtable',first_name:d.first,last_name:d.last,email:d.email,phone:d.phone,company:d.company,title:d.title,stores:d.stores,topics:d.topics};
+    var q=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))data[k]=q.get(k)});
+    function mailFallback(){
       var body='Name: '+d.first+' '+d.last+'\nEmail: '+d.email+'\nMobile: '+d.phone+'\nCompany: '+d.company+'\nTitle: '+d.title+'\nStores: '+d.stores+'\nTopics: '+d.topics;
       window.location.href='mailto:dale@drivegrowthwith.ai?subject='+encodeURIComponent('Roundtable waitlist: '+d.first+' '+d.last+', '+d.company)+'&body='+encodeURIComponent(body);
     }
+    try{fetch(window.DGM_FORMS_HOOK,{method:'POST',body:new URLSearchParams(data),keepalive:true}).then(function(r){if(!r.ok)mailFallback()}).catch(mailFallback)}catch(e){mailFallback()}
     el('rt-pop-form').style.display='none';el('rt-pop-done').style.display='block';
   });
 })();

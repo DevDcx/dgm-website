@@ -50,4 +50,18 @@ Update these as the new pages are built.
 | Privacy, Terms | Footer | drivecx.com/privacy, drivecx.com/terms |
 | Login | Footer | console.drivecx.com |
 | Get help | Footer | support@drivecx.com |
-| MasterClass application form | Brand Growth Strategy page | Not connected yet: paste the Zapier Catch Hook URL into `WEBHOOK_URL` in `src/Brand.dc.html` (Keap tag `MC-Apply`) |
+
+## Forms and Keap
+
+All four site forms post to one Zapier workflow, **DGM Website Forms to Keap** (https://zapier.com/workflow/01a18045-eb32-768f-b544-c51e6ca0a572). It creates or updates the Keap contact by email, saves the form details, sets Lead Source, and applies the tag.
+
+| Form | Page | `form` value | Keap tag |
+|---|---|---|---|
+| 15 Profit Leaks download gate | `15-profit-leaks/` | `leaks` | 962 15 Profit Leaks Download |
+| 8 Profit Drivers download gate | `profit-growth-score/` | `drivers` | 964 8 Profit Drivers Download |
+| Roundtable waitlist pop-up | `roundtables/` | `roundtable` | 968 Executive Roundtable Waitlist |
+| MasterClass application | `brand-growth-strategy/` | `masterclass` | 876 Brand Growth Session Waitlist |
+
+Field mapping: name / first and last name, email, phone, company (Company + custom Company Name), title or role (Job Title, Role), industry, stores (Locations), topics and seat format (Challenges/Goals), UTM source/medium/campaign.
+
+To add a new form: post to `DGM_FORMS_HOOK` with a new `form` value, then add that value and its tag ID to the `FORMS` table in the workflow.

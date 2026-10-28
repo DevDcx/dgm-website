@@ -322,7 +322,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
           </label>
         </div>
         <input type="hidden" name="lead_magnet" value="masterclass">
-        <input type="hidden" name="keap_tag" value="MC-Apply">
+        <input type="hidden" name="form" value="masterclass">
         <input type="hidden" id="f-src" name="utm_source">
         <input type="hidden" id="f-med" name="utm_medium">
         <input type="hidden" id="f-camp" name="utm_campaign">
@@ -380,8 +380,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </footer>
 
 <script>
-/* Paste your Zapier "Catch Hook" URL here. The hidden keap_tag (MC-Apply) tells the Zap which Keap tag to apply. */
-const WEBHOOK_URL = '';
+/* Zapier workflow "DGM Website Forms to Keap": creates or updates the Keap contact and applies tag 876 (Brand Growth Session Waitlist). */
+const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/495935/CCNLdhnVhbiNq1Iwk/';
 
 function track(event){ try { if (window.gtag) gtag('event', event, { page_key: 'masterclass' }); } catch(e){} }
 
