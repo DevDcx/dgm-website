@@ -123,6 +123,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </a>
 </sc-for>
 </div>
+<sc-for list="{{cta1}}" as="c" hint-placeholder-count="1">
+<div><a href="{{c.href}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">{{c.t}} →</a></div>
+</sc-for>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #4F6270">From the blog</div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
@@ -155,6 +158,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </a>
 </sc-for>
 </div>
+<sc-for list="{{cta2}}" as="c" hint-placeholder-count="1">
+<div><a href="{{c.href}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">{{c.t}} →</a></div>
+</sc-for>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #4F6270">From the blog</div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
@@ -187,6 +193,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </a>
 </sc-for>
 </div>
+<sc-for list="{{cta3}}" as="c" hint-placeholder-count="1">
+<div><a href="{{c.href}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">{{c.t}} →</a></div>
+</sc-for>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #4F6270">From the blog</div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
@@ -219,6 +228,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </a>
 </sc-for>
 </div>
+<sc-for list="{{cta4}}" as="c" hint-placeholder-count="1">
+<div><a href="{{c.href}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">{{c.t}} →</a></div>
+</sc-for>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #4F6270">From the blog</div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
@@ -251,6 +263,9 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </a>
 </sc-for>
 </div>
+<sc-for list="{{cta5}}" as="c" hint-placeholder-count="1">
+<div><a href="{{c.href}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 6px; background: #2A4252; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">{{c.t}} →</a></div>
+</sc-for>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: #4F6270">From the blog</div>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
@@ -381,14 +396,12 @@ class Component extends DCLogic {
           "tool": "AI Optimizer"
         }
       ],
+      "cta1": [{"t": "Get your Profit Growth Score", "href": "Score.dc.html"}],
+      "cta2": [{"t": "Get your free comment card", "href": "https://subscription.drivecx.com/signup/lite"}],
+      "cta3": [],
+      "cta4": [],
+      "cta5": [{"t": "Meet Jane, your profit growth coach", "href": "AI.dc.html"}],
       "tools1": [
-        {
-          "type": "Scorecard",
-          "t": "Profit Growth Score",
-          "d": "A free 10-minute assessment of the 8 Profit Drivers. Get your score out of 10, your 3 biggest profit leaks and how you compare.",
-          "href": "Score.dc.html",
-          "cta": "Get your score"
-        },
         {
           "type": "MasterClass",
           "t": "Brand Growth Strategy MasterClass",
@@ -436,13 +449,6 @@ class Component extends DCLogic {
           "cta": "Run the numbers"
         },
         {
-          "type": "Free tool",
-          "t": "Your free comment card",
-          "d": "A custom-branded comment card that tells you what customers love and what to fix.",
-          "href": "https://subscription.drivecx.com/signup/lite",
-          "cta": "Get your comment card"
-        },
-        {
           "type": "eBook",
           "t": "Turn Feedback Into Sales",
           "d": "A step-by-step guide to growing sales with real-time customer feedback.",
@@ -487,6 +493,13 @@ class Component extends DCLogic {
           "d": "See what lower turnover and higher productivity are worth across your stores.",
           "href": "https://www.drivecx.com/engage-teams-for-productivity-gains",
           "cta": "Run the numbers"
+        },
+        {
+          "type": "eBook",
+          "t": "Team Engage eBook",
+          "d": "How to get the best from your frontline teams and keep your good people.",
+          "href": "#step-3",
+          "cta": "Coming soon"
         }
       ],
       "blogs3": [
@@ -519,6 +532,13 @@ class Component extends DCLogic {
           "d": "See how personalized offers grow customer value and cut discounting.",
           "href": "https://www.drivecx.com/turbocharge-promo-roi",
           "cta": "Run the numbers"
+        },
+        {
+          "type": "eBook",
+          "t": "Promotions ROI Builder eBook",
+          "d": "How to grow sales with personalized offers instead of discounts.",
+          "href": "#step-4",
+          "cta": "Coming soon"
         }
       ],
       "blogs4": [
@@ -546,11 +566,11 @@ class Component extends DCLogic {
           "cta": "Run the numbers"
         },
         {
-          "type": "AI coach",
-          "t": "Meet Jane, your AI Growth Coach",
-          "d": "Jane watches your 8 Profit Drivers every week and tells you what to fix first.",
-          "href": "AI.dc.html",
-          "cta": "Meet Jane"
+          "type": "eBook",
+          "t": "Breaking the Growth Plateau",
+          "d": "Practical strategies for franchise operators to tackle turnover, lift frontline productivity and scale profitably.",
+          "href": "#step-5",
+          "cta": "Coming soon"
         }
       ],
       "blogs5": [
