@@ -53,7 +53,9 @@ window.DGM_FORMS_HOOK = window.DGM_FORMS_HOOK || 'https://hooks.zapier.com/hooks
     if(!d.name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)||!d.stores){el('dgm-gate-err').style.display='block';return}
     el('dgm-gate-err').style.display='none';
     sendToKeap(pending.key,d); startDownload(pending.href,pending.name);
-    el('dgm-gate-form').style.display='none'; el('dgm-gate-done').style.display='block';
+    /* Close the form while the download starts, then show the next-step message 2 seconds later. */
+    el('dgm-gate').classList.remove('open');
+    setTimeout(function(){el('dgm-gate-form').style.display='none'; el('dgm-gate-done').style.display='block'; el('dgm-gate').classList.add('open')},2000);
   });
   document.addEventListener('click',function(e){
     if(e.target.id==='dgm-gate'||(e.target.closest&&e.target.closest('.dgm-gate__x'))) el('dgm-gate').classList.remove('open');
@@ -121,10 +123,6 @@ window.DGM_FORMS_HOOK = window.DGM_FORMS_HOOK || 'https://hooks.zapier.com/hooks
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px">
 <a href="../images/../downloads/15-retail-profit-leaks.pdf" download="15-Retail-Profit-Leaks-Drive-Growth-Management.pdf" data-gate="leaks" data-gate-title="the 15 Profit Leaks guide" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 6px; background: #FFB042; color: #2A4252; font-weight: 700; font-size: 18px; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(255,142,0,.7)">Download the free guide (PDF) →</a>
 <p style="margin: 0; font-size: 15px; font-weight: 600; color: #2A4252">18 pages. Free. More than 400 retail leaders subscribed after this guide ran on LinkedIn.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding-top: 18px; border-top: 1px solid rgba(42,66,82,.15)">
-<span style="font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.8vw, 21px); font-weight: 600; color: #2A4252">Ready to find your leaks?</span>
-<a href="../profit-growth-score/" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 6px; border: 2px solid #2A4252; color: #2A4252; font-weight: 700; font-size: 18px; text-decoration: none">Get your Profit Growth Score →</a>
 </div>
 </div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
@@ -262,9 +260,9 @@ window.DGM_FORMS_HOOK = window.DGM_FORMS_HOOK || 'https://hooks.zapier.com/hooks
 <p class="dgm-gate__fine">We'll send you occasional retail profit insights. Unsubscribe anytime.</p>
 </form>
 <div id="dgm-gate-done" style="display: none">
-<h3>Your download has started</h3>
+<h3>You now have the 15 Top Retail Profit Leaks</h3>
 <p>Ready to see which leaks are costing your stores the most? Get your free Profit Growth Score now. It takes about 10 minutes.</p>
-<a class="dgm-gate__go" href="../profit-growth-score/">Get your Profit Growth Score →</a>
+<a class="dgm-gate__go" href="../profit-growth-score/">Ready to find your leaks?</a>
 </div>
 </div>
 </div>
