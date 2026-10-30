@@ -18,11 +18,6 @@ const pages = {
     title: 'Get Your Profit Growth Score | Free 8 Profit Drivers Assessment | Drive Growth Management',
     description: 'A free 10-minute assessment for multi-unit pharmacy, retail and restaurant chains. Get your Profit Growth Score, a breakdown of all 8 Profit Drivers, and your 3 biggest profit leaks.',
   },
-  'Clients.dc.html': {
-    out: 'our-clients/index.html', depth: 1,
-    title: 'Our Clients | Pharmacy and Restaurant Case Studies | Drive Growth Management',
-    description: 'Results and case studies from multi-unit pharmacy and restaurant chains using the 8 Profit Drivers.',
-  },
   'ClientsPharmacy.dc.html': {
     out: 'our-clients/pharmacy/index.html', depth: 2,
     title: "Pharmacy Case Studies | Murphy's Pharmacies | Drive Growth Management",
@@ -89,6 +84,13 @@ const pages = {
     description: 'Members-only training for The Profit Drivers SCALE Method, for Drive Growth Management clients and subscribers.',
   },
 };
+
+// Industry case study pages shown under "Our clients" in the top menu.
+// To add an industry: build its page, add it to `pages` above, then add one line here.
+const clientIndustries = [
+  { label: 'Pharmacy', src: 'ClientsPharmacy.dc.html' },
+  { label: 'Restaurants', src: 'ClientsRestaurants.dc.html' },
+];
 
 // Uploaded design images -> files in images/
 const blobs = {
@@ -213,8 +215,13 @@ function build(srcName, cfg, props, extraHead, bodyHtml) {
   page = page.replace(/href="#top"/g, `href="${up || './'}"`);
 
   // Mobile menu: a menu button and drop-down panel that replace the main nav under 1180px
+  const pagePath = src => (up + pages[src].out.replace(/index\.html$/, '')) || './';
   page = page.replace(/(<nav aria-label="Main"[^>]*>)([\s\S]*?)(<\/nav>)/, (m, open, links, close) => {
-    const items = links.trim().split('\n').map(l => l.replace(/ style="[^"]*"/, '')).join('\n');
+    const items = links.trim().split('\n').map(l => l.replace(/ style="[^"]*"/, '')).map(l => /data-clients-menu/.test(l)
+      ? clientIndustries.map(c => `<a href="${pagePath(c.src)}">Our clients: ${c.label}</a>`).join('\n')
+      : l).join('\n');
+    // Desktop: "Our clients" opens a small menu of industry pages
+    m = m.replace(/<a ([^>]*)data-clients-menu([^>]*)>Our clients<\/a>/, (a, pre, post) => `<div class="dgm-dd"><a ${pre}aria-haspopup="true"${post}>Our clients <span aria-hidden="true" style="font-size:11px">&#9662;</span></a><div class="dgm-dd-menu">${clientIndustries.map(c => `<a href="${pagePath(c.src)}">${c.label}</a>`).join('')}</div></div>`);
     return `${m}
 <button type="button" class="dgm-burger" aria-label="Open menu" aria-expanded="false" aria-controls="dgm-mnav"><span></span><span></span><span></span></button>
 <nav id="dgm-mnav" class="dgm-mnav" aria-label="Mobile" hidden>
@@ -244,6 +251,12 @@ ${helmet.trim()}
 .dgm-mnav[hidden]{display:none}
 .dgm-mnav a{display:block;padding:14px 2px;font-size:17px;font-weight:600;color:#2A4252;text-decoration:none;border-bottom:1px solid #EEF1F4}
 .dgm-mnav a.dgm-mnav-cta{margin:16px 0 8px;padding:15px 18px;border:0;border-radius:8px;background:#FFC873;color:#1F3550;text-align:center}
+.dgm-dd{position:relative}
+.dgm-dd-menu{display:none;position:absolute;left:-14px;top:calc(100% + 8px);z-index:50;min-width:180px;padding:8px 0;background:#FFFFFF;border:1px solid #E1E6EB;border-radius:8px;box-shadow:0 8px 24px rgba(31,53,80,.12)}
+.dgm-dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}
+.dgm-dd:hover .dgm-dd-menu,.dgm-dd:focus-within .dgm-dd-menu{display:block}
+.dgm-dd-menu a{display:block;padding:10px 16px;color:#2A4252;text-decoration:none;font-weight:600;white-space:nowrap}
+.dgm-dd-menu a:hover{background:#F4F6F8;color:#3873AF}
 @media (max-width:1179px){.dgm-burger{display:flex}}
 @media (min-width:1180px){.dgm-mnav{display:none!important}}
 </style>

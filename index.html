@@ -26,6 +26,12 @@ a{color:#3873AF}a:hover{color:#2A4252}
 .dgm-mnav[hidden]{display:none}
 .dgm-mnav a{display:block;padding:14px 2px;font-size:17px;font-weight:600;color:#2A4252;text-decoration:none;border-bottom:1px solid #EEF1F4}
 .dgm-mnav a.dgm-mnav-cta{margin:16px 0 8px;padding:15px 18px;border:0;border-radius:8px;background:#FFC873;color:#1F3550;text-align:center}
+.dgm-dd{position:relative}
+.dgm-dd-menu{display:none;position:absolute;left:-14px;top:calc(100% + 8px);z-index:50;min-width:180px;padding:8px 0;background:#FFFFFF;border:1px solid #E1E6EB;border-radius:8px;box-shadow:0 8px 24px rgba(31,53,80,.12)}
+.dgm-dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}
+.dgm-dd:hover .dgm-dd-menu,.dgm-dd:focus-within .dgm-dd-menu{display:block}
+.dgm-dd-menu a{display:block;padding:10px 16px;color:#2A4252;text-decoration:none;font-weight:600;white-space:nowrap}
+.dgm-dd-menu a:hover{background:#F4F6F8;color:#3873AF}
 @media (max-width:1179px){.dgm-burger{display:flex}}
 @media (min-width:1180px){.dgm-mnav{display:none!important}}
 </style>
@@ -47,7 +53,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 15px; font-weight: 600">
 <a href="how-we-work/" style="color: #2A4252; text-decoration: none">How we work</a>
 <a href="how-ai-helps/" style="color: #2A4252; text-decoration: none">How AI helps</a>
-<a href="our-clients/" style="color: #2A4252; text-decoration: none">Our clients</a>
+<div class="dgm-dd"><a href="our-clients/pharmacy/" aria-haspopup="true" style="color: #2A4252; text-decoration: none">Our clients <span aria-hidden="true" style="font-size:11px">&#9662;</span></a><div class="dgm-dd-menu"><a href="our-clients/pharmacy/">Pharmacy</a><a href="our-clients/restaurants/">Restaurants</a></div></div>
 <a href="growth-framework/" style="color: #2A4252; text-decoration: none">Radical Retail Growth</a>
 <a href="roundtables/" style="color: #2A4252; text-decoration: none">Roundtables</a>
 <a href="blog/" style="color: #2A4252; text-decoration: none">Blog</a>
@@ -56,7 +62,8 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <nav id="dgm-mnav" class="dgm-mnav" aria-label="Mobile" hidden>
 <a href="how-we-work/">How we work</a>
 <a href="how-ai-helps/">How AI helps</a>
-<a href="our-clients/">Our clients</a>
+<a href="our-clients/pharmacy/">Our clients: Pharmacy</a>
+<a href="our-clients/restaurants/">Our clients: Restaurants</a>
 <a href="growth-framework/">Radical Retail Growth</a>
 <a href="roundtables/">Roundtables</a>
 <a href="blog/">Blog</a>
@@ -228,7 +235,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="flex: 999 1 420px; min-width: 0"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><blockquote style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; font-weight: 500; color: #FFFFFF">"We learned more about our customers in one week by connecting directly with them than we did spending $30K with a market research firm."</blockquote><figcaption style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #C7D3DC">CEO and Founder, restaurant group</figcaption></figure></div>
 </div>
 </div>
-<div><a href="our-clients/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how our clients get more profitable growth →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="our-clients/pharmacy/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how pharmacies get more profitable growth →</a><a href="our-clients/restaurants/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how restaurants get more profitable growth →</a></div>
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 14px; color: #C7D3DC; border-top: 1px solid rgba(255,255,255,.16); padding-top: 18px">Results from Drive Growth Management clients in pharmacy and restaurants. Leading indicators were achieved within the first 90 days. Financial results were measured after one year.</p>
 </div>
 </section>
@@ -471,7 +478,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 </figure>
 
 </div>
-<div><a href="our-clients/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how our clients get more profitable growth →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="our-clients/pharmacy/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how pharmacies get more profitable growth →</a><a href="our-clients/restaurants/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 6px; background: #FFC873; color: #2A4252; font-weight: 700; font-size: 16px; text-decoration: none">See how restaurants get more profitable growth →</a></div>
 </div>
 </section>
 
