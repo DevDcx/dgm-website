@@ -126,6 +126,7 @@ const blobs = {
   'a12ed0e0d33c48f4f5ed01404debe3d2': 'ai-jamie.jpg',
   '286c3e1322a590b2bdcef7a9b8f84eeb': 'ai-julia.jpg',
   '0f37918d1ad7b0ac785b430aada3b6ce': 'store-visit-growth-loop.webp',
+  'ce6882ea2b8901ef1ba441d223b5c696': 'restaurant-visit-growth-loop.webp',
 };
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
