@@ -11,37 +11,41 @@ Most retail leaders are immersed in the day-to-day demands of running the busine
 
 The challenge is that every leadership team has strengths. Some excel at operations. Others are exceptional marketers or outstanding people leaders. Those strengths can also create blind spots, leaving opportunities in other parts of the business unnoticed.
 
-After working with multi-location retailers for many years, I've found that sustainable, profitable growth consistently comes back to four management pillars supported by eight measurable drivers.
+After working with multi-location retailers for many years, I've found that sustainable, profitable growth consistently comes back to one strategy at the centre and four steps around it, supported by eight measurable drivers. I call it the Profit Drivers SCALE Method.
 
-## The 4 Management Pillars
+## The 5 Steps of the SCALE Method
 
-### 1. Connect with Customers
+### S. Set your Brand Growth Strategy
+
+Know why customers choose you over the store down the road, and put everything into making that stronger. It guides where you innovate and where you spend.
+
+### C. Connect with your customers
 
 Build systems that consistently create great customer experiences, repeat visits, and long-term loyalty.
 
-### 2. Engage Your Employees
+### A. Activate your teams
 
 Develop engaged, accountable frontline teams that stay longer, perform better, and raise the bar on the customer experience.
 
-### 3. Personalize Marketing
+### L. Lift sales with personalized marketing
 
 Understand who buys, why they buy, and how to create targeted promotions that increase sales without relying on blanket discounting.
 
-### 4. Optimize Margins
+### E. Expand your margins
 
 Use operational and marketing performance data to improve productivity, increase margins, and identify opportunities before they affect profitability.
 
 ## The 8 Profit Drivers
 
-These four pillars are supported by the 8 Profit Drivers:
+The last four steps are supported by the 8 Profit Drivers:
 
 - **Customer Experience.** How consistently do you deliver your brand promise across every customer touchpoint?
 - **Customer Engagement.** How well do you build lasting relationships that increase loyalty, repeat visits, and customer lifetime value?
 - **Employee Experience.** How well do you create a workplace where employees feel supported, respected, and equipped to succeed?
 - **Employee Accountability.** How effectively do you create a culture where employees take ownership of improving both the customer experience and the workplace experience?
-- **Targeted Promotions.** How effectively do you tailor communications, promotions, and offers to what different customer groups value most?
-- **Marketing ROI Management.** How well do you measure the contribution each marketing campaign makes to sales, margins, and profitable growth?
-- **Productivity Management.** How effectively do you give every store the visibility, tools, and support needed to perform at its best?
+- **Personalized Marketing.** How effectively do you tailor communications, promotions, and offers to what different customer groups value most?
+- **Marketing ROI.** How well do you measure the contribution each marketing campaign makes to sales, margins, and profitable growth?
+- **Team Productivity.** How effectively do you give every store the visibility, tools, and support needed to perform at its best?
 - **Performance Intelligence.** How effectively do you use AI intelligence to identify trends, prioritize opportunities, and recommend actions most likely to accelerate profitable growth?
 
 ## Where does your company stand?

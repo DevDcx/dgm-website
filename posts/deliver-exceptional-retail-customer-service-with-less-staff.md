@@ -45,4 +45,4 @@ With these strategies, retailers can improve the experience of both customers an
 
 Together, we can overcome staff shortages, high turnover, and rising labour costs and thrive in the retail industry.
 
-[Get your free Profit Growth Score](Score.dc.html) to see where your stores stand on Customer Experience and Productivity Management.
+[Get your free Profit Growth Score](Score.dc.html) to see where your stores stand on Customer Experience and Team Productivity.
