@@ -33,4 +33,4 @@ Your customers are giving you their contact information to receive a come back o
 
 The last page of your comment card is an opportunity to advertise new products, events, specials and cross-promotions. Keep this page fresh with new content, so you can see what your customers respond to most. If customers opt in to your comment card on your payment device, this page can double as your screensaver.
 
-[Get your free Profit Growth Score](Score.dc.html) to see how your stores rate on Customer Engagement and Targeted Promotions.
+[Get your free Profit Growth Score](Score.dc.html) to see how your stores rate on Customer Engagement and Personalized Marketing.
