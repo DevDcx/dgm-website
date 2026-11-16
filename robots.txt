@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://drivegrowthmanagement.com/sitemap.xml
