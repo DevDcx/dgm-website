@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
 // While the site is a draft, keep search engines out. Set to false on launch day.
-const DRAFT = true;
+const DRAFT = false;
 
 // Design source file -> published page, plus its SEO title and description
 const pages = {
