@@ -27,7 +27,7 @@ Build systems that consistently create great customer experiences, repeat visits
 
 Develop engaged, accountable frontline teams that stay longer, perform better, and raise the bar on the customer experience.
 
-### L. Lift sales with personalized marketing
+### L. Lift sales with personalized offers
 
 Understand who buys, why they buy, and how to create targeted promotions that increase sales without relying on blanket discounting.
 
