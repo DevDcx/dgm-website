@@ -96,7 +96,7 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 18px; color: #C7D3DC"><strong style="color: #FFFFFF; font-weight: 500">Sales and margins are lagging indicators.</strong> Manage the 8 Profit Drivers, track their leading indicators every week, and profit follows.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px 20px">
-<sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="5">
 <div style="border-top: 2px solid #FFB042; padding-top: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(40px, 4.6vw, 52px); letter-spacing: -.02em; line-height: 1; color: #FFB042">{{s.value}}</div>
 <div style="font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 500; color: #FFFFFF">{{s.label}}</div>
@@ -197,32 +197,24 @@ a{color:#3873AF}a:hover{color:#2A4252}
 <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700"><span style="width: 28px; height: 3px; background: #FF8E00; border-radius: 2px"></span>The mechanism</div>
 <h2 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.12; letter-spacing: -.01em; font-weight: 600">The Profit Growth Accelerator</h2>
 <p style="margin: 4px 0 0; font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2vw, 24px); line-height: 1.4; font-weight: 600; color: #2A4252">Your financials are lagging indicators. By the time a problem shows up in the P&amp;L, customers may have already walked away, and your best people may have already left.</p>
-<p style="margin: 0; font-size: 19px; color: #4F6270">Every chain has 8 Profit Drivers. Together they create a flywheel effect we call the Profit Growth Accelerator. It starts slowly, then builds momentum, growing sales and margins every quarter, in every store. We build it in 5 steps with the Profit Drivers SCALE Method.</p>
-</div>
-<div style="background: #2A4252; color: #FFFFFF; border-radius: 10px; padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
-<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: #FFB042">Step 1: S, at the centre of the accelerator</div>
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 23px; font-weight: 600">Set your Brand Growth Strategy</h3>
-<p style="margin: 0; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; color: #DDE5EB">It's what sets you apart in the eyes of your customers and builds unshakeable brand loyalty. It guides where you innovate and allocate resources to strengthen your competitive advantage.</p>
-</div>
-<a href="{{brandStrategyUrl}}" style="flex: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; text-decoration: none">Learn more →</a>
+<p style="margin: 0; font-size: 19px; color: #4F6270">Each of these management activities creates a flywheel effect we call the Profit Growth Accelerator. It starts slowly, then builds momentum, growing sales and margins every quarter, in every store. We build it in 5 steps with <a href="How.dc.html" style="color: #3873AF; text-decoration: underline; font-weight: 600">The S.C.A.L.E. Method</a>.</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px 48px">
 <div style="flex: 0 1 270px; min-width: 0; margin: 0 auto; display: flex; justify-content: center">
-<img src="/_blob/2f3118ce031bdcd7ba8ef5ee2cf1d96b" alt="The Profit Growth Accelerator: your Brand Growth Strategy at the centre, with the 8 Profit Drivers around it" style="display: block; width: 100%; max-width: 270px; height: auto">
+<img src="/_blob/2f3118ce031bdcd7ba8ef5ee2cf1d96b" alt="The Profit Growth Accelerator: Connect, Engage, Personalize and Optimize around your Brand Growth Strategy at the centre" style="display: block; width: 100%; max-width: 270px; height: auto">
 </div>
 <div style="flex: 999 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
 <sc-for list="{{wheelAreas}}" as="a" hint-placeholder-count="4">
 <div style="background: #FFFFFF; border: 1px solid #E1E6EB; border-top: 4px solid {{a.color}}; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 1.3; font-weight: 600">{{a.label}}</h3>
+<h3 style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 1.3; font-weight: 600; min-height: 2.6em">{{a.label}}</h3>
 <div style="font-size: 13px; font-weight: 700; color: #3873AF">{{a.drivers}}</div>
 <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4F6270">{{a.body}}</p>
+<sc-if value="{{a.link}}" hint-placeholder-val="{{false}}"><a href="{{a.link}}" style="align-self: flex-start; margin-top: 4px; color: #3873AF; font-weight: 700; text-decoration: underline">Learn more →</a></sc-if>
 <sc-if value="{{a.stat}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; padding-top: 10px; border-top: 1px solid #E1E6EB; font-size: 13.5px; line-height: 1.5; color: #2A4252"><strong style="font-weight: 700">{{a.stat}}</strong> <a href="{{a.statUrl}}" style="color: #4F6270; font-style: italic; text-decoration: underline">{{a.statSource}}</a></p></sc-if>
 </div>
 </sc-for>
-<div class="drivers-cta" style="grid-column: span 2; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; padding: 18px 4px">
+<div class="drivers-cta" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; padding: 18px 4px">
 <a href="How.dc.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: {{accent}}; color: #2A4252; font-weight: 700; text-decoration: none">Learn more about this →</a>
-<p style="margin: 0; font-size: 16px; color: #2A4252; font-weight: 600">Get your Profit Growth Score. It only takes a few minutes.</p>
 </div>
 </div>
 </div>
@@ -411,10 +403,11 @@ class Component extends DCLogic {
         'Is there a new internal or external trend we need to pay attention to?'
       ],
       wheelAreas: [
-        { label: '2. C: Connect with your customers', color: CONNECT, drivers: 'Customer Experience · Customer Engagement', body: 'Get customer feedback in real time. Send \u201ccome back\u201d offers to increase return visits, promote good reviews and build loyalty engagement.' , stat: 'Increasing customer retention by 5% can raise profits by 25% to 95%.', statSource: '(Bain & Company, via Harvard Business Review)', statUrl: 'https://hbr.org/2014/10/the-value-of-keeping-the-right-customers' },
-        { label: '3. A: Activate your teams', color: ENGAGE, drivers: 'Employee Experience · Employee Accountability', body: 'Know how to attract and keep great staff. Get feedback from teams, resolve problems in real time, acknowledge success and use AI to spot training gaps.' , stat: 'Replacing a frontline employee costs about 16% of their annual salary.', statSource: '(Center for American Progress)', statUrl: 'https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/' },
-        { label: '4. L: Lift sales with personalized marketing', color: PERSONALIZE, drivers: 'Personalized Marketing · Marketing ROI', body: 'Send personalized offers that increase visits, spend and brand loyalty. Track the return on every promotion and boost sales with less discounting.' , stat: 'Personalization typically lifts revenue by 10% to 15%.', statSource: '(McKinsey & Company)', statUrl: 'https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying' },
-        { label: '5. E: Expand your margins', color: OPTIMIZE, drivers: 'Team Productivity · Performance Intelligence', body: 'AI-driven performance management for every store. KPI alerts with prioritized actions, performance feedback and digital coaching, like a productivity coach for each manager.' , stat: 'Companies that make decisions from data are 5% to 6% more productive.', statSource: '(MIT Sloan research)', statUrl: 'https://papers.ssrn.com/abstract=1819486' }
+        { label: 'Set your Brand Growth Strategy', color: '#1E95A8', drivers: 'Brand Growth Strategy', body: "It's what sets you apart in the eyes of your customers and builds unshakeable brand loyalty. It guides where you innovate and allocate resources to strengthen your competitive advantage.", link: 'Brand.dc.html' },
+        { label: 'Connect with your customers', color: CONNECT, drivers: 'Connect', body: 'Get customer feedback in real time. Send \u201ccome back\u201d offers to increase return visits, promote good reviews and build loyalty engagement.' , stat: 'Increasing customer retention by 5% can raise profits by 25% to 95%.', statSource: '(Bain & Company, via Harvard Business Review)', statUrl: 'https://hbr.org/2014/10/the-value-of-keeping-the-right-customers' },
+        { label: 'Activate your teams', color: ENGAGE, drivers: 'Engage', body: 'Know how to attract and keep great staff. Get feedback from teams, resolve problems in real time, acknowledge success and use AI to spot training gaps.' , stat: 'Replacing a frontline employee costs about 16% of their annual salary.', statSource: '(Center for American Progress)', statUrl: 'https://www.americanprogress.org/article/there-are-significant-business-costs-to-replacing-employees/' },
+        { label: 'Lift sales with personalized offers', color: PERSONALIZE, drivers: 'Personalize', body: 'Send personalized offers that increase visits, spend and brand loyalty. Track the return on every promotion and boost sales with less discounting.' , stat: 'Personalization typically lifts revenue by 10% to 15%.', statSource: '(McKinsey & Company)', statUrl: 'https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying' },
+        { label: 'Expand your margins', color: OPTIMIZE, drivers: 'Optimize', body: 'AI-driven performance management for every store. KPI alerts with prioritized actions, performance feedback and digital coaching, like a productivity coach for each manager.' , stat: 'Companies that make decisions from data are 5% to 6% more productive.', statSource: '(MIT Sloan research)', statUrl: 'https://papers.ssrn.com/abstract=1819486' }
       ],
       quads: [
         { area: 'Customers', color: CONNECT, d1: 'Customer Experience', m1: "Why customers come back, or don't", d2: 'Customer Engagement', m2: 'Selling more to the customers you already have' },
